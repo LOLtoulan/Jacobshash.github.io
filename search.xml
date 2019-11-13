@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>线程3之线程的生命周期</title>
+      <link href="/2019/11/13/xian-cheng-3-zhi-xian-cheng-de-sheng-ming-zhou-qi/"/>
+      <url>/2019/11/13/xian-cheng-3-zhi-xian-cheng-de-sheng-ming-zhou-qi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><p>一般来说，一个正常的线程的生命周期有四步：</p><p>​         新建：创建线程对象</p><p>​         就绪：有执行权，但没执行资格</p><p>​         运行：有执行资格，有执行权</p><p>​         死亡：线程对象变成垃圾，等待虚拟机回收</p><p>之所以是一般，是因为有其他情况：</p><p>​         新建：创建线程对象</p><p>​         就绪：有执行权，但没执行资格</p><p>​         运行：有执行资格，有执行权，但由于一些其他操作让其阻塞了，处于阻塞状态的线程没有执行资格，没有执行权，而一些其他的操作可以把它激活，激活后的线程处于就绪状态。</p><p>​         死亡：线程对象变成垃圾，等待虚拟机回收</p><p>用一张图来表示就是：</p><p><img src="1.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java线程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>线程2之线程控制</title>
       <link href="/2019/11/13/xian-cheng-2-zhi-xian-cheng-kong-zhi/"/>
       <url>/2019/11/13/xian-cheng-2-zhi-xian-cheng-kong-zhi/</url>
