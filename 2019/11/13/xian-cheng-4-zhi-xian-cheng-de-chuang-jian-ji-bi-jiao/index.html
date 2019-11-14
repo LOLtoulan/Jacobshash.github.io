@@ -4,15 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="线程3之线程的生命周期, LOLtoulan-blog">
+    <meta name="keywords" content="线程4之线程的创建及比较, LOLtoulan-blog">
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
-    <meta name="description" content="线程的生命周期一般来说，一个正常的线程的生命周期有四步：
-​         新建：创建线程对象
-​         就绪：有执行权，但没执行资格
-​         运行：有执行资格，有执行权
-​         死亡：线程对象变成垃圾，">
+    <meta name="description" content="Java多线程之线程的创建与比较一、Java创建多线程 java创建多线程的方法一：
+
+详见： https://loltoulan.github.io/2019/11/12/xian-cheng/ 
+回顾下
+
+新建一个MyTherd类，继承">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>线程3之线程的生命周期 | LOLtoulan-blog</title>
+    <title>线程4之线程的创建及比较 | LOLtoulan-blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -281,13 +282,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        线程3之线程的生命周期
+                        线程4之线程的创建及比较
                     </div>
                 </div>
             </div>
@@ -445,18 +446,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><p>一般来说，一个正常的线程的生命周期有四步：</p>
-<p>​         新建：创建线程对象</p>
-<p>​         就绪：有执行权，但没执行资格</p>
-<p>​         运行：有执行资格，有执行权</p>
-<p>​         死亡：线程对象变成垃圾，等待虚拟机回收</p>
-<p>之所以是一般，是因为有其他情况：</p>
-<p>​         新建：创建线程对象</p>
-<p>​         就绪：有执行权，但没执行资格</p>
-<p>​         运行：有执行资格，有执行权，但由于一些其他操作让其阻塞了，处于阻塞状态的线程没有执行资格，没有执行权，而一些其他的操作可以把它激活，激活后的线程处于就绪状态。</p>
-<p>​         死亡：线程对象变成垃圾，等待虚拟机回收</p>
-<p>用一张图来表示就是：</p>
-<p><img src="1.png" alt=""></p>
+                <h2 id="Java多线程之线程的创建与比较"><a href="#Java多线程之线程的创建与比较" class="headerlink" title="Java多线程之线程的创建与比较"></a>Java多线程之线程的创建与比较</h2><h4 id="一、Java创建多线程"><a href="#一、Java创建多线程" class="headerlink" title="一、Java创建多线程"></a>一、Java创建多线程</h4><p> <strong>java创建多线程的方法一：</strong></p>
+<blockquote>
+<p>详见： <a href="https://loltoulan.github.io/2019/11/12/xian-cheng/">https://loltoulan.github.io/2019/11/12/xian-cheng/</a> </p>
+<p>回顾下</p>
+<ol>
+<li>新建一个MyTherd类，继承Therd类</li>
+<li>在类中重写run()方法</li>
+<li>创建对象</li>
+<li>调用start()方法，开启多线程</li>
+</ol>
+</blockquote>
+<p> <strong>java创建多线程的方法二：</strong></p>
+<blockquote>
+<ol>
+<li>新建一个MyRunnable类实现Runnable接口</li>
+<li>重写run()方法</li>
+<li>创建对象</li>
+<li>调用start()开启多线程</li>
+</ol>
+</blockquote>
+<p>所以，我们就知道创建多线程的实现接口方法</p>
+<p>撸代码：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyRunnable</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"*****"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyRunnableDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        MyRunnable myRunnable <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyRunnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//lambda</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"*****"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"郑和惠子"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>myRunnable<span class="token punctuation">,</span> <span class="token string">"斋藤飞鸟"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>myRunnable<span class="token punctuation">,</span> <span class="token string">"桥本环奈"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="2.png" alt=""></p>
+<p>二、创建多线程两种方法的比较</p>
+<ol>
+<li>继承Thread的类可以直接调用getName()函数，而用实现Runnable接口的方式，不能直接调用getName方法，只能通过Thread.currentThread().getName() ，来得到线程名字，</li>
+<li>由于Java中有一个类只能继承一个父类，但可以实现多个接口的性质，如果该类已经继承了一个父类，但父类没有继承Thread类，且子类中有需要用到线程的代码，此时我们就可以通过调用Runnable接口来实现线程。</li>
+<li>通过两种线程实现方法，我们发现在方法一中，每当启用一个线程的时候，就需要创建一个MyThread对象，但在实现Runnable接口时，我们发现MyRunnable类只需要创建一次对象，就可以直接通过：new Thread(myRunnable, “桥本环奈”).start();来实现，这种情况适合多个相同的程序处理同一资源的情况，把线程同程序的代码，数据有效的分离，较好的体现了面向对象的设计思想。</li>
+</ol>
 
             </div>
             <hr />
@@ -491,9 +531,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《线程3之线程的生命周期》
+                    《线程4之线程的创建及比较》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/13/xian-cheng-3-zhi-xian-cheng-de-sheng-ming-zhou-qi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/13/xian-cheng-4-zhi-xian-cheng-de-chuang-jian-ji-bi-jiao/" property="cc:attributionName"
                rel="cc:attributionURL">
                 LOLtoulan
             </a> 采用
@@ -533,9 +573,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/11/13/xian-cheng-4-zhi-xian-cheng-de-chuang-jian-ji-bi-jiao/">
                     <div class="card-image">
@@ -553,9 +594,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -568,6 +609,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -586,13 +628,13 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/13/xian-cheng-2-zhi-xian-cheng-kong-zhi/">
+                <a href="/2019/11/13/xian-cheng-3-zhi-xian-cheng-de-sheng-ming-zhou-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="线程2之线程控制">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="线程3之线程的生命周期">
                         
-                        <span class="card-title">线程2之线程控制</span>
+                        <span class="card-title">线程3之线程的生命周期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
