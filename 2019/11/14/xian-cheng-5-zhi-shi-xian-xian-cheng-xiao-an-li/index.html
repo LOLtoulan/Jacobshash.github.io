@@ -281,10 +281,23 @@ public class ThreadSleep extends Thread {
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -716,7 +729,7 @@ public class ThreadSleep extends Thread {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="线程6之Lock锁">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="线程6之Lock锁">
                         
                         <span class="card-title">线程6之Lock锁</span>
                     </div>
@@ -765,7 +778,7 @@ public class ThreadSleep extends Thread {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="线程4之线程的创建及比较">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="线程4之线程的创建及比较">
                         
                         <span class="card-title">线程4之线程的创建及比较</span>
                     </div>
