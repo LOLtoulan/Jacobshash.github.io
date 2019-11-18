@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>集合2之Collection集合</title>
+      <link href="/2019/11/18/ji-he-2-zhi-collection-ji-he/"/>
+      <url>/2019/11/18/ji-he-2-zhi-collection-ji-he/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a>Collection集合</h2><h4 id="一、Collection集合的功能概述"><a href="#一、Collection集合的功能概述" class="headerlink" title="一、Collection集合的功能概述"></a>一、Collection集合的功能概述</h4><blockquote><p>Collection：Collection 层次结构 中的根接口。Collection 表示一组对象，这些对象也称为 collection 的元素。一些  collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK 不提供此接口的任何直接实现：它提供更具体的子接口（如List和Set）实现。此接口通常用来传递collection，并在需要最大普遍性的地方操作这些collection。 </p></blockquote><blockquote><p>Collection的基本功能</p><p>增：</p><ol><li>boolean add(Object obj) :添加一个元素</li><li>boolean addAll(Collection c) : 添加一个集合的元素</li></ol><p>删：</p><ol><li>void clear() :移出所有元素</li></ol><p>改</p><p>查：</p><p>1. </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java集合 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>集合1之集合的由来及与数组的区别</title>
+      <link href="/2019/11/18/ji-he-1-zhi-ji-he-de-you-lai-ji-yu-shu-zu-de-qu-bie/"/>
+      <url>/2019/11/18/ji-he-1-zhi-ji-he-de-you-lai-ji-yu-shu-zu-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h4 id="一、集合的由来及与数组的区别"><a href="#一、集合的由来及与数组的区别" class="headerlink" title="一、集合的由来及与数组的区别"></a>一、集合的由来及与数组的区别</h4><ol><li><p><strong>为什么会出现集合类？</strong></p><p>面向对象语言对事物的体现都是以对象的形式，所以为了方便对多个对象的操作，Java就提供了集合类。</p></li><li><p><strong>数组和集合同是容器有何不同？</strong></p><p>数组虽然也可以存储对象，但是长度是固定的；集合的长度是可变的数组可以存储基本数据类型，集合只能存储对象，引用类型。</p></li><li><p><strong>集合类的特点</strong></p><p>集合只用于存储对象，集合长度是可变的，集合可以存储不同类型的对象</p></li></ol><h4 id="二、集合的继承体系图"><a href="#二、集合的继承体系图" class="headerlink" title="二、集合的继承体系图"></a>二、集合的继承体系图</h4><p><img src="2.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java集合 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>对象数组</title>
+      <link href="/2019/11/18/dui-xiang-shu-zu/"/>
+      <url>/2019/11/18/dui-xiang-shu-zu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="对象数组"><a href="#对象数组" class="headerlink" title="对象数组"></a>对象数组</h2><h4 id="一、对象数组的创建"><a href="#一、对象数组的创建" class="headerlink" title="一、对象数组的创建"></a>一、对象数组的创建</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>    <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> name<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> age<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token annotation punctuation">@Override</span>    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> <span class="token string">"Student{"</span> <span class="token operator">+</span>                <span class="token string">"name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>                <span class="token string">", age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>                <span class="token string">'}'</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token comment" spellcheck="true">//创建一个对象</span>        Student<span class="token punctuation">[</span><span class="token punctuation">]</span> students <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//创建对象并赋值</span>        Student s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"林青霞"</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        Student s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"风清扬"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        Student s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        Student s4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        Student s5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//把上面的东西放在数组中</span>        students<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> s1<span class="token punctuation">;</span>        students<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> s2<span class="token punctuation">;</span>        students<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> s3<span class="token punctuation">;</span>        students<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> s4<span class="token punctuation">;</span>        students<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> s5<span class="token punctuation">;</span>        List<span class="token operator">&lt;</span>Student<span class="token operator">></span> list <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>students<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span>Student student <span class="token operator">:</span> students<span class="token punctuation">)</span> <span class="token punctuation">{</span>            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><p>运行结果：</p><p><img src="1.png" alt=""></p><h4 id="二、对象数组的内存图"><a href="#二、对象数组的内存图" class="headerlink" title="二、对象数组的内存图"></a>二、对象数组的内存图</h4><p><img src="2.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>工厂模式</title>
       <link href="/2019/11/18/gong-han-mo-shi/"/>
       <url>/2019/11/18/gong-han-mo-shi/</url>
