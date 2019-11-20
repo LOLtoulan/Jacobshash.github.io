@@ -485,13 +485,20 @@
 <p>运行结果</p>
 <p><img src="1.png" alt=""></p>
 <h5 id="List集合的特有功能"><a href="#List集合的特有功能" class="headerlink" title="List集合的特有功能"></a>List集合的特有功能</h5><blockquote>
+<p> //添加元素到指定位置</p>
 <p> void add(int index,Object element);</p>
-<p> boolean addAll(int index,Collection  c)</p>
+<p> //添加集合到指定位置</p>
+<p> boolean addAll(int index,Collection  c);</p>
+<p> //获取指定位置上的元素</p>
 <p> Object get(int index);</p>
+<p> //修改指定位置上的元素</p>
 <p> Object set(int index,Object element);</p>
+<p> //删除指定位置上的元素</p>
 <p> Object remove(int index);</p>
+<p> //List迭代器</p>
 <p> ListIterator<E> listIterator();</p>
 <p> ListIterator<E> listIterator(int index);</p>
+<p> //输出指定位置到指定位置的元素</p>
 <p> List subList(int fromIndex,int toIndex);</p>
 </blockquote>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ListDemo</span> <span class="token punctuation">{</span>
