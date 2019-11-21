@@ -9,9 +9,26 @@
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
     <meta name="description" content="泛型一、泛型概述
-格式：        &amp;lt;数据类型&amp;gt;
-​        此处的数据类型只能是引用类型
-好处：        A：把运行时期的问题提到了编译期        B：避免了强制类型转换        C：优化了程序设计">
+格式：
+
+&amp;lt;数据类型&amp;gt;
+
+此处的数据类型只能是引用类型
+
+
+好处：
+
+把运行时期的问题提到了编译期
+
+避免了强制类型转换
+
+
+
+优化了程序设计
+
+在那些地方使用：
+
+看API，如果类，接口，抽象类后面有就说明要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -458,11 +475,29 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><h4 id="一、泛型概述"><a href="#一、泛型概述" class="headerlink" title="一、泛型概述"></a>一、泛型概述</h4><blockquote>
-<p>格式：<br>        &lt;数据类型&gt;</p>
-<p>​        此处的数据类型只能是引用类型</p>
-<p>好处：<br>        A：把运行时期的问题提到了编译期<br>        B：避免了强制类型转换<br>        C：优化了程序设计</p>
-<p>在那些地方使用：<br>        看API，如果类，接口，抽象类后面有<E>就说明要用泛型，一般在集合中使用</p>
+<p>格式：</p>
+<ul>
+<li><p>&lt;数据类型&gt;</p>
+</li>
+<li><p>此处的数据类型只能是引用类型</p>
+</li>
+</ul>
+<p>好处：</p>
+<ul>
+<li><p>把运行时期的问题提到了编译期</p>
+</li>
+<li><p>避免了强制类型转换</p>
+</li>
+</ul>
+<ul>
+<li>优化了程序设计</li>
+</ul>
+<p>在那些地方使用：</p>
+<ul>
+<li>看API，如果类，接口，抽象类后面有<E>就说明要用泛型，一般在集合中使用</li>
+</ul>
 </blockquote>
+<p>看一个demo</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -630,7 +665,7 @@
 <span class="token punctuation">}</span></code></pre>
 <p>解析，如果为我们直接运行上面的代码，我们发现会报错：</p>
 <blockquote>
-<p>Error:(24, 20) java: 不兼容的类型: java.lang.Integer无法转换为java.lang.String</p>
+<pre class=" language-java"><code class="language-java">Error<span class="token operator">:</span><span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span> java<span class="token operator">:</span> 不兼容的类型<span class="token operator">:</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>Integer无法转换为java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>String</code></pre>
 </blockquote>
 <p>所以，我们发现加上泛型之后我们因为类型无法转换而导致的出错问题会提前到编译器，也就是或，你在没运行时，就会报错，此外我们还发现我们能在一个类中定义两种不同的数据类型，由此可见，泛型是作为一个占位符，当我们传什么类型过去，他就会实例化什么类型。</p>
 <pre class=" language-java"><code class="language-java">        <span class="token comment" spellcheck="true">//java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String</span>
@@ -640,7 +675,7 @@
         ot2<span class="token punctuation">.</span><span class="token function">setObj</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         String s <span class="token operator">=</span> ot2<span class="token punctuation">.</span><span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>我们将代码换成上面的就不会报错了，因为String.valueOf();就是将其他类型转换为String类型的方法。</p>
+<p>我们将代码换成上面的就不会报错了，因为<code>String.valueOf();</code>就是将其他类型转换为String类型的方法。</p>
 <h5 id="手写泛型方法"><a href="#手写泛型方法" class="headerlink" title="手写泛型方法"></a><strong>手写泛型方法</strong></h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">{</span>
     <span class="token keyword">public</span> T <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> t<span class="token punctuation">;</span>
@@ -658,7 +693,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>解析：</p>
-<p>我们发现虽然我们在方法上加了泛型<code>T</code>但是，我们发现如果我们传的类型和ObjectTool<String>不一致还是会报错，所以我们这种方法本质上还是将泛型定义在类上，</p>
+<p>我们发现虽然我们在方法上加了泛型<code>T</code>但是，我们发现如果我们传的类型和<code>ObjectTool&lt;String&gt;</code>不一致还是会报错，所以我们这种方法本质上还是将泛型定义在类上，</p>
 <p>所以我们需要重新写一个真正的泛型方法，代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> T <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -703,10 +738,9 @@
 <p>我们发现其实泛型最大的好处就是在写类名接口名，或方法名时，可以先不写数据类型，把数据类型的方法留在实例化的时候。大大方便了我们的编程。</p>
 <h4 id="四、泛型高级通配符"><a href="#四、泛型高级通配符" class="headerlink" title="四、泛型高级通配符"></a>四、泛型高级通配符</h4><p>主要有三个</p>
 <blockquote>
-<E>
-
-<p>&lt;? extends E&gt;</p>
-<p>&lt;? super E&gt;</p>
+<p>   <code>&lt;E&gt;</code></p>
+<p>   <code>&lt;? extends E&gt;</code></p>
+<p>   <code>&lt;? super E&gt;</code></p>
 </blockquote>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -742,24 +776,24 @@
 <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span></code></pre>
 <p>分析：</p>
 <p><img src="3.png" alt=""></p>
-<p>由图片我们发现Collection<Object>只能对Object进行实例化</p>
-<p>Collection&lt;?&gt;可以对任意Java类进行实例化</p>
-<p>Collection&lt;? extends Animal&gt;向下继承</p>
-<p>Collection&lt;? super Animal&gt;向上继承</p>
+<p>由图片我们发现<code>Collection&lt;Object&gt;</code>只能对<code>Object</code>进行实例化</p>
+<p><code>Collection&lt;?&gt;</code>可以对任意<code>Java</code>类进行实例化</p>
+<p><code>Collection&lt;? extends Animal&gt;</code>向下继承</p>
+<p><code>Collection&lt;? super Animal&gt;</code>向上继承</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
 <p>泛型只是一种类型，可以理解为占位符</p>
 <p>泛型可以加在类上，接口上，方法上</p>
 <p>高级通配符：</p>
 <ul>
-<li>泛型通配符&lt;?&gt;<ul>
+<li>泛型通配符<code>&lt;?&gt;</code><ul>
 <li>任意类型，如果没有明确，那就是Object以及任意Java类了</li>
 </ul>
 </li>
-<li>&lt;? extends E&gt;<ul>
+<li><code>&lt;? extends E&gt;</code><ul>
 <li>向下限定，E及其父类</li>
 </ul>
 </li>
-<li>&lt;? super E&gt;<ul>
+<li><code>&lt;? super E&gt;</code><ul>
 <li>向上限定，E及其父类</li>
 </ul>
 </li>
