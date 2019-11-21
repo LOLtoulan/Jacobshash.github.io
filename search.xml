@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>集合10之Set集合</title>
+      <link href="/2019/11/21/ji-he-10-zhi-set-ji-he/"/>
+      <url>/2019/11/21/ji-he-10-zhi-set-ji-he/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h3><h4 id="一、Set集合"><a href="#一、Set集合" class="headerlink" title="一、Set集合"></a>一、Set集合</h4><blockquote><p>一个不包含重复元素的 collection。更确切地讲，set 不包含满足 <code>e1.equals(e2)</code> 的元素对  <code>e1</code> 和 <code>e2</code>，并且最多包含一个 null 元素。正如其名称所暗示的，此接口模仿了数学上的  <em>set</em> 抽象。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java集合 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>集合9之纯ArrayList实现现登陆注册</title>
       <link href="/2019/11/21/ji-he-9-zhi-chun-arraylist-shi-xian-xian-deng-lu-zhu-ce/"/>
       <url>/2019/11/21/ji-he-9-zhi-chun-arraylist-shi-xian-xian-deng-lu-zhu-ce/</url>
