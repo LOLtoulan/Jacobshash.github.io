@@ -782,6 +782,28 @@ public interface Collection&amp;lt;E&gt; extends Iterable&amp;lt;E&gt; {
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '5f0b87ce6cf2323e439f',
+        clientSecret: 'c660e3f9a12d429b21f4599c66f625574f701703',
+        repo: 'LOLtoulan.github.io',
+        owner: 'LOLtoulan',
+        admin: "LOLtoulan",
+        id: '2019/11/19/die-dai-qi-de-ju-ti-shi-xian-ji-yuan-ma-jie-xi/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 

@@ -914,6 +914,7 @@
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span>Student s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">-</span> s<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//其中"(a&lt;b)?a:b"是一个"条件表达式",它是这样执行的:如果a&lt;b为真,则表达式取a值,否则取b值</span>
         <span class="token keyword">int</span> m <span class="token operator">=</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">:</span> n<span class="token punctuation">;</span>
         <span class="token keyword">return</span> m<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -958,6 +959,7 @@
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//其中"(a&lt;b)?a:b"是一个"条件表达式",它是这样执行的:如果a&lt;b为真,则表达式取a值,否则取b值</span>
         <span class="token keyword">int</span> m <span class="token operator">=</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span> n<span class="token punctuation">;</span>
 
         <span class="token keyword">return</span> m<span class="token punctuation">;</span>
@@ -1004,6 +1006,7 @@
                 <span class="token annotation punctuation">@Override</span>
                 <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token keyword">int</span> n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//其中"(a&lt;b)?a:b"是一个"条件表达式",它是这样执行的:如果a&lt;b为真,则表达式取a值,否则取b值</span>
                     <span class="token keyword">int</span> m <span class="token operator">=</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span> n<span class="token punctuation">;</span>
 
                     <span class="token keyword">return</span> m<span class="token punctuation">;</span>
@@ -1149,7 +1152,7 @@
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator">&lt;</span>Student<span class="token operator">></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span>Student<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
-
+            <span class="token comment" spellcheck="true">//其中"(a&lt;b)?a:b"是一个"条件表达式",它是这样执行的:如果a&lt;b为真,则表达式取a值,否则取b值.</span>
             <span class="token keyword">int</span> num <span class="token operator">=</span> s2<span class="token punctuation">.</span><span class="token function">getSum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s1<span class="token punctuation">.</span><span class="token function">getSum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">int</span> num1 <span class="token operator">=</span> num <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getChinese</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getChinese</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> num<span class="token punctuation">;</span>
             <span class="token keyword">int</span> num2 <span class="token operator">=</span> num1 <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getEnglish</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getEnglish</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> num1<span class="token punctuation">;</span>
@@ -1418,6 +1421,28 @@
         </div>
     </div>
 
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '5f0b87ce6cf2323e439f',
+        clientSecret: 'c660e3f9a12d429b21f4599c66f625574f701703',
+        repo: 'LOLtoulan.github.io',
+        owner: 'LOLtoulan',
+        admin: "LOLtoulan",
+        id: '2019/11/21/ji-he-10-zhi-set-ji-he/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     

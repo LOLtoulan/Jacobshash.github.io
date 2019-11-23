@@ -815,7 +815,7 @@ Collection
                                 底层数据是哈希表和链表，通过HashCode和Equals来确保元素唯一性
                                由链表来确保元素有序，由hash表来确定元素唯一
 
-针对Collection集合我们到底该怎样选你？
+针对Collection集合我们到底该怎样选呢？
 
 分析如下：
 
@@ -1057,6 +1057,28 @@ TreeXxx ：底层结构是二叉树，两种排序方式，自然排序和比较
         </div>
     </div>
 
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '5f0b87ce6cf2323e439f',
+        clientSecret: 'c660e3f9a12d429b21f4599c66f625574f701703',
+        repo: 'LOLtoulan.github.io',
+        owner: 'LOLtoulan',
+        admin: "LOLtoulan",
+        id: '2019/11/18/ji-he-2-zhi-collection-ji-he/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
