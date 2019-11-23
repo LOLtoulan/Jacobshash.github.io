@@ -291,7 +291,7 @@ Collection：Collection 层次结构 中的根接口。Collection 表示一组�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -777,15 +777,88 @@ Collection：Collection 层次结构 中的根接口。Collection 表示一组�
 <p>运行结果：</p>
 <p><img src="5.png" alt=""></p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
-<p>集合的继承体系结构：</p>
-<p>Collection</p>
-<p>​        |–List</p>
-<p>​               |–ArrayList</p>
-<p>​               |–Vector</p>
-<p>​               |–LinkedList</p>
-<p>​        |–List</p>
-<p>​               |–TreeSet</p>
-<p>​               |–HashSet</p>
+<pre class=" language-java"><code class="language-java">集合的继承体系结构：
+
+Collection
+
+       <span class="token operator">|</span><span class="token operator">--</span>List 有序，可重复
+
+              <span class="token operator">|</span><span class="token operator">--</span>ArrayList
+
+                   底层数据是数组，查询快，增删慢
+                    线程不安全，效率高
+
+               <span class="token operator">|</span><span class="token operator">--</span>Vector
+
+                    底层数据是数组，查询快，增删慢
+                   线程安全，效率低
+
+              <span class="token operator">|</span><span class="token operator">--</span>LinkedList
+
+                   底层数据是链表，查询慢，增删快
+                    线程不安全，效率高
+
+        <span class="token operator">|</span><span class="token operator">--</span>List
+
+               <span class="token operator">|</span><span class="token operator">--</span>TreeSet
+
+                        底层数据是红黑树，有一定规则排序，与所选的构造器有关
+
+                        <span class="token operator">|</span><span class="token operator">--</span>LinkedListSet
+
+               <span class="token operator">|</span><span class="token operator">--</span>HashSet
+
+                        底层数据是哈希表，通过HashCode和Equals来确保元素唯一性
+
+                        <span class="token operator">|</span><span class="token operator">--</span>LinkedListSet
+
+                                底层数据是哈希表和链表，通过HashCode和Equals来确保元素唯一性
+                               由链表来确保元素有序，由hash表来确定元素唯一
+
+针对Collection集合我们到底该怎样选你？
+
+分析如下：
+
+           唯一吗？
+
+                   不唯一：List
+
+                           安全吗？
+
+                               安全：Vector（其实一般需要安全也不用Vector，一般用ArrayList加同步锁的方式）
+
+                               不安全：ArrayList   或 LinkedList
+
+                                       查询多：ArrayList
+
+                                       增删多：LinkedLIst
+
+                   唯一：Set
+
+                           排序吗？
+
+                               排序：TreeSet
+
+                               不排序：HashSet
+
+如果知道需要用Set，但不知道用哪个，就选HashSet    
+
+如果知道需要用List，但不知道用哪个，就选ArrayList
+
+如果知道需要用集合，但不知道用哪个，就选ArrayList    
+
+
+
+集合中常见的数据结构：
+
+ArrayXxx：底层数据是数组查询快，增删慢
+
+LinkedXxx：底层结构是链表，查询慢，增删快
+
+HashXxx：底层结构是Hash表，依赖两个方法，HashCode和Equals
+
+TreeXxx ：底层结构是二叉树，两种排序方式，自然排序和比较器排序</code></pre>
+<p>​                                                            </p>
 <p>集合使用步骤：</p>
 <ol>
 <li>创建集合对象</li>
@@ -1007,7 +1080,7 @@ Collection：Collection 层次结构 中的根接口。Collection 表示一组�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="迭代器的具体实现及源码解析">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="迭代器的具体实现及源码解析">
                         
                         <span class="card-title">迭代器的具体实现及源码解析</span>
                     </div>
@@ -1056,7 +1129,7 @@ Collection：Collection 层次结构 中的根接口。Collection 表示一组�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="集合1之集合的由来及与数组的区别">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="集合1之集合的由来及与数组的区别">
                         
                         <span class="card-title">集合1之集合的由来及与数组的区别</span>
                     </div>

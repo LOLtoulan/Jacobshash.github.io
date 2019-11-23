@@ -4,13 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="线程8之线程池, LOLtoulan-blog">
+    <meta name="keywords" content="集合之TreeSet数据结构, LOLtoulan-blog">
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
-    <meta name="description" content="Java中的线程池一、线程池的介绍程序启动一个新线程成本比较高的，因为涉及到与操作系统进行交互。而使用线程池可以很好的提高性能，尤其是程序中要创建大量生存周期很短的线程时，更应该考虑线程池。
+    <meta name="description" content="TreeSet数据结构
+TreeSet：TreeSet集合底层是二叉树结构，其实它不仅是是二叉树，还是红黑树结构，红黑树其实是一种自平衡二叉树。
 
-线程池里面的每一个线程代码结束后，并不会死亡，">
+画图解释如下：
+
+所以我们发现，在红黑树（自平衡二叉树）中，二叉树的结构变得更加均衡了，不会">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>线程8之线程池 | LOLtoulan-blog</title>
+    <title>集合之TreeSet数据结构 | LOLtoulan-blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +295,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        线程8之线程池
+                        集合之TreeSet数据结构
                     </div>
                 </div>
             </div>
@@ -421,8 +424,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Java%E7%BA%BF%E7%A8%8B/" class="post-category" target="_blank">
-                            Java线程
+                        <a href="/categories/Java%E9%9B%86%E5%90%88/" class="post-category" target="_blank">
+                            Java集合
                         </a>
                         
                     </div>
@@ -433,7 +436,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-16
+                    2019-11-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -456,117 +459,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Java中的线程池"><a href="#Java中的线程池" class="headerlink" title="Java中的线程池"></a>Java中的线程池</h2><h4 id="一、线程池的介绍"><a href="#一、线程池的介绍" class="headerlink" title="一、线程池的介绍"></a>一、线程池的介绍</h4><p>程序启动一个新线程成本比较高的，因为涉及到与操作系统进行交互。而使用线程池可以很好的提高性能，尤其是程序中要创建大量生存周期很短的线程时，更应该考虑线程池。</p>
-<ul>
-<li>线程池里面的每一个线程代码结束后，并不会死亡，而是再次回到线程池中成为空闲状态等待下一个线程来使用</li>
-<li>在jdk5之前，我们必须手动实现线程池，但在jdk5以后Java内置线程池</li>
-</ul>
-<p>如何实现线程池的代码呢？</p>
-<ul>
-<li><p>创建一个线程池对象控制要创建几个线程对象。</p>
-<p> public static ExecutorService new newFixedThreadPool(int nThreads)</p>
-</li>
-<li><p>这种线程池的线程可以执行：</p>
-<p>  可以执行Runnable对象或者Callable对象代表的线程</p>
-<p>写一个类实现Runnable接口。</p>
-</li>
-<li><p>调用方法如下即可</p>
-<p> Future&lt;?&gt; submit(Runnable task)</p>
-<p><T> Future<T> submit(Callable<T> task)</p>
-</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyRunnable</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExcutorsDemo</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ExecutorService pool <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        pool<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyRunnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        pool<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyRunnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//可以杀死线程池，</span>
-        <span class="token comment" spellcheck="true">//shutdown()</span>
-        <span class="token comment" spellcheck="true">//启动有序关闭，其中先前提交的任务将被执行，但不会接受任何新任务。</span>
-        <span class="token comment" spellcheck="true">//pool.shutdown();</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>运行结果：</p>
-<p>没调用shutdown()时，</p>
-<p><img src="1.png" alt=""></p>
-<p>当调用shutdown()时，</p>
-<p><img src="2.png" alt=""></p>
-<h4 id="二、线程的第三种创建方法"><a href="#二、线程的第三种创建方法" class="headerlink" title="二、线程的第三种创建方法"></a>二、线程的第三种创建方法</h4><p>线程的第三种创建方法时通过实现Callable接口来实现的，而且这种方法还有返回值，下面来看一下线程的第三种创建方法</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyCallable</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> Object <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyCallableDemo</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ExecutorService pool <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        pool<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyCallable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        pool<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyCallable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-       <span class="token comment" spellcheck="true">// pool.shutdown();</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>因为这种方法是依赖线程池做的，所以拥有和线程池一样的特性，</p>
-<p>运行结果如下：</p>
-<p><img src="3.png" alt=""></p>
-<p>如果只是这样，那么这种方法还没Runnable好用，就不必有这个方法了，但是，前面说过，这种方法可以有返回值，下面就做一个含有返回值的案例。</p>
-<p>代码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyCallable</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token operator">&lt;</span>Integer<span class="token operator">></span>  <span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span>  Integer n <span class="token punctuation">;</span>
-    <span class="token keyword">private</span>  Integer m<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token function">MyCallable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token function">MyCallable</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>n <span class="token operator">=</span> n<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>m <span class="token operator">=</span> m<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> Integer <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            sum<span class="token operator">=</span>sum<span class="token operator">+</span>i<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyCallableDemo</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ExecutionException<span class="token punctuation">,</span> InterruptedException <span class="token punctuation">{</span>
-        ExecutorService pool <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        Future future <span class="token operator">=</span> pool<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyCallable</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Future future1 <span class="token operator">=</span> pool<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyCallable</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> future<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> i1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> future1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        pool<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>计算结果：</p>
-<p><img src="4.png" alt=""></p>
-<h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><blockquote>
-<p>线程池，在执行完代码后不会死亡，而会空闲下来等待下一个线程使用，但线程池的大小要视情况而定。</p>
-<p>Callable实现线程的方法有返回值，如果你的程序需要用到返回值，那么这个首选，但是，如果没有返回值，尽量不要用，太麻烦了。</p>
+                <h2 id="TreeSet数据结构"><a href="#TreeSet数据结构" class="headerlink" title="TreeSet数据结构"></a>TreeSet数据结构</h2><blockquote>
+<p>TreeSet：TreeSet集合底层是二叉树结构，其实它不仅是是二叉树，还是红黑树结构，红黑树其实是一种自平衡二叉树。</p>
 </blockquote>
+<p>画图解释如下：</p>
+<p><img src="1.png" alt=""></p>
+<p>所以我们发现，在红黑树（自平衡二叉树）中，二叉树的结构变得更加均衡了，不会再出现一边重的现象，如下</p>
+<p><img src="2.png" alt=""></p>
+<p>这里简单了解下红黑树，详细的红黑树算法请看 ：<a href="https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&mid=2247484135&idx=1&sn=be2221572ffc82f5792dd4ef1ea8e309&chksm=ebd743e6dca0caf00f188cabafc73665b875bf1cbe92cf3626cedb4f80313bb20a7429b8ec3f&scene=21#wechat_redirect" target="_blank" rel="noopener">红黑树</a></p>
+<p>元素是如何存进去的呢？</p>
+<p>假设我们现在有这样一组数据，</p>
+<p>20，18，23，22，17，24，19，18，24</p>
+<p>我想把它存在TreeSet集合中，而TreeSet集合底层是TreeMap，也就是红黑树，存储过程如下。</p>
+<p>看下图：</p>
+<p><img src="3.png" alt=""></p>
 
             </div>
             <hr />
@@ -725,9 +631,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《线程8之线程池》
+                    《集合之TreeSet数据结构》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/16/xian-cheng-8-zhi-xian-cheng-chi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/23/ji-he-zhi-treeset-shu-ju-jie-gou/" property="cc:attributionName"
                rel="cc:attributionURL">
                 LOLtoulan
             </a> 采用
@@ -767,41 +673,43 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/17/xian-cheng-9-zhi-ni-ming-nei-bu-lei-shi-xian-duo-xian-cheng/">
+                <a href="/2019/11/23/ji-he-zhi-treeset-shu-ju-jie-gou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="线程9之匿名内部类实现多线程">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="集合之TreeSet数据结构">
                         
-                        <span class="card-title">线程9之匿名内部类实现多线程</span>
+                        <span class="card-title">集合之TreeSet数据结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            梳理一下Java中的多线程
+                            梳理下集合相关的知识点
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java%E7%BA%BF%E7%A8%8B/" class="post-category" target="_blank">
-                                    Java线程
+                            <a href="/categories/Java%E9%9B%86%E5%90%88/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -820,31 +728,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/15/xian-cheng-7-zhi-xian-cheng-jian-tong-xin/">
+                <a href="/2019/11/21/ji-he-10-zhi-set-ji-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="线程7之线程间通信">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="集合10之Set集合">
                         
-                        <span class="card-title">线程7之线程间通信</span>
+                        <span class="card-title">集合10之Set集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            梳理一下Java中的多线程
+                            梳理下集合相关的知识点
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java%E7%BA%BF%E7%A8%8B/" class="post-category" target="_blank">
-                                    Java线程
+                            <a href="/categories/Java%E9%9B%86%E5%90%88/" class="post-category" target="_blank">
+                                    Java集合
                                 </a>
                             
                             
