@@ -900,7 +900,6 @@ Map的键唯一，Col">
 
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">char</span> ch <span class="token operator">:</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             Integer i <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
             <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
@@ -908,14 +907,11 @@ Map的键唯一，Col">
                 treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-
         Set<span class="token operator">&lt;</span>Character<span class="token operator">></span> keySet <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span>Character key <span class="token operator">:</span> keySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             Integer value <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">"("</span> <span class="token operator">+</span>  value<span class="token operator">+</span><span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-
-
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>运行结果：</p>
@@ -1138,6 +1134,71 @@ Map的键唯一，Col">
 <li>HashMap线程不安全 效率高，Hashtable 线程安全效率低</li>
 <li>Hashtable 不可以使用null作为键值，HashMap可以</li>
 </ol>
+<h4 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h4><blockquote>
+<p>Map:</p>
+<ol>
+<li><p>将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。 </p>
+</li>
+<li><p>Collection和Map的区别</p>
+<ul>
+<li>Map ：存储的是键值形式的元素，键唯一，值可以重复。</li>
+<li>Collection：存储的随机单独形式的元素，子接口Set元素唯一子接口List中元素可重复。</li>
+</ul>
+</li>
+<li><p>Map接口功能概述</p>
+<ul>
+<li>添加功能：<ul>
+<li>V put(K key,V value)</li>
+</ul>
+</li>
+<li>删除功能<ul>
+<li>void clear()</li>
+<li>V remove(Object key);</li>
+<li>V remove(K key,V value)</li>
+</ul>
+</li>
+<li>判断功能<ul>
+<li>containsKey(Object key)</li>
+<li>containsValue(Object value)</li>
+<li>isEmpty()</li>
+</ul>
+</li>
+<li>获取功能<ul>
+<li>get(Object key);</li>
+<li>Set&lt;Map.entry&lt;K,V&gt;&gt; entrySet()</li>
+<li>Set<K> keySet()</li>
+<li>Collection<V> values()</li>
+</ul>
+</li>
+<li>长度功能<ul>
+<li>int size()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Map集合的遍历</p>
+<ol>
+<li><p>键找值</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> hashMap3 <span class="token operator">:</span> arrayList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         String value <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">"----"</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>键值对对象找键和值</p>
+<pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">>></span> entrySet <span class="token operator">=</span> treeMap1<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Student key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Integer value <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>key<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
 
             </div>
             <hr />
