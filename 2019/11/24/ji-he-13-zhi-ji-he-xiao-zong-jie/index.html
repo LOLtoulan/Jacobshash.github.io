@@ -4,15 +4,21 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="集合之Collections模拟斗地主洗牌发牌, LOLtoulan-blog">
+    <meta name="keywords" content="集合13之集合小总结, LOLtoulan-blog">
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
-    <meta name="description" content="Collections模拟斗地主洗牌发牌分两版，一版未排序，一般排序
-代码如下：
-public class CollectionsDemo {
-    public static void main(String[] args) {
-   ">
+    <meta name="description" content="集合总结集合中包含两大集合：Collection和Map
+
+Collection
+List
+
+ArrayList
+底层结构是数组，查询快，增删慢，线程不安全，效率高
+常用方法：
+add();增加元素
+remove();删除元素
+isEmpt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +26,7 @@ public class CollectionsDemo {
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>集合之Collections模拟斗地主洗牌发牌 | LOLtoulan-blog</title>
+    <title>集合13之集合小总结 | LOLtoulan-blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -312,13 +318,13 @@ public class CollectionsDemo {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        集合之Collections模拟斗地主洗牌发牌
+                        集合13之集合小总结
                     </div>
                 </div>
             </div>
@@ -428,11 +434,24 @@ public class CollectionsDemo {
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/Java/" target="_blank">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Java%E9%9B%86%E5%90%88/" class="post-category" target="_blank">
+                            Java集合
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -463,141 +482,231 @@ public class CollectionsDemo {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Collections模拟斗地主洗牌发牌"><a href="#Collections模拟斗地主洗牌发牌" class="headerlink" title="Collections模拟斗地主洗牌发牌"></a>Collections模拟斗地主洗牌发牌</h2><p><strong>分两版，一版未排序，一般排序</strong></p>
-<p>代码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CollectionsDemo</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//zhuangpai</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> colors <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"♠"</span><span class="token punctuation">,</span> <span class="token string">"♥"</span><span class="token punctuation">,</span> <span class="token string">"♣"</span><span class="token punctuation">,</span> <span class="token string">"♦"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> numbers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">,</span> <span class="token string">"3"</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">,</span> <span class="token string">"5"</span><span class="token punctuation">,</span> <span class="token string">"6"</span><span class="token punctuation">,</span> <span class="token string">"7"</span><span class="token punctuation">,</span> <span class="token string">"8"</span><span class="token punctuation">,</span> <span class="token string">"9"</span><span class="token punctuation">,</span> <span class="token string">"10"</span><span class="token punctuation">,</span> <span class="token string">"J"</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">,</span> <span class="token string">"K"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>String color <span class="token operator">:</span> colors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span>String number <span class="token operator">:</span> numbers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"JOKER🤡"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"joker🤡"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collections<span class="token punctuation">.</span><span class="token function">shuffle</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> liuBei <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> zhangFei <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> gaunYu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> diPai <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//54张牌</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> array<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">>=</span> array<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                diPai<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                liuBei<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                gaunYu<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                zhangFei<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"刘备"</span><span class="token punctuation">,</span>liuBei<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"张飞"</span><span class="token punctuation">,</span>zhangFei<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"关羽"</span><span class="token punctuation">,</span>gaunYu<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"底牌"</span><span class="token punctuation">,</span> diPai<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//        System.out.println(array);</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">lookPorker</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>name<span class="token operator">+</span><span class="token string">"的牌是："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s<span class="token operator">+</span><span class="token string">"  "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+                <h2 id="集合总结"><a href="#集合总结" class="headerlink" title="集合总结"></a>集合总结</h2><p>集合中包含两大集合：Collection和Map</p>
+<blockquote>
+<h5 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a><strong>Collection</strong></h5><ol>
+<li><p>List</p>
+<ul>
+<li>ArrayList<ul>
+<li>底层结构是数组，查询快，增删慢，线程不安全，效率高<ul>
+<li>常用方法：<ol>
+<li>add();增加元素</li>
+<li>remove();删除元素</li>
+<li>isEmpty();判断集合是否为空</li>
+<li>toArray();将链表转换为数组</li>
+<li>set();替换</li>
+<li>get();获取指定元素</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vector<ul>
+<li>底层结构是数组，查询快，增删慢，线程安全，效率低<ul>
+<li>特有方法：<ol>
+<li>addElements();同add()</li>
+<li>elementAt();返回指定位置索引</li>
+</ol>
+</li>
+<li>说明：一般不用。或者说，基本不用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LinkedList<ul>
+<li>底层结构是链表，查询慢，增删快，线程不安全，效率高<ul>
+<li>特有方法<ol>
+<li>addFirst()</li>
+<li>addLast()</li>
+<li>getFirst()</li>
+<li>getLast()</li>
+<li>peek()获取但不移出此列表的头(第一个元素)</li>
+<li>poll()获取并移除此列表的头</li>
+<li>pop()弹出列表头</li>
+<li>push();将元素推入集合中</li>
+<li>removeFirst()</li>
+<li>removeLast()</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Set（唯一，无序）</p>
+<ul>
+<li><p>HashSet</p>
+<ul>
+<li>底层是hash表，是一个元素为链表的数组<ul>
+<li>通过查看源码我们发现，HashSet的add方法是通过new HashSet时，通过无参构造创建HashMap对象，通过hashmap的put方法来达到元素唯一性。</li>
+</ul>
+</li>
+<li>数据的唯一性依赖于HashCode和equals方法，可自动生成。<ul>
+<li>先判断HashCode是否一样<ul>
+<li>一样，继续比较equals，看返回值，<ul>
+<li>true：相同不添加</li>
+<li>false：不相同，添加</li>
+</ul>
+</li>
+<li>不一样，直接添加</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LinkedHashSet集合<ul>
+<li>此集合底层是hash表和链表，Hash表确保元素的唯一，链表确保集合的有序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>TreeSet（可按照一定的规则排序，具体实现与构造器有关）</p>
+<ul>
+<li>底层时二叉树（红黑树）</li>
+</ul>
+</li>
+<li><p>如何保证元素的唯一性，红黑树（元素相同则无法添加进集合中）</p>
+<ul>
+<li><p>自然排序（元素具备具备比较性）</p>
+<ul>
+<li>无参构造排序是因为例如Integer，String，Character都已经实现Comparable接口，是因为：<code>此接口强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的 compareTo 方法被称为它的自然比较方法。</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>构造器排序</p>
+<ul>
+<li>有参构造则是通过让集合构造方法实现Comparator的实现类对象，而一般我们都不会新创建一个类专门来实例化对象，一般我们会通过匿名内部类的方法来实现。   </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>一般我们在用集合时，尽量用ArrayList，其他集合能实现的功能ArrayList集合基本都能实现。一般不用Set集合，用也只用HashSet。（具体情况具体对待）</p>
+</li>
+</ol>
+<h5 id="Map"><a href="#Map" class="headerlink" title="Map"></a><strong>Map</strong></h5><p>将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。</p>
+<p>Map集合的数据结构仅仅针对键有效，与值无关</p>
+<ol>
+<li>HashMap线程不安全，效率高<ul>
+<li>和hashSet一样</li>
+<li>LinkedHashMap<ul>
+<li>和LinkedHashSet一样</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hashtable线程安全，效率低<ul>
+<li>和HashMap基本一样</li>
+</ul>
+</li>
+<li>TreeSet<ul>
+<li>和TreeSet一样</li>
+</ul>
+</li>
+</ol>
+<h5 id="集合如何选择"><a href="#集合如何选择" class="headerlink" title="集合如何选择"></a><strong>集合如何选择</strong></h5><p>​    看需求</p>
+<ul>
+<li>是否是键值对象形式<ul>
+<li>是：Map<ul>
+<li>键是否需要排序<ul>
+<li>是：HashMap</li>
+<li>否：TreeMap</li>
+</ul>
+</li>
+<li>不知道就用HashMap</li>
+</ul>
+</li>
+<li>否：Collection<ul>
+<li>元素是否唯一：<ul>
+<li>是：Set<ul>
+<li>是否需要排序<ul>
+<li>是：TreeSet</li>
+<li>否：HashSet</li>
+</ul>
+</li>
+<li>不知道就用HashSet</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>否：List<ul>
+<li>安全否？<ul>
+<li>安全Vector（其实也不用，用的最多的是ArrayList的加锁方式）</li>
+<li>否，增删多，查询多<ul>
+<li>增删多：LinkedList</li>
+<li>查询多：ArrayList</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不知道就用ArrayList，不知道就用ArrayList，不知道就用ArrayList（重要的事情说三遍）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>集合的常见方法及遍历</strong></p>
+<p>Collection：</p>
+<ul>
+<li>add</li>
+<li>remove</li>
+<li>contains</li>
+<li>iterator</li>
+<li>size</li>
+</ul>
+<p>遍历：</p>
+<ul>
+<li><p>增强for</p>
+</li>
+<li><p>迭代器</p>
+</li>
+</ul>
+<p>List集合由三种遍历</p>
+<ul>
+<li><p>普通for，get</p>
+</li>
+<li><p>增强for</p>
+</li>
+<li><p>迭代器</p>
+</li>
+</ul>
+<p>Set</p>
+<ul>
+<li><p>增强for</p>
+</li>
+<li><p>迭代器</p>
+</li>
+</ul>
+<p>Map:</p>
+<ul>
+<li>put</li>
+<li>remove</li>
+<li>containsKey()</li>
+<li>containsValue</li>
+<li>keySet</li>
+<li>get</li>
+<li>value</li>
+<li>entrySet</li>
+<li>size</li>
+</ul>
+<p>遍历两种：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> hashMap3 <span class="token operator">:</span> arrayList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         String value <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">"----"</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<p>发牌顺序为随机，两次运行结果如下：</p>
-<p><img src="2.png" alt=""></p>
-<p><img src="3.png" alt=""></p>
-<p><strong>可以排序的代码如下：</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PokerOrder</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        <span class="token comment" spellcheck="true">//创建一个Map集合</span>
-        HashMap<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">></span> hm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//创建一个ArrayList集合</span>
-        ArrayList<span class="token operator">&lt;</span>Integer<span class="token operator">></span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//创建花色和点数</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> colors <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"♠"</span><span class="token punctuation">,</span> <span class="token string">"♥"</span><span class="token punctuation">,</span> <span class="token string">"♣"</span><span class="token punctuation">,</span> <span class="token string">"♦"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> numbers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"3"</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">,</span> <span class="token string">"5"</span><span class="token punctuation">,</span> <span class="token string">"6"</span><span class="token punctuation">,</span> <span class="token string">"7"</span><span class="token punctuation">,</span> <span class="token string">"8"</span><span class="token punctuation">,</span> <span class="token string">"9"</span><span class="token punctuation">,</span> <span class="token string">"10"</span><span class="token punctuation">,</span> <span class="token string">"J"</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">,</span> <span class="token string">"K"</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>String number <span class="token operator">:</span> numbers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span>String color <span class="token operator">:</span> colors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                String poker <span class="token operator">=</span> color<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                hm<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> poker<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                index<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        hm<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token string">"JOKER"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        index<span class="token operator">++</span><span class="token punctuation">;</span>
-        hm<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token string">"joker"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        array<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        Collections<span class="token punctuation">.</span><span class="token function">shuffle</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        TreeSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> liuBei <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        TreeSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> zhangFei <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        TreeSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> gaunYu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        TreeSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> diPai <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-
-
-        <span class="token comment" spellcheck="true">//54张牌</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> array<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">>=</span> array<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                diPai<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                liuBei<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                gaunYu<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                zhangFei<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">/*Set&lt;Integer> setKey = hm.keySet();
-        for (Integer key : setKey) {
-            String value = hm.get(key);
-            System.out.print(key + ":" + value + " ");
-        }*/</span>
-
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"刘备"</span><span class="token punctuation">,</span> liuBei<span class="token punctuation">,</span> hm<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"关羽"</span><span class="token punctuation">,</span> gaunYu<span class="token punctuation">,</span> hm<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"张飞"</span><span class="token punctuation">,</span> zhangFei<span class="token punctuation">,</span> hm<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">lookPorker</span><span class="token punctuation">(</span><span class="token string">"底牌"</span><span class="token punctuation">,</span> diPai<span class="token punctuation">,</span> hm<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">lookPorker</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> TreeSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> ts<span class="token punctuation">,</span> HashMap<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">></span> hm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"的牌是："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>Integer key <span class="token operator">:</span> ts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            String value <span class="token operator">=</span> hm<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>value <span class="token operator">+</span> <span class="token string">"  "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
+<pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">>></span> entrySet <span class="token operator">=</span> treeMap1<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Student key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Integer value <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>key<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>运行结果：</p>
-<p><img src="4.png" alt=""></p>
-<p><img src="5.png" alt=""></p>
+</blockquote>
 
             </div>
             <hr />
@@ -756,9 +865,9 @@ public class CollectionsDemo {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《集合之Collections模拟斗地主洗牌发牌》
+                    《集合13之集合小总结》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/24/ji-he-zhi-collections-mo-ni-dou-di-zhu-xi-pai-fa-pai/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/24/ji-he-13-zhi-ji-he-xiao-zong-jie/" property="cc:attributionName"
                rel="cc:attributionURL">
                 LOLtoulan
             </a> 采用
@@ -799,7 +908,7 @@ public class CollectionsDemo {
         repo: 'LOLtoulan.github.io',
         owner: 'LOLtoulan',
         admin: "LOLtoulan",
-        id: '2019/11/24/ji-he-zhi-collections-mo-ni-dou-di-zhu-xi-pai-fa-pai/',
+        id: '2019/11/24/ji-he-13-zhi-ji-he-xiao-zong-jie/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -820,9 +929,10 @@ public class CollectionsDemo {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/11/24/ji-he-13-zhi-ji-he-xiao-zong-jie/">
                     <div class="card-image">
@@ -831,55 +941,6 @@ public class CollectionsDemo {
                         <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="集合13之集合小总结">
                         
                         <span class="card-title">集合13之集合小总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            梳理下集合相关的知识点
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java%E9%9B%86%E5%90%88/" class="post-category" target="_blank">
-                                    Java集合
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/11/24/ji-he-12-zhi-collections-gong-ju-lei/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="集合12之Collections工具类">
-                        
-                        <span class="card-title">集合12之Collections工具类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,6 +965,7 @@ public class CollectionsDemo {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -911,6 +973,44 @@ public class CollectionsDemo {
                         <span class="chip bg-color">Java</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/24/ji-he-zhi-collections-mo-ni-dou-di-zhu-xi-pai-fa-pai/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="集合之Collections模拟斗地主洗牌发牌">
+                        
+                        <span class="card-title">集合之Collections模拟斗地主洗牌发牌</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Collections模拟斗地主洗牌发牌分两版，一版未排序，一般排序
+代码如下：
+public class CollectionsDemo {
+    public static void main(String[] args) {
+   
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-24
+                            </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
