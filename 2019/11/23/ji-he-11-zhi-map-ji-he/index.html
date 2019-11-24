@@ -768,7 +768,377 @@ Map的键唯一，Col">
 <blockquote>
 <p>由Hash表确保唯一性，由链表保证键的有序</p>
 </blockquote>
-<h4 id="六、TreeMap集合"><a href="#六、TreeMap集合" class="headerlink" title="六、TreeMap集合"></a>六、TreeMap集合</h4>
+<h4 id="六、TreeMap集合"><a href="#六、TreeMap集合" class="headerlink" title="六、TreeMap集合"></a>六、TreeMap集合</h4><blockquote>
+<p>基于红黑树（Red-Black tree）的 NavigableMap 实现。该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。 </p>
+</blockquote>
+<p>我们前面在学习TreeSet时，我们就知道TreeSet底层是红黑树，而且通过源码我们知道，TreeSet是通过实现实例化TreeMap对象来进行添加元素的，所以我们应该想到TreeMap也应该有排序功能，而且也应该一种自然排序，一种构造器排序。而且我们用过查看API我们发现真的是这样的。构造器如下：</p>
+<p><img src="6.png" alt=""></p>
+<p><strong>自然排序demo如下：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeMapTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        TreeMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> treeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"qwe"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"asd"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"acb"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"bcq"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> keySet <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> keySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Integer value <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">>></span> entrySet <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Integer value <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>运行结果如下：</p>
+<p><img src="7.png" alt=""></p>
+<p><strong>学号为键学生为值</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> Integer num<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span> Integer num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>num <span class="token operator">=</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> Integer <span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setNum</span><span class="token punctuation">(</span>Integer num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>num <span class="token operator">=</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Student{"</span> <span class="token operator">+</span>
+                <span class="token string">"name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", num="</span> <span class="token operator">+</span> num <span class="token operator">+</span>
+                <span class="token string">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeMapTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        TreeMap<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> Student<span class="token operator">></span> treeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"桥本环奈"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"郑和惠子"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"胡歌"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"胡歌"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1001011</span><span class="token punctuation">,</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1008611</span><span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">10010</span><span class="token punctuation">,</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">10086</span><span class="token punctuation">,</span>s4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">9527</span><span class="token punctuation">,</span>s5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Set<span class="token operator">&lt;</span>Integer<span class="token operator">></span> keySet <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Integer key <span class="token operator">:</span> keySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Student value <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span>  value<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>value<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         TreeMap<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">></span> treeMap1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">(</span>student1<span class="token punctuation">,</span> student2<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//int num = student1.getName().compareTo(student2.getName());</span>
+            <span class="token keyword">int</span> num2 <span class="token operator">=</span> <span class="token punctuation">(</span>student1<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> student2<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> num3 <span class="token operator">=</span> num2 <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> student1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>student2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">:</span>num2<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> num3<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s6 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"qiao本环奈"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s7 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"zhai藤飞鸟"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"zhen和惠子"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"hu歌"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s10 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"hu歌"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        treeMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>s6<span class="token punctuation">,</span><span class="token number">9526</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>s7<span class="token punctuation">,</span><span class="token number">9525</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>s8<span class="token punctuation">,</span><span class="token number">9524</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>s9<span class="token punctuation">,</span><span class="token number">9523</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        treeMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>s10<span class="token punctuation">,</span><span class="token number">9522</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">>></span> entrySet <span class="token operator">=</span> treeMap1<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Student key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Integer value <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>key<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>运行结果：</p>
+<p><img src="8.png" alt=""></p>
+<p><strong>小案例：</strong></p>
+<p><img src="9.png" alt=""></p>
+<p>代码如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        TreeMap<span class="token operator">&lt;</span>Character<span class="token punctuation">,</span> Integer<span class="token operator">></span> treeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String s <span class="token operator">=</span> <span class="token string">"qweqweqweqweqwesdf"</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//首先把字符串转化为字符数组</span>
+        <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">char</span> ch <span class="token operator">:</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Integer i <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                i<span class="token operator">++</span><span class="token punctuation">;</span>
+                treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        Set<span class="token operator">&lt;</span>Character<span class="token operator">></span> keySet <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Character key <span class="token operator">:</span> keySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Integer value <span class="token operator">=</span> treeMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">"("</span> <span class="token operator">+</span>  value<span class="token operator">+</span><span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>运行结果：</p>
+<p><img src="10.png" alt=""></p>
+<h4 id="七、Map集合嵌套案例"><a href="#七、Map集合嵌套案例" class="headerlink" title="七、Map集合嵌套案例"></a>七、Map集合嵌套案例</h4><h5 id="HashMap嵌套HashMap"><a href="#HashMap嵌套HashMap" class="headerlink" title="HashMap嵌套HashMap"></a><strong>HashMap嵌套HashMap</strong></h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">>></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> hashMap1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"桥本环奈"</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> hashMap2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap2<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"胡歌"</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap2<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"郑和惠子"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"本科"</span><span class="token punctuation">,</span> hashMap1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"研究生"</span><span class="token punctuation">,</span> hashMap2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> setKey <span class="token operator">=</span> hashMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String universityKey <span class="token operator">:</span> setKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> universityValue <span class="token operator">=</span> hashMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>universityKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Set<span class="token operator">&lt;</span>String<span class="token operator">></span> underGraduate <span class="token operator">=</span> hashMap1<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>String underGraduateKey <span class="token operator">:</span> underGraduate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                Integer value <span class="token operator">=</span> hashMap1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>underGraduateKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>universityKey<span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>underGraduateKey<span class="token operator">+</span><span class="token string">"："</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            Set<span class="token operator">&lt;</span>String<span class="token operator">></span> Graduate <span class="token operator">=</span> hashMap1<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>String GraduateKey <span class="token operator">:</span> Graduate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                Integer value <span class="token operator">=</span> hashMap1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>GraduateKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>universityKey<span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>GraduateKey<span class="token operator">+</span><span class="token string">"："</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>运行结果：</p>
+<p><img src="11.png" alt=""></p>
+<h5 id="HashMap嵌套ArrayList"><a href="#HashMap嵌套ArrayList" class="headerlink" title="HashMap嵌套ArrayList"></a><strong>HashMap嵌套ArrayList</strong></h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapArrayListDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>String<span class="token operator">>></span> classic <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> westJourney <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        westJourney<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"孙悟空"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        westJourney<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"唐三藏"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        westJourney<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"猪八戒"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        westJourney<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"沙悟净"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> theStone <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        theStone<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"贾宝玉"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        theStone<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"林黛玉"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        theStone<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"薛宝钗"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        theStone<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"王熙凤"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> waterMargin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        waterMargin<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"宋江"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        waterMargin<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"林冲"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        waterMargin<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"武松"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        waterMargin<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"鲁智深"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> threeKingdoms <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        threeKingdoms<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"诸葛亮"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        threeKingdoms<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"司马懿"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        threeKingdoms<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"周瑜"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        threeKingdoms<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"吕布"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        classic<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"西游记"</span><span class="token punctuation">,</span> westJourney<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        classic<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"水浒传"</span><span class="token punctuation">,</span> waterMargin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        classic<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"红楼梦"</span><span class="token punctuation">,</span> theStone<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        classic<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"三国演义"</span><span class="token punctuation">,</span> threeKingdoms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> keySet <span class="token operator">=</span> classic<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> keySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            StringBuilder sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> value <span class="token operator">=</span> classic<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            String result <span class="token operator">=</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>运行结果：</p>
+<p><img src="12.png" alt=""></p>
+<h5 id="ArrayList嵌套HashMap"><a href="#ArrayList嵌套HashMap" class="headerlink" title="ArrayList嵌套HashMap"></a>ArrayList嵌套HashMap</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayListHashMapDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ArrayList<span class="token operator">&lt;</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">>></span> arrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> hashMap1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> hashMap2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"周瑜"</span><span class="token punctuation">,</span> <span class="token string">"小乔"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"吕布"</span><span class="token punctuation">,</span> <span class="token string">"貂蝉"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"郭靖"</span><span class="token punctuation">,</span> <span class="token string">"黄蓉"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"杨康"</span><span class="token punctuation">,</span> <span class="token string">"穆念慈"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap2<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"令狐冲"</span><span class="token punctuation">,</span> <span class="token string">"任盈盈"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap2<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"林平之"</span><span class="token punctuation">,</span> <span class="token string">"岳灵珊"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>hashMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>hashMap1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>hashMap2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> hashMap3 <span class="token operator">:</span> arrayList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                String value <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">"----"</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><img src="13.png" alt=""></p>
+<p><strong>HashMap嵌套HashMap嵌套ArrayList</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MultilayerNestedDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>>></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>></span> hashMap1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>></span> hashMap2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>></span> hashMap3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>></span> hashMap4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>></span> hashMap5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList1  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList2  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList3  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList4  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList5  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList6  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList7  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList8  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList9  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList10 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Student s1  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"千与千寻"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s2  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"桥本环奈"</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s3  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s4  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"郑和惠子"</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s5  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"胡歌"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s6  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"古力娜扎"</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s7  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"迪丽热巴"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s8  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"马儿扎哈"</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s9  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"刘诗诗"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Student s10 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"刘亦菲"</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        arrayList1<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList3<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList4<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList5<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList6<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList7<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s7<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList8<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList9<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s9<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        arrayList10<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s10<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"本科"</span><span class="token punctuation">,</span> arrayList1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap1<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"研究生"</span><span class="token punctuation">,</span> arrayList2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap2<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"本科"</span><span class="token punctuation">,</span> arrayList3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap2<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"研究生"</span><span class="token punctuation">,</span> arrayList4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap3<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"本科"</span><span class="token punctuation">,</span> arrayList5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap3<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"研究生"</span><span class="token punctuation">,</span> arrayList6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap4<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"本科"</span><span class="token punctuation">,</span> arrayList7<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap4<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"研究生"</span><span class="token punctuation">,</span> arrayList8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap5<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"本科"</span><span class="token punctuation">,</span> arrayList9<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap5<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"研究生"</span><span class="token punctuation">,</span> arrayList10<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"北大"</span><span class="token punctuation">,</span> hashMap1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"清华"</span><span class="token punctuation">,</span> hashMap2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"河大"</span><span class="token punctuation">,</span> hashMap3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"复旦"</span><span class="token punctuation">,</span> hashMap4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"上交"</span><span class="token punctuation">,</span> hashMap5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//第一种 ，运行结果如下</span>
+        <span class="token comment" spellcheck="true">/*Set&lt;String> setKey = hashMap.keySet();
+        for (String key1 : setKey) {
+            HashMap&lt;String, ArrayList&lt;Student>> value = hashMap.get(key1);
+            Set&lt;String> key2 = value.keySet();
+            for (String key3 : key2) {
+                ArrayList&lt;Student> array = value.get(key3);
+                for (Student s : array) {
+                    System.out.println(key1+"---"+key3+"---"+s.getName()+":"+s.getAge());
+                }
+            }
+        }*/</span>
+
+        <span class="token comment" spellcheck="true">//升级版 ，运行结果如下</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> setKey <span class="token operator">=</span> hashMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String key1 <span class="token operator">:</span> setKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>></span> value <span class="token operator">=</span> hashMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Set<span class="token operator">&lt;</span>String<span class="token operator">></span> key2 <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>String key3 <span class="token operator">:</span> key2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\t"</span><span class="token operator">+</span>key3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> array <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>Student s <span class="token operator">:</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\t\t"</span><span class="token operator">+</span>s<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>s<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>运行结果：</p>
+<p><img src="14.png" alt="第一种"></p>
+<p><img src="15.png" alt="第二种"></p>
+<h4 id="八、Hashtable集合"><a href="#八、Hashtable集合" class="headerlink" title="八、Hashtable集合"></a>八、Hashtable集合</h4><blockquote>
+<p>此类实现一个哈希表，该哈希表将键映射到相应的值。任何非null对象都可以用作键或值。为了成功地在哈希表中存储和获取对象，用作键的对象必须实现hashCode方法和equals方法。</p>
+<p><strong>注意：Hashtable 中的 table 是小写table</strong></p>
+</blockquote>
+<p><strong>HashMap和Hashtable的区别？</strong></p>
+<ol>
+<li>HashMap线程不安全 效率高，Hashtable 线程安全效率低</li>
+<li>Hashtable 不可以使用null作为键值，HashMap可以</li>
+</ol>
+
             </div>
             <hr />
 
@@ -990,18 +1360,17 @@ Map的键唯一，Col">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/23/ji-he-11-zhi-map-ji-he/">
+                <a href="/2019/11/24/ji-he-12-zhi-collections-gong-ju-lei/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="集合11之Map集合">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="集合12之Collections工具类">
                         
-                        <span class="card-title">集合11之Map集合</span>
+                        <span class="card-title">集合12之Collections工具类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1011,9 +1380,9 @@ Map的键唯一，Col">
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1026,7 +1395,6 @@ Map的键唯一，Col">
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
