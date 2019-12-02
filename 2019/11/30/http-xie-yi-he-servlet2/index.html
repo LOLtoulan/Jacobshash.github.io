@@ -1206,50 +1206,48 @@
         outputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         is<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> resp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>index.html</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
 
-</code></pre>
+    让tomcat的默认下载器下载：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/aa.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>aa.jpg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/bb.txt<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>bb.txt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/cc.rar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cc.rar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+    手动编码提供下载下载：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MyDownload?filename<span class="token punctuation">=</span>aa.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>aa.jpg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MyDownload?filename<span class="token punctuation">=</span>bb.txt<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>bb.txt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MyDownload?filename<span class="token punctuation">=</span>cc.rar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cc.rar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>   </code></pre>
+<p>web.xml</p>
+<pre class=" language-xml"><code class="language-xml">   <span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+           "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+           "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-class</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span>
+
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-mapping</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span></code></pre>
 </li>
 </ol>
-<pre><code>   @Override
-   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       doGet(req, resp);
-   }</code></pre><p>   }</p>
-<pre><code>
-   index.html
-
-   ```html
-   &lt;!DOCTYPE html&gt;
-   &lt;head&gt;
-       &lt;meta charset=&quot;UTF-8&quot; /&gt;
-   &lt;/head&gt;
-   &lt;html&gt;
-   &lt;body&gt;
-   &lt;h2&gt;Hello World!&lt;/h2&gt;
-
-   让tomcat的默认下载器下载：&lt;br&gt;
-   &lt;a href=&quot;download/aa.jpg&quot;&gt;aa.jpg&lt;/a&gt;&lt;br&gt;
-   &lt;a href=&quot;download/bb.txt&quot;&gt;bb.txt&lt;/a&gt;&lt;br&gt;
-   &lt;a href=&quot;download/cc.rar&quot;&gt;cc.rar&lt;/a&gt;&lt;br&gt;
-   手动编码提供下载下载：&lt;br&gt;
-   &lt;a href=&quot;MyDownload?filename=aa.jpg&quot;&gt;aa.jpg&lt;/a&gt;&lt;br&gt;
-   &lt;a href=&quot;MyDownload?filename=bb.txt&quot;&gt;bb.txt&lt;/a&gt;&lt;br&gt;
-   &lt;a href=&quot;MyDownload?filename=cc.rar&quot;&gt;cc.rar&lt;/a&gt;&lt;br&gt;
-   &lt;/body&gt;</code></pre><p>   web.xml</p>
-<pre><code>   &lt;!DOCTYPE web-app PUBLIC
-           &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;
-           &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;
-
-   &lt;web-app&gt;
-    &lt;servlet&gt;
-       &lt;servlet-name&gt;MyDownload&lt;/servlet-name&gt;
-       &lt;servlet-class&gt;com.yage.myservlet.MyDownload&lt;/servlet-class&gt;
-     &lt;/servlet&gt;
-
-     &lt;servlet-mapping&gt;
-       &lt;servlet-name&gt;MyDownload&lt;/servlet-name&gt;
-       &lt;url-pattern&gt;/MyDownload&lt;/url-pattern&gt;
-     &lt;/servlet-mapping&gt;
-   &lt;/web-app&gt;</code></pre><h4 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h4><blockquote>
+<h4 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h4><blockquote>
 <p>ServletContext【重点】</p>
 <blockquote>
 <p>作用：</p>
@@ -1497,48 +1495,46 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/30/http-xie-yi-he-servlet2/">
+                <a href="/2019/12/02/io-liu-1-zhi-yi-chang-de-gai-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Http协议和Servlet2">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="IO流1之异常的概述">
                         
-                        <span class="card-title">Http协议和Servlet2</span>
+                        <span class="card-title">IO流1之异常的概述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            开始服务器端开发
+                            梳理下IO流相关知识点
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-30
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JSP-Servlet/" class="post-category" target="_blank">
-                                    JSP/Servlet
+                            <a href="/categories/JavaIO%E6%B5%81/" class="post-category" target="_blank">
+                                    JavaIO流
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JSP-Servlet/" target="_blank">
-                        <span class="chip bg-color">JSP/Servlet</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
