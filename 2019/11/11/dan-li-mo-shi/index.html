@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="单例模式, LOLtoulan-blog">
+    <meta name="keywords" content="单例模式, LOLtoulan">
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>单例模式 | LOLtoulan-blog</title>
+    <title>单例模式 | LOLtoulan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -34,7 +34,11 @@
 
             
     </style>
+    <!--新添加的代码-->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+	<script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
+    
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script>
@@ -46,7 +50,15 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<!-- 样式二（飘动的彩带） -->
+<!--<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
+<!--动态线条背景-->
+<!--<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+-->
 
 <body>
 
@@ -58,7 +70,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LOLtoulan-blog</span>
+                    <span class="logo-span">LOLtoulan</span>
                 </a>
             </div>
             
@@ -142,7 +154,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LOLtoulan-blog</div>
+        <div class="logo-name">LOLtoulan</div>
         <div class="logo-desc">
             
             技术博客，Java基础，算法
@@ -308,7 +320,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -460,6 +472,20 @@
                 </div>
 
                 
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+                
 
                 
                 <div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -483,7 +509,7 @@
 </li>
 </ul>
 <p>下面写一个小的demo（饿汉模式）:</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//创建一个私有的SingleModel对象</span>
     <span class="token keyword">private</span> <span class="token keyword">static</span> SingleModel singleModel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -498,9 +524,9 @@
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello 单例模式！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>主函数:</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
         <span class="token comment" spellcheck="true">//这样会报错,见下图，编译时会出错</span>
@@ -510,12 +536,12 @@
         SingleModel singleModel <span class="token operator">=</span> SingleModel<span class="token punctuation">.</span><span class="token function">getSingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         singleModel<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>报错:</p>
 <p> <img src="2.png" alt="img"> </p>
 <p>运行结果:</p>
 <p> <img src="1.png" alt="img"> </p>
-<h3 id="二、单例模式的几种实现方法"><a href="#二、单例模式的几种实现方法" class="headerlink" title="二、单例模式的几种实现方法"></a>二、单例模式的几种实现方法</h3><h4 id="2-1-1-懒汉模式-线程不安全-不支持多线程"><a href="#2-1-1-懒汉模式-线程不安全-不支持多线程" class="headerlink" title="2.1.1 懒汉模式(线程不安全 , 不支持多线程)"></a>2.1.1 懒汉模式(线程不安全 , 不支持多线程)</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
+<h3 id="二、单例模式的几种实现方法"><a href="#二、单例模式的几种实现方法" class="headerlink" title="二、单例模式的几种实现方法"></a>二、单例模式的几种实现方法</h3><h4 id="2-1-1-懒汉模式-线程不安全-不支持多线程"><a href="#2-1-1-懒汉模式-线程不安全-不支持多线程" class="headerlink" title="2.1.1 懒汉模式(线程不安全 , 不支持多线程)"></a>2.1.1 懒汉模式(线程不安全 , 不支持多线程)</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> <span class="token keyword">static</span> SingleModel singleModel<span class="token punctuation">;</span>
 
@@ -531,9 +557,9 @@
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello 单例模式中的懒汉模式！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>主函数:</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
         <span class="token comment" spellcheck="true">//这样会报错,见下图，编译时会出错</span>
@@ -543,9 +569,9 @@
         SingleModel singleModel <span class="token operator">=</span> SingleModel<span class="token punctuation">.</span><span class="token function">getSingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         singleModel<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>多线程 : </p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">{</span>
             SingleModel singleModel1 <span class="token operator">=</span> SingleModel<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -660,7 +686,7 @@
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="3.png" alt="1573526650670"></p>
 <p>由上面代码我们可以看出<strong>懒汉模式</strong>的由来 ,  在类加载时并没有直接创建对象 , 而是当程序加载时需要这个对象时才创建买这个对象 , 就好像一个人懒的饿到不行了才去找东西吃一样 . </p>
 <p>这种是最简单的单例模式 , 其实 , 严格意义上来说 , 这并不是单例模式 , 因为没有加  synchronized 锁 , 在多线程下不能正常工作 , 也就是说 , 如果线程是单线程的 , 是按照顺序 ( 串行 ) 的方式执行代码 , 但到了多线程下 , 执行顺序就由串行 , 变为并行 , 如果控制不好就会出现许多意想不到的情况 , 这就是多线程的安全问题 , 所以应当加锁来控制线程并行引起的问题 . </p>
@@ -672,7 +698,7 @@
 <p>2.是否有共享数据</p>
 <p>3.是否有多条语句操作共享数据</p>
 </blockquote>
-<h4 id="2-1-2-懒汉模式-线程安全-支持多线程"><a href="#2-1-2-懒汉模式-线程安全-支持多线程" class="headerlink" title="2.1.2 懒汉模式(线程安全 , 支持多线程)"></a>2.1.2 懒汉模式(线程安全 , 支持多线程)</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
+<h4 id="2-1-2-懒汉模式-线程安全-支持多线程"><a href="#2-1-2-懒汉模式-线程安全-支持多线程" class="headerlink" title="2.1.2 懒汉模式(线程安全 , 支持多线程)"></a>2.1.2 懒汉模式(线程安全 , 支持多线程)</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> <span class="token keyword">static</span> SingleModel singleModel<span class="token punctuation">;</span>
 
@@ -688,9 +714,9 @@
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello 单例模式中的懒汉模式！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>主函数:</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
         <span class="token comment" spellcheck="true">//这样会报错,见下图，编译时会出错</span>
@@ -700,10 +726,10 @@
         SingleModel singleModel <span class="token operator">=</span> SingleModel<span class="token punctuation">.</span><span class="token function">getSingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         singleModel<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>多线程 : 和上面的多线程一样 , 就不再写了</p>
 <p>这样的单例模式支持多线程 , 线程安全 , 但加锁会影响效率 . </p>
-<h4 id="2-2-1双检锁-双重校验锁-DCL-即double-checked-locking-线程安全-支持多线程"><a href="#2-2-1双检锁-双重校验锁-DCL-即double-checked-locking-线程安全-支持多线程" class="headerlink" title="2.2.1双检锁/双重校验锁 ( DCL , 即double-checked locking (线程安全 , 支持多线程))"></a>2.2.1双检锁/双重校验锁 ( DCL , 即double-checked locking (线程安全 , 支持多线程))</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
+<h4 id="2-2-1双检锁-双重校验锁-DCL-即double-checked-locking-线程安全-支持多线程"><a href="#2-2-1双检锁-双重校验锁-DCL-即double-checked-locking-线程安全-支持多线程" class="headerlink" title="2.2.1双检锁/双重校验锁 ( DCL , 即double-checked locking (线程安全 , 支持多线程))"></a>2.2.1双检锁/双重校验锁 ( DCL , 即double-checked locking (线程安全 , 支持多线程))</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span>  SingleModel singleModel <span class="token operator">=</span> null<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token function">SingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span>  SingleModel <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -714,7 +740,7 @@
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> singleModel<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>主函数和上面的多线程一样 , 就不再写了 , 在这段代码中 , 我们发现了一个明显的新的关键词 , “volatile” 这个关键词起到了至关重要的作用 , 要理解为什么要加上这个关键词 , 我们必须了解对象构造过程 ,  程序实例化一个对象 , 其实可以分为三步 :</p>
 <ul>
 <li><p>分配内存空间</p>
@@ -731,7 +757,7 @@
 <li>初始化对象</li>
 </ul>
 <p>如果按照上面的步骤进行，那么在多线程下就会将一个没有初始化的对象暴露出来，从而导致不可预料的后果，而加上就不会有这些顾虑了，因为 volatile关键字就是Java中提供的另一种解决可见性和有序性问题的方案。 一看到有序我们就知道，加上volatile就会使实例化对象的时候变得有序。</p>
-<h4 id="2-3-1-登记式-静态内部类"><a href="#2-3-1-登记式-静态内部类" class="headerlink" title="2.3.1 登记式/静态内部类"></a>2.3.1 登记式/静态内部类</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
+<h4 id="2-3-1-登记式-静态内部类"><a href="#2-3-1-登记式-静态内部类" class="headerlink" title="2.3.1 登记式/静态内部类"></a>2.3.1 登记式/静态内部类</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span>  <span class="token keyword">static</span> <span class="token keyword">class</span>  <span class="token class-name">SingleModelHolder</span><span class="token punctuation">{</span>
         <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> SingleModel SINGLE_MODEL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -743,32 +769,32 @@
     <span class="token keyword">public</span> <span class="token keyword">static</span>  SingleModel <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> SingleModelHolder<span class="token punctuation">.</span>SINGLE_MODEL<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p> 主函数和上面的多线程一样 , 就不再写了 。</p>
 <p>这种方法有DCL一样的效果，实现更加简单，但是 这种方式只适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用。 </p>
-<h4 id="2-4-1-枚举"><a href="#2-4-1-枚举" class="headerlink" title="2.4.1 枚举"></a>2.4.1 枚举</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> SingleModel<span class="token punctuation">{</span>  
+<h4 id="2-4-1-枚举"><a href="#2-4-1-枚举" class="headerlink" title="2.4.1 枚举"></a>2.4.1 枚举</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> SingleModel<span class="token punctuation">{</span>  
     INSTANCE<span class="token punctuation">;</span>  
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">whateverMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
     <span class="token punctuation">}</span>  
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p> 这种实现方式还没有被广泛采用，但这是实现单例模式的最佳方法。它更简洁，自动支持序列化机制，绝对防止多次实例化。 </p>
 <p> <strong>经验之谈：</strong>一般情况下，不建议使用第 1 种和第 2 种懒汉方式，建议使用第 3 种饿汉方式。只有在要明确实现 lazy loading 效果时，才会使用第 5 种登记方式。如果涉及到反序列化创建对象时，可以尝试使用第 6 种枚举方式。如果有其他特殊的需求，可以考虑使用第 4 种双检锁方式。 </p>
 <p>摘自：菜鸟教程</p>
 <h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>如何判断单例模式是否成功，我们知道，单例模式就是创建单一对象，所以，我们可以想到：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModel</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token function">SingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
     <span class="token keyword">private</span> <span class="token keyword">static</span> SingleModel singleModel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SingleModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> SingleModel <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> singleModel<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleModelDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SingleModel singleModel <span class="token operator">=</span> SingleModel<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         SingleModel singleModel1 <span class="token operator">=</span> SingleModel<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singleModel<span class="token operator">==</span>singleModel1<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>结果为：true</p>
 <p>面试一般问的是懒汉式，开发中一般用饿汉式，主要是因为懒汉式会有线程安全问题。</p>
 <blockquote>
@@ -1004,7 +1030,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="线程">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="线程">
                         
                         <span class="card-title">线程</span>
                     </div>
@@ -1053,7 +1079,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="代理模式">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="代理模式">
                         
                         <span class="card-title">代理模式</span>
                     </div>
@@ -1124,7 +1150,7 @@
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: LOLtoulan-blog<br />'
+            + '来源: LOLtoulan<br />'
             + '作者: LOLtoulan<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
@@ -1237,6 +1263,9 @@
         <div class="col s12 m8 l8 copy-right">
             &copy; 2019 LOLtoulan. All Rights Reserved.
 
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">58.2k</span>
             
 
             <br>
@@ -1395,11 +1424,47 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+<!-- 彩带特效 -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/ribbon.js"><\/script>');
+}
+</script>
+
     <!-- 雪花特效 -->
     
     <script type="text/javascript" src=""></script>
     
 
-</body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+
+	<!--单击显示文字-->
+    <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-z16"},"display":{"position":"right","width":350,"height":400},"mobile":{"show":true,"react":{"opacity":0.7}}});</script></body>
 
 </html>

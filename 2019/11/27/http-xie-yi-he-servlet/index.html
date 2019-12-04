@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Http协议和Servlet, LOLtoulan-blog">
+    <meta name="keywords" content="Http协议和Servlet, LOLtoulan">
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
@@ -24,7 +24,7 @@ http协议
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Http协议和Servlet | LOLtoulan-blog</title>
+    <title>Http协议和Servlet | LOLtoulan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -42,7 +42,11 @@ http协议
 
             
     </style>
+    <!--新添加的代码-->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+	<script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
+    
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script>
@@ -54,7 +58,15 @@ http协议
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<!-- 样式二（飘动的彩带） -->
+<!--<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
+<!--动态线条背景-->
+<!--<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+-->
 
 <body>
 
@@ -66,7 +78,7 @@ http协议
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LOLtoulan-blog</span>
+                    <span class="logo-span">LOLtoulan</span>
                 </a>
             </div>
             
@@ -150,7 +162,7 @@ http协议
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LOLtoulan-blog</div>
+        <div class="logo-name">LOLtoulan</div>
         <div class="logo-desc">
             
             技术博客，Java基础，算法
@@ -316,7 +328,7 @@ http协议
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -468,6 +480,20 @@ http协议
                 </div>
 
                 
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+                
 
                 
                 <div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -549,80 +575,82 @@ http协议
 <li><p><strong>Hello Servlet</strong></p>
 <blockquote>
 <ol>
-<li><p>首先创建一个web项目，然后配置Tomcat。</p>
+<li>首先创建一个web项目，然后配置Tomcat。</li>
+</ol>
 <p>如果用idea的话，项目结构大致为。</p>
 <p><img src="7.png" alt=""></p>
 <ol start="2">
 <li><p>测试运行web工程</p>
 <ol>
-<li>我们点击运行时，在浏览器输入 localhost:8080  如果出现下图，就是成功了</li>
-</ol>
+<li><p>我们点击运行时，在浏览器输入 localhost:8080  如果出现下图，就是成功了</p>
 <p><img src="6.png" alt=""></p>
 </li>
+<li><p>写一个类，实现Servlet接口</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServlet</span> <span class="token keyword">implements</span> <span class="token class-name">Servlet</span> <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>ServletConfig servletConfig<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException <span class="token punctuation">{</span>
+          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我被初始化了!!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> ServletConfig <span class="token function">getServletConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span>ServletRequest servletRequest<span class="token punctuation">,</span> ServletResponse servletResponse<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我被访问了！！！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> String <span class="token function">getServletInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我被销毁了！！！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>配置Servlet，告诉服务器我们的应用有这些Servlet，在web.xml中配置</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+   "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+   "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>display-name</span><span class="token punctuation">></span></span>Archetype Created Web Application<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>display-name</span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--向Tomcat报告，我们这个项目有Servlet名字叫做MyServlet，具体的路径是com.YaGe.MyServlet.MyServlet--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-class</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--注册Servlet映射，servletName : 找到上面具体的servlet，url-pattern ：在地址栏中的path--></span>
+    <span class="token comment" spellcheck="true">&lt;!--例如：我们像访问当前的servlet，也就是MyServlet，我们就需要在地址栏中键入http://localhost:8080/a--></span>
+    <span class="token comment" spellcheck="true">&lt;!--具体的路径，还需要看你自己的路径，但是a是你访问指定servlet的路径--></span>
+    <span class="token comment" spellcheck="true">&lt;!--注意：url-pattern是需要加"/"，如果不加，则会在项目启动时报错--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-mapping</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>servlet执行过程</p>
+<p>  <img src="8.png" alt=""></p>
+</li>
 </ol>
 </li>
 </ol>
-<p>​             2.  写一个类，实现Servlet接口 </p>
-<pre><code> ```java
- public class MyServlet implements Servlet {
-     @Override
-     public void init(ServletConfig servletConfig) throws ServletException {
-         System.out.println(&quot;我被初始化了!!!&quot;);
-     }
-
-     @Override
-     public ServletConfig getServletConfig() {
-         return null;
-     }
-
-     @Override
-     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-         System.out.println(&quot;我被访问了！！！！&quot;);
-     }
-
-     @Override
-     public String getServletInfo() {
-         return null;
-     }
-
-     @Override
-     public void destroy() {
-         System.out.println(&quot;我被销毁了！！！！&quot;);
-
-     }
- }
- ```</code></pre><p>​                3. 配置Servlet，告诉服务器我们的应用有这些Servlet，在web.xml中配置</p>
-<pre><code> ```xml
- &lt;!DOCTYPE web-app PUBLIC
-  &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;
-  &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;
-
- &lt;web-app&gt;
-   &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;
-
-   &lt;!--向Tomcat报告，我们这个项目有Servlet名字叫做MyServlet，具体的路径是com.YaGe.MyServlet.MyServlet--&gt;
-   &lt;servlet&gt;
-     &lt;servlet-name&gt;MyServlet&lt;/servlet-name&gt;
-     &lt;servlet-class&gt;com.yage.myservlet.MyServlet&lt;/servlet-class&gt;
-   &lt;/servlet&gt;
-
-   &lt;!--注册Servlet映射，servletName : 找到上面具体的servlet，url-pattern ：在地址栏中的path--&gt;
-   &lt;!--例如：我们像访问当前的servlet，也就是MyServlet，我们就需要在地址栏中键入http://localhost:8080/a--&gt;
-   &lt;!--具体的路径，还需要看你自己的路径，但是a是你访问指定servlet的路径--&gt;
-   &lt;!--注意：url-pattern是需要加&quot;/&quot;，如果不加，则会在项目启动时报错--&gt;
-   &lt;servlet-mapping&gt;
-     &lt;servlet-name&gt;MyServlet&lt;/servlet-name&gt;
-     &lt;url-pattern&gt;/a&lt;/url-pattern&gt;
-   &lt;/servlet-mapping&gt;
- &lt;/web-app&gt;
- ```</code></pre><p>​          4. servlet执行过程</p>
-<pre><code> ![](8.png)</code></pre></blockquote>
+</blockquote>
 </li>
 <li><p><strong>Servlet的通用写法</strong></p>
 <blockquote>
 <p>因为Servlet是一个接口，而且我们通过API发现，Servlet的直接子类实现为GenericServlet和HttpServlet，而当我们进入查看GenericServlet实现类是发现，HttpServlet也是 GenericServlet 的子类实现，所以我们重新写一个类继承HttpServlet，这样我们就可以重写HttpServlet 里面的方法了。但是我们重用的是重写doget()和dopost()方法。</p>
 <p>继承并重写doget()和dopost()方法的代码如下</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServlet02</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServlet02</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
@@ -633,9 +661,9 @@ http协议
     <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"post---"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
 
@@ -652,7 +680,7 @@ http协议
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/MyServlet02<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在postman中分别使用get请求和post请求，控制台输出以下内容：</p>
 <p><img src="9.png" alt=""></p>
 </blockquote>
@@ -660,7 +688,7 @@ http协议
 <li><p><strong>Servlet的生命周期</strong></p>
 <blockquote>
 <p>代码如下:</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServlet</span> <span class="token keyword">implements</span> <span class="token class-name">Servlet</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServlet</span> <span class="token keyword">implements</span> <span class="token class-name">Servlet</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>ServletConfig servletConfig<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我被初始化了!!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -685,9 +713,9 @@ http协议
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我被销毁了！！！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span></code></pre>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
   "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
    "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
 
@@ -709,7 +737,7 @@ http协议
         <span class="token comment" spellcheck="true">&lt;!-- 一般这里写的都是根目录，但是这里为了方便演示，更换到了其他路径 --></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span></code></pre>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>演示如下</p>
 <p>当我们第一次访问网站： localhost:8080/a的时候我们会发现控制台上打印出</p>
 <p><img src="10.png" alt=""></p>
@@ -747,7 +775,7 @@ http协议
 <ol>
 <li><p><strong>获取到Servlet中Servlet-name的文本内容</strong></p>
 <blockquote>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//调用父类doget方法</span>
@@ -766,9 +794,9 @@ http协议
         <span class="token comment" spellcheck="true">//调用父类dopost方法</span>
         <span class="token comment" spellcheck="true">//super.doPost(req, resp);</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
@@ -782,7 +810,7 @@ http协议
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>aa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletConfig<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当我们在浏览器地址栏中输入 localhost:8080/MyServletConfig  时，在控制台中打印出</p>
 <p><img src="16.png" alt=""></p>
 <p>当我们将Servlet中的Servlet-name改为“MyServletConfig”时，按照上面操作步骤，控制台打印出</p>
@@ -791,7 +819,7 @@ http协议
 </li>
 <li><p><strong>获取某一个具体的的参数值</strong></p>
 <blockquote>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//父类doget方法</span>
@@ -811,9 +839,9 @@ http协议
         <span class="token comment" spellcheck="true">//父类dopost方法</span>
         <span class="token comment" spellcheck="true">//super.doPost(req, resp);</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
@@ -833,14 +861,14 @@ http协议
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当我们在浏览器地址栏中输入 localhost:8080/MyServletConfig  时，在控制台中打印出</p>
 <p><img src="15.png" alt=""></p>
 </blockquote>
 </li>
 <li><p><strong>用迭代方法获取initParameter中的ParameterName</strong></p>
 <blockquote>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
  <span class="token annotation punctuation">@Override</span>
  <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
      <span class="token comment" spellcheck="true">//父类doget方法</span>
@@ -865,9 +893,9 @@ http协议
      <span class="token comment" spellcheck="true">//super.doPost(req, resp);</span>
  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
 "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
 "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
@@ -893,14 +921,14 @@ http协议
  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletConfig<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当我们在浏览器地址栏中输入 localhost:8080/MyServletConfig  时，在控制台中打印出 </p>
 <p><img src="18.png" alt=""></p>
 </blockquote>
 </li>
 <li><p><strong>用迭代方法获取initParameter中的ParameterName、value</strong></p>
 <blockquote>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyServletConfig</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//父类doget方法</span>
@@ -930,9 +958,9 @@ http协议
         <span class="token comment" spellcheck="true">//父类dopost方法</span>
         <span class="token comment" spellcheck="true">//super.doPost(req, resp);</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
@@ -958,7 +986,7 @@ http协议
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletConfig<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p> 当我们在浏览器地址栏中输入 localhost:8080/MyServletConfig  时，在控制台中打印出 </p>
 <p><img src="19.png" alt=""></p>
 </blockquote>
@@ -980,7 +1008,7 @@ http协议
 <p>我们知道，get请求走doget方法，post方法，走dopost方法，但为什么呢？</p>
 <p>我们在浏览器输入网址，按道理我们首先应该走的是service()方法，但为什么又走到doget()、dopost方法？</p>
 <p>当我们查看源码的时候，我们发现HttpServlet中实现了Service方法，源码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span>ServletRequest req<span class="token punctuation">,</span> ServletResponse res<span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span>ServletRequest req<span class="token punctuation">,</span> ServletResponse res<span class="token punctuation">)</span>
         <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException<span class="token punctuation">{</span>
 
         HttpServletRequest  request<span class="token punctuation">;</span>
@@ -1057,7 +1085,7 @@ http协议
 
             resp<span class="token punctuation">.</span><span class="token function">sendError</span><span class="token punctuation">(</span>HttpServletResponse<span class="token punctuation">.</span>SC_NOT_IMPLEMENTED<span class="token punctuation">,</span> errMsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>所以我们发现，我们的请求在走service方法的时候，会通过判断来走doget或者是dopst或者是其他。</p>
 </blockquote>
 </li>
@@ -1326,7 +1354,7 @@ http协议
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Http协议和Servlet2">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Http协议和Servlet2">
                         
                         <span class="card-title">Http协议和Servlet2</span>
                     </div>
@@ -1375,7 +1403,7 @@ http协议
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="XML介绍">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="XML介绍">
                         
                         <span class="card-title">XML介绍</span>
                     </div>
@@ -1446,7 +1474,7 @@ http协议
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: LOLtoulan-blog<br />'
+            + '来源: LOLtoulan<br />'
             + '作者: LOLtoulan<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
@@ -1559,6 +1587,9 @@ http协议
         <div class="col s12 m8 l8 copy-right">
             &copy; 2019 LOLtoulan. All Rights Reserved.
 
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">58.2k</span>
             
 
             <br>
@@ -1717,11 +1748,47 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+<!-- 彩带特效 -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/ribbon.js"><\/script>');
+}
+</script>
+
     <!-- 雪花特效 -->
     
     <script type="text/javascript" src=""></script>
     
 
-</body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+
+	<!--单击显示文字-->
+    <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-z16"},"display":{"position":"right","width":350,"height":400},"mobile":{"show":true,"react":{"opacity":0.7}}});</script></body>
 
 </html>

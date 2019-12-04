@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="集合11之Map集合, LOLtoulan-blog">
+    <meta name="keywords" content="集合11之Map集合, LOLtoulan">
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
@@ -26,7 +26,7 @@ Map的键唯一，Col">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>集合11之Map集合 | LOLtoulan-blog</title>
+    <title>集合11之Map集合 | LOLtoulan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -44,7 +44,11 @@ Map的键唯一，Col">
 
             
     </style>
+    <!--新添加的代码-->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+	<script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
+    
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script>
@@ -56,7 +60,15 @@ Map的键唯一，Col">
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<!-- 样式二（飘动的彩带） -->
+<!--<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
+<!--动态线条背景-->
+<!--<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+-->
 
 <body>
 
@@ -68,7 +80,7 @@ Map的键唯一，Col">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LOLtoulan-blog</span>
+                    <span class="logo-span">LOLtoulan</span>
                 </a>
             </div>
             
@@ -152,7 +164,7 @@ Map的键唯一，Col">
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LOLtoulan-blog</div>
+        <div class="logo-name">LOLtoulan</div>
         <div class="logo-desc">
             
             技术博客，Java基础，算法
@@ -318,7 +330,7 @@ Map的键唯一，Col">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -470,6 +482,20 @@ Map的键唯一，Col">
                 </div>
 
                 
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    19 分
+                </div>
+                
+                
 
                 
                 <div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -541,7 +567,7 @@ Map的键唯一，Col">
 </ol>
 </blockquote>
 <h4 id="三、功能测试"><a href="#三、功能测试" class="headerlink" title="三、功能测试"></a>三、功能测试</h4><p><strong>测试代码及解释看下面代码</strong>：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"map是否为空："</span><span class="token operator">+</span>map<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -593,7 +619,7 @@ Map的键唯一，Col">
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="1.png" alt=""></p>
 <p><strong>遍历方法一和方法二的区别：</strong></p>
 <p><img src="2.png" alt=""></p>
@@ -602,7 +628,7 @@ Map的键唯一，Col">
 </blockquote>
 <p><strong>方法和Map方法一样，不需要特意记</strong></p>
 <p>看下面例子分析：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"郑合惠子"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -617,11 +643,11 @@ Map的键唯一，Col">
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p>由运行结果我们可以看出HashMap不重复，且如果key重复，那么，value将会是最新的value。</p>
 <p><strong>学号为键学生为值</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashMap<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> Student<span class="token operator">></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"桥本环奈"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -641,8 +667,8 @@ Map的键唯一，Col">
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Integer num<span class="token punctuation">;</span>
@@ -678,11 +704,11 @@ Map的键唯一，Col">
                 <span class="token string">", num="</span> <span class="token operator">+</span> num <span class="token operator">+</span>
                 <span class="token string">'}'</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果如下：</p>
 <p><img src="3.png" alt=""></p>
 <p><strong>学生为键，学号为值</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashMap<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> String<span class="token operator">></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"桥本环奈"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -702,8 +728,8 @@ Map的键唯一，Col">
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Integer num<span class="token punctuation">;</span>
@@ -739,14 +765,14 @@ Map的键唯一，Col">
                 <span class="token string">", num="</span> <span class="token operator">+</span> num <span class="token operator">+</span>
                 <span class="token string">'}'</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="4.png" alt=""></p>
 <h4 id="五、LinkedHashMap集合"><a href="#五、LinkedHashMap集合" class="headerlink" title="五、LinkedHashMap集合"></a>五、LinkedHashMap集合</h4><blockquote>
 <p>Map 接口的哈希表和链接列表实现，具有可预知的迭代顺序。此实现与 HashMap 的不同之处在于，后者维护着一个运行于所有条目的双重链接列表。此链接列表定义了迭代顺序，该迭代顺序通常就是将键插入到映射中的顺序（插入顺序）。注意，如果在映射中重新插入 键，则插入顺序不受影响。</p>
 </blockquote>
 <p>我们发现API中说道，<code>Map 接口的哈希表和链接列表实现，具有可预知的迭代顺序</code>，说明具有顺序（此处的有序是指，怎样put进map就怎样出来）</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedHashMapDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedHashMapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         LinkedHashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> linkedHashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         linkedHashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"qwe"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -761,7 +787,7 @@ Map的键唯一，Col">
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="5.png" alt=""></p>
 <p>有结果我们发现他就是怎样put进map就怎样出来的，说明LinkedHashMap是有序的，</p>
@@ -774,7 +800,7 @@ Map的键唯一，Col">
 <p>我们前面在学习TreeSet时，我们就知道TreeSet底层是红黑树，而且通过源码我们知道，TreeSet是通过实现实例化TreeMap对象来进行添加元素的，所以我们应该想到TreeMap也应该有排序功能，而且也应该一种自然排序，一种构造器排序。而且我们用过查看API我们发现真的是这样的。构造器如下：</p>
 <p><img src="6.png" alt=""></p>
 <p><strong>自然排序demo如下：</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeMapTest</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeMapTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span> treeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"qwe"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -797,11 +823,11 @@ Map的键唯一，Col">
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果如下：</p>
 <p><img src="7.png" alt=""></p>
 <p><strong>学号为键学生为值</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Integer num<span class="token punctuation">;</span>
@@ -837,8 +863,8 @@ Map的键唯一，Col">
                 <span class="token string">", num="</span> <span class="token operator">+</span> num <span class="token operator">+</span>
                 <span class="token string">'}'</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeMapTest</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeMapTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeMap<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> Student<span class="token operator">></span> treeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"桥本环奈"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -884,13 +910,13 @@ Map的键唯一，Col">
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>key<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="8.png" alt=""></p>
 <p><strong>小案例：</strong></p>
 <p><img src="9.png" alt=""></p>
 <p>代码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeMap<span class="token operator">&lt;</span>Character<span class="token punctuation">,</span> Integer<span class="token operator">></span> treeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         String s <span class="token operator">=</span> <span class="token string">"qweqweqweqweqwesdf"</span><span class="token punctuation">;</span>
@@ -913,10 +939,10 @@ Map的键唯一，Col">
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">"("</span> <span class="token operator">+</span>  value<span class="token operator">+</span><span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="10.png" alt=""></p>
-<h4 id="七、Map集合嵌套案例"><a href="#七、Map集合嵌套案例" class="headerlink" title="七、Map集合嵌套案例"></a>七、Map集合嵌套案例</h4><h5 id="HashMap嵌套HashMap"><a href="#HashMap嵌套HashMap" class="headerlink" title="HashMap嵌套HashMap"></a><strong>HashMap嵌套HashMap</strong></h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
+<h4 id="七、Map集合嵌套案例"><a href="#七、Map集合嵌套案例" class="headerlink" title="七、Map集合嵌套案例"></a>七、Map集合嵌套案例</h4><h5 id="HashMap嵌套HashMap"><a href="#HashMap嵌套HashMap" class="headerlink" title="HashMap嵌套HashMap"></a><strong>HashMap嵌套HashMap</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">>></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -948,10 +974,10 @@ Map的键唯一，Col">
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="11.png" alt=""></p>
-<h5 id="HashMap嵌套ArrayList"><a href="#HashMap嵌套ArrayList" class="headerlink" title="HashMap嵌套ArrayList"></a><strong>HashMap嵌套ArrayList</strong></h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapArrayListDemo</span> <span class="token punctuation">{</span>
+<h5 id="HashMap嵌套ArrayList"><a href="#HashMap嵌套ArrayList" class="headerlink" title="HashMap嵌套ArrayList"></a><strong>HashMap嵌套ArrayList</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapArrayListDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>String<span class="token operator">>></span> classic <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> westJourney <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -995,10 +1021,10 @@ Map的键唯一，Col">
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="12.png" alt=""></p>
-<h5 id="ArrayList嵌套HashMap"><a href="#ArrayList嵌套HashMap" class="headerlink" title="ArrayList嵌套HashMap"></a>ArrayList嵌套HashMap</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayListHashMapDemo</span> <span class="token punctuation">{</span>
+<h5 id="ArrayList嵌套HashMap"><a href="#ArrayList嵌套HashMap" class="headerlink" title="ArrayList嵌套HashMap"></a>ArrayList嵌套HashMap</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayListHashMapDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         ArrayList<span class="token operator">&lt;</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">>></span> arrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1024,10 +1050,10 @@ Map的键唯一，Col">
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="13.png" alt=""></p>
 <p><strong>HashMap嵌套HashMap嵌套ArrayList</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MultilayerNestedDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MultilayerNestedDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">>>></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1121,7 +1147,7 @@ Map的键唯一，Col">
 
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="14.png" alt="第一种"></p>
 <p><img src="15.png" alt="第二种"></p>
@@ -1179,21 +1205,21 @@ Map的键唯一，Col">
 <li><p>Map集合的遍历</p>
 <ol>
 <li><p>键找值</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> hashMap3 <span class="token operator">:</span> arrayList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> hashMap3 <span class="token operator">:</span> arrayList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
          String value <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">"----"</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>键值对对象找键和值</p>
-<pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">>></span> entrySet <span class="token operator">=</span> treeMap1<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">>></span> entrySet <span class="token operator">=</span> treeMap1<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             Student key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             Integer value <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>key<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 </li>
@@ -1429,7 +1455,7 @@ Map的键唯一，Col">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="集合12之Collections工具类">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="集合12之Collections工具类">
                         
                         <span class="card-title">集合12之Collections工具类</span>
                     </div>
@@ -1478,7 +1504,7 @@ Map的键唯一，Col">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="集合之TreeSet数据结构">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="集合之TreeSet数据结构">
                         
                         <span class="card-title">集合之TreeSet数据结构</span>
                     </div>
@@ -1549,7 +1575,7 @@ Map的键唯一，Col">
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: LOLtoulan-blog<br />'
+            + '来源: LOLtoulan<br />'
             + '作者: LOLtoulan<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
@@ -1662,6 +1688,9 @@ Map的键唯一，Col">
         <div class="col s12 m8 l8 copy-right">
             &copy; 2019 LOLtoulan. All Rights Reserved.
 
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">58.2k</span>
             
 
             <br>
@@ -1820,11 +1849,47 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+<!-- 彩带特效 -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/ribbon.js"><\/script>');
+}
+</script>
+
     <!-- 雪花特效 -->
     
     <script type="text/javascript" src=""></script>
     
 
-</body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+
+	<!--单击显示文字-->
+    <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-z16"},"display":{"position":"right","width":350,"height":400},"mobile":{"show":true,"react":{"opacity":0.7}}});</script></body>
 
 </html>

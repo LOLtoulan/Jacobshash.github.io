@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="集合10之Set集合, LOLtoulan-blog">
+    <meta name="keywords" content="集合10之Set集合, LOLtoulan">
     <meta name="baidu-site-verification" content="" />
     <meta name="google-site-verification" content="" />
     <meta name="360-site-verification" content="" />
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>集合10之Set集合 | LOLtoulan-blog</title>
+    <title>集合10之Set集合 | LOLtoulan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -35,7 +35,11 @@
 
             
     </style>
+    <!--新添加的代码-->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+	<script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
+    
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script>
@@ -47,7 +51,15 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<!-- 样式二（飘动的彩带） -->
+<!--<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
+<!--动态线条背景-->
+<!--<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+-->
 
 <body>
 
@@ -59,7 +71,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">LOLtoulan-blog</span>
+                    <span class="logo-span">LOLtoulan</span>
                 </a>
             </div>
             
@@ -143,7 +155,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">LOLtoulan-blog</div>
+        <div class="logo-name">LOLtoulan</div>
         <div class="logo-desc">
             
             技术博客，Java基础，算法
@@ -309,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -461,6 +473,20 @@
                 </div>
 
                 
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+                
 
                 
                 <div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -477,7 +503,7 @@
 <p>一个不包含重复元素的 collection。更确切地讲，set 不包含满足 <code>e1.equals(e2)</code> 的元素对  <code>e1</code> 和 <code>e2</code>，并且最多包含一个 null 元素。正如其名称所暗示的，此接口模仿了数学上的  <em>set</em> 抽象。</p>
 </blockquote>
 <p>通过案例学Set</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SetDemoTest</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SetDemoTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
         <span class="token comment" spellcheck="true">//因为Set集合是一个接口，不能实例化</span>
@@ -504,10 +530,10 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="1.png" alt=""></p>
 <h4 id="二、通过源码分析Set集合为什么保证元素唯一性"><a href="#二、通过源码分析Set集合为什么保证元素唯一性" class="headerlink" title="二、通过源码分析Set集合为什么保证元素唯一性"></a>二、通过源码分析Set集合为什么保证元素唯一性</h4><h5 id="小案例"><a href="#小案例" class="headerlink" title="小案例"></a>小案例</h5><p>再看源码分析前，我们先来看一个demo，代码如下；</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
@@ -534,8 +560,8 @@
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Set<span class="token operator">&lt;</span>Student<span class="token operator">></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"工藤新一"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -554,31 +580,31 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="2.png" alt=""></p>
 <p>我们发现运行结果中并没有去除重复的元素，这时，我们就要进行源码分析</p>
 <h5 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h5><p>通过源码分析我们就想到直接进入add方法，进入之后我们发现</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>没有一点特殊之处然后我们就想到Set是一个接口，既然在实例化时我们能通过new HashSet();来进行实例化，所以在HashSet中肯定有方法的实现，于是，我们找到HashSet中的add()方法，如下</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token keyword">return</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> PRESENT<span class="token punctuation">)</span><span class="token operator">==</span>null<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>我们发现HashSet底层的add方法居然是map的put方法，但是到这之后我们并没有找到HashSet元素唯一性的原因，于是我们继续找，这是我们发现HashSet的构造方法如下</p>
-<pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token function">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token function">HashSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>这时我们才发现，当我们执行</p>
-<pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>的时候其实在底层，已经创建了一个新的HashMap集合，而且在map调用put方法时其实其中的map是</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">transient</span> HashMap<span class="token operator">&lt;</span>E<span class="token punctuation">,</span>Object<span class="token operator">></span> map<span class="token punctuation">;</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">transient</span> HashMap<span class="token operator">&lt;</span>E<span class="token punctuation">,</span>Object<span class="token operator">></span> map<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>所以偶们知道了，一切原因其实都在HashMap的put方法中，代码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> V <span class="token function">put</span><span class="token punctuation">(</span>K key<span class="token punctuation">,</span> V value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> V <span class="token function">put</span><span class="token punctuation">(</span>K key<span class="token punctuation">,</span> V value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token function">putVal</span><span class="token punctuation">(</span><span class="token function">hash</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>我们发现此时put方法中又调用了putVal方法，所以我们又找到putVal方法，所以整合如下。</p>
 <p>在jdk1.7的时候，hashmap底层结构就是数组+链表的结构，如果发生冲突，即hashcode相同key也相同，但是value不同的话，那么就会放在底层数组的同一个下标处，官方话叫同一个桶内，以链表的形式保存。<br>但是在jdk1.8后就修改这么个存储方式，变成了数组+链表+红黑树的结构。我就暂时不讨论他红黑树部分是怎么实现的。我就先看看这个put（）方法具体是怎么执行的。</p>
-<pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> V <span class="token function">put</span><span class="token punctuation">(</span>K key<span class="token punctuation">,</span> V value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"> <span class="token keyword">public</span> V <span class="token function">put</span><span class="token punctuation">(</span>K key<span class="token punctuation">,</span> V value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token function">putVal</span><span class="token punctuation">(</span><span class="token function">hash</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
@@ -666,9 +692,9 @@
         <span class="token punctuation">}</span>
         <span class="token function">afterNodeInsertion</span><span class="token punctuation">(</span>evict<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们通过源码发现，其实比较的时<code>hashcode</code>和<code>equals</code>方法，所以我们如果不重写<code>hashcode</code>和<code>equals</code>方法，那么比较的就是Object的hashcode方法，因为我们每个都是创建对象才赋值的，不同对象地址不同，hashcode肯定不同，所以就没有达到去重的目的，下面是重写<code>hashcode</code>和<code>equals</code>方法之后的代码：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
@@ -709,8 +735,8 @@
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> Objects<span class="token punctuation">.</span><span class="token function">hash</span><span class="token punctuation">(</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Set<span class="token operator">&lt;</span>Student<span class="token operator">></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"工藤新一"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -729,14 +755,14 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="3.png" alt=""></p>
 <h4 id="三、LinkedHashSet集合的特点"><a href="#三、LinkedHashSet集合的特点" class="headerlink" title="三、LinkedHashSet集合的特点"></a>三、LinkedHashSet集合的特点</h4><blockquote>
 <p>具有可预知迭代顺序的 <code>Set</code> 接口的哈希表和链接列表实现。此实现与 <code>HashSet</code>  的不同之外在于，后者维护着一个运行于所有条目的双重链接列表。</p>
 </blockquote>
 <p>所以我们知道LinkedHashSet具有set和HashSet的所有功能</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedHashSetDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedHashSetDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         LinkedHashSet<span class="token operator">&lt;</span>String<span class="token operator">></span> linkedHashSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -749,21 +775,21 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="4.png" alt=""></p>
 <p>而且通过源代码我们发现：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedHashSet</span><span class="token operator">&lt;</span>E<span class="token operator">></span> 
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedHashSet</span><span class="token operator">&lt;</span>E<span class="token operator">></span> 
     <span class="token keyword">extends</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span>E<span class="token operator">></span> 
     <span class="token keyword">implements</span> <span class="token class-name">Set</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">,</span> Cloneable<span class="token punctuation">,</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span class="token punctuation">{</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span> </code></pre>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>LinkedHashSet的父亲时HashSet并且实现了Set集合接口，克隆接口以及序列化接口。</p>
 <h4 id="四、TreeSet"><a href="#四、TreeSet" class="headerlink" title="四、TreeSet"></a>四、TreeSet</h4><blockquote>
 <p>基于 <code>TreeMap</code> 的 <code>NavigableSet</code>  实现。使用元素的自然顺序对元素进行排序，或者根据创建 set 时提供的 <code>Comparator</code>  进行排序，具体取决于使用的构造方法。</p>
 </blockquote>
 <p>这也就是说，TreeSet可以按照一定的顺序进行排序，线路代码再看，</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator">&lt;</span>String<span class="token operator">></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         TreeSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> treeSet1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -789,7 +815,7 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="5.png" alt=""></p>
 <p>由上面的运行结果和程序可知，我们不自己设置排序规则的话，TreeSet的排序是按照他自己一些规则进行排序的。TreeSet的排序一共有两种：</p>
 <blockquote>
@@ -798,7 +824,7 @@
 </blockquote>
 <p><strong>通过源码分析排序实现的原理</strong>：</p>
 <p>我们上面说过<code>TreeSet</code>是基于 <code>TreeMap</code> 的 <code>NavigableSet</code> 实现。我们通过API发现<code>NavigableSet</code>是一个接口，且<code>NavigableSet</code>也是由<code>TreeSet</code>集合进行实现，所以我们又回到TreeSet集合中，我们又进入到<code>TreeSet</code>的add方法中，这是我们发现<code>TreeSet</code>的add方法其实是调用<code>NavigableMap</code>中的put方法，而我们发现<code>NavigableMap</code>也同样是一个接口，且实现类中含有<code>TreeMap</code>，所以我们到这大概知道了，<code>Treeset</code>中的add方法其实底层是<code>TreeMap</code>的put方法，然后我们找到put方法代码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">Collection</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">Collection</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
 
 <span class="token keyword">interface</span> <span class="token class-name">Set</span> <span class="token keyword">extends</span> <span class="token class-name">Collection</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
 
@@ -895,12 +921,12 @@
     <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> m<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> PRESENT<span class="token punctuation">)</span><span class="token operator">==</span>null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>所以，真正的比较是依赖于compareTo()方法，而这个方法是定义在Comparable里面的。所以，你想要重写该方法，就需要现实现Comparable接口。这个接口表示的就是自然排序。</p>
 <p>请转到 ：TreeSet数据结构</p>
 <h4 id="五、小案例Demo"><a href="#五、小案例Demo" class="headerlink" title="五、小案例Demo"></a>五、小案例Demo</h4><p><strong>下面实现一个案例，TreeSet实现自定义对象的存储及排序</strong>(建议自己先写一遍，再看代码)</p>
 <p>代码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自然排序</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自然排序</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token operator">&lt;</span>Student<span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
@@ -936,8 +962,8 @@
         <span class="token keyword">int</span> m <span class="token operator">=</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">:</span> n<span class="token punctuation">;</span>
         <span class="token keyword">return</span> m<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator">&lt;</span>Student<span class="token operator">></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"工藤一"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -959,7 +985,7 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果如下：</p>
 <p><img src="6.png" alt=""></p>
 <blockquote>
@@ -972,7 +998,7 @@
 </blockquote>
 <p><strong>比较器排序</strong></p>
 <p>代码：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token operator">&lt;</span>Student<span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token operator">&lt;</span>Student<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -982,8 +1008,8 @@
 
         <span class="token keyword">return</span> m<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span>  <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span>  <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
@@ -1011,8 +1037,8 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
         <span class="token comment" spellcheck="true">//如果一个方法的参数是接口那么真正要的是接口实现类对象</span>
@@ -1057,11 +1083,11 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="7.png" alt=""></p>
 <p><strong>Set集合随机生成10个，100以内的数</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         HashSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1076,9 +1102,9 @@
 
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="8.png" alt=""></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator">&lt;</span>Integer<span class="token operator">></span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1093,11 +1119,11 @@
 
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="9.png" alt=""></p>
 <p><strong>使用TreeSet集合输入5位同学语文，英语，数学成绩，并按照从总分高到低进行排序</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span>  <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span>  <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> Chinese<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> Math<span class="token punctuation">;</span>
@@ -1166,8 +1192,8 @@
         <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Chinese <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>English <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Math<span class="token punctuation">;</span>
         <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator">&lt;</span>Student<span class="token operator">></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span>Student<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
             <span class="token comment" spellcheck="true">//其中"(a&lt;b)?a:b"是一个"条件表达式",它是这样执行的:如果a&lt;b为真,则表达式取a值,否则取b值.</span>
@@ -1206,7 +1232,7 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getChinese</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getMath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getEnglish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="10.png" alt=""></p>
 <h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><blockquote>
@@ -1484,7 +1510,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="集合之TreeSet数据结构">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="集合之TreeSet数据结构">
                         
                         <span class="card-title">集合之TreeSet数据结构</span>
                     </div>
@@ -1533,7 +1559,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="集合9之纯ArrayList实现现登陆注册">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="集合9之纯ArrayList实现现登陆注册">
                         
                         <span class="card-title">集合9之纯ArrayList实现现登陆注册</span>
                     </div>
@@ -1604,7 +1630,7 @@
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: LOLtoulan-blog<br />'
+            + '来源: LOLtoulan<br />'
             + '作者: LOLtoulan<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
@@ -1717,6 +1743,9 @@
         <div class="col s12 m8 l8 copy-right">
             &copy; 2019 LOLtoulan. All Rights Reserved.
 
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">58.2k</span>
             
 
             <br>
@@ -1875,11 +1904,47 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+<!-- 彩带特效 -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/ribbon.js"><\/script>');
+}
+</script>
+
     <!-- 雪花特效 -->
     
     <script type="text/javascript" src=""></script>
     
 
-</body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+
+	<!--单击显示文字-->
+    <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-z16"},"display":{"position":"right","width":350,"height":400},"mobile":{"show":true,"react":{"opacity":0.7}}});</script></body>
 
 </html>
