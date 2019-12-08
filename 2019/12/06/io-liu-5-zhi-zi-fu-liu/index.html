@@ -434,14 +434,14 @@ public class Ou">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-06
+                    2019-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    955
+                    1.1k
                 </div>
                 
 
@@ -726,6 +726,58 @@ public class Ou">
         bufferedWriter<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h3><blockquote>
+<p>字符流 = 字节流 + 编码表</p>
+<p>编码表：编码表就是由字符和对相应的数值组成的一张表</p>
+<p>常见的编码表：</p>
+<ul>
+<li>ASCII</li>
+<li>ISO-8859-1</li>
+<li>GB2312</li>
+<li>GBK</li>
+<li>GB18030</li>
+<li>UTF-8</li>
+</ul>
+<p>字符串中的编码问题</p>
+<ul>
+<li>编码：String – byte[]</li>
+<li>解码：byte[] – String</li>
+</ul>
+<p>IO流中的编码问题</p>
+<ul>
+<li>OutputStreamWriter<ul>
+<li>OutputStreamWriter(OutputStream os)</li>
+<li>OutputStreamWriter(OutputStream os , String charsetName)</li>
+</ul>
+</li>
+<li>InputStreamReader<ul>
+<li>InputStreamReader(InputStream is)</li>
+<li>InputStreamReader(InputStream is , String charsetName)</li>
+</ul>
+</li>
+<li>编码一致即可</li>
+</ul>
+<p>字符流</p>
+<ul>
+<li>Rreader<ul>
+<li>InputStreamReader<ul>
+<li>FIleReader</li>
+</ul>
+</li>
+<li>BufferReader</li>
+</ul>
+</li>
+<li>Writer<ul>
+<li>OutputStreamWriter <ul>
+<li>FileWriter</li>
+</ul>
+</li>
+<li>BufferWriter</li>
+</ul>
+</li>
+</ul>
+<p>复制文件有五种方法</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -1099,7 +1151,7 @@ public class Ou">
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('1200')) {
+        if (('' + selection).length < Number.parseInt('12000')) {
             return;
         }
 
@@ -1265,7 +1317,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.4k</span>&nbsp;字
+                class="white-color">67k</span>&nbsp;字
             
             
             
@@ -1364,10 +1416,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
+
+    <a href="https://blog.csdn.net/LOL_toulan" class="tooltipped" target="_blank" data-tooltip="关注我的csdn: https://blog.csdn.net/LOL_toulan" data-position="top" data-delay="50">
+        <i class="fab fa-csdn">C</i>
+    </a>
 </div>
     </div>
 </footer>

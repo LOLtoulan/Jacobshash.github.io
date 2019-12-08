@@ -5,8 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="IO流6之IO小结, LOLtoulan">
-    <meta name="description" content="IO流6之IO小结io流图解
-">
+    <meta name="description" content="IO流6之IO小结一、IO流图解
+二、IO流脑图
+字节流：
+
+InputStream：
+
+int read();一次读取一个字节
+int read(byte[] bytes);一次读取一个字节数组
+int read(byte[] bytes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -424,14 +431,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-06
+                    2019-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    357
                 </div>
                 
 
@@ -454,7 +461,88 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="IO流6之IO小结"><a href="#IO流6之IO小结" class="headerlink" title="IO流6之IO小结"></a>IO流6之IO小结</h1><h3 id="io流图解"><a href="#io流图解" class="headerlink" title="io流图解"></a>io流图解</h3><p><img src="1.png" alt=""></p>
+                <h1 id="IO流6之IO小结"><a href="#IO流6之IO小结" class="headerlink" title="IO流6之IO小结"></a>IO流6之IO小结</h1><h3 id="一、IO流图解"><a href="#一、IO流图解" class="headerlink" title="一、IO流图解"></a>一、IO流图解</h3><p><img src="1.png" alt=""></p>
+<h3 id="二、IO流脑图"><a href="#二、IO流脑图" class="headerlink" title="二、IO流脑图"></a>二、IO流脑图</h3><blockquote>
+<p>字节流：</p>
+<ul>
+<li><p>InputStream：</p>
+<ul>
+<li>int read();一次读取一个字节</li>
+<li>int read(byte[] bytes);一次读取一个字节数组</li>
+<li>int read(byte[] bytes , int index , int len);一次读取一个字节数组的一部分</li>
+<li>子类<ul>
+<li>FileInputStream</li>
+<li>BufferedInputStream</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>OutputStream：</p>
+<ul>
+<li>write() ; 一次写一个字节</li>
+<li>write(byte[] bytes);一次写一个字节数组</li>
+<li>write(byte[] bytes , int index , int len);一次写一个字节数组</li>
+<li>子类<ul>
+<li>FileOutputStream</li>
+<li>BufferedOutputStream</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>字符流：</p>
+<ul>
+<li>Reader<ul>
+<li>void read(int by); 一次读一个字符</li>
+<li>void read(char[] chars);一次读一个字符数组</li>
+<li>子类<ul>
+<li>InputStreamReader<ul>
+<li>FileReader</li>
+</ul>
+</li>
+<li>BufferedReader<ul>
+<li>String readerLine(); //一次读取一个字符串</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Write<ul>
+<li>void write(int by); 一次写一个字符</li>
+<li>void write(char[] chars);一次写一个字符数组</li>
+<li>write(byte[] bytes , int index , int len);一次写一个字节数组</li>
+<li>子类<ul>
+<li>OutputWrite<ul>
+<li>FileWrite</li>
+</ul>
+</li>
+<li>BufferedWrite<ul>
+<li>void newLine(); 写一个换行符</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="三、案例"><a href="#三、案例" class="headerlink" title="三、案例"></a>三、案例</h3><ol>
+<li>复制文本文件</li>
+<li>复制图片（视频）</li>
+<li>把集合中的数据写到文本文件</li>
+<li>把文本文件中的数据写到集合中并遍历集合</li>
+<li>复制单级文件夹</li>
+<li>复制单级文件夹中指定的文件并改名</li>
+<li>复制多级文件夹</li>
+<li>键盘录入学生信息按照总分从高到底存储到文本文件</li>
+<li>把某个文件夹中的字符串排序后输出到指定文件中</li>
+<li>用Reader模拟BufferedReader的特有功能</li>
+<li>模拟Line NumberReader的特有功能</li>
+</ol>
+<blockquote>
+<p>答案在下一篇博客中</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -832,7 +920,7 @@
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('1200')) {
+        if (('' + selection).length < Number.parseInt('12000')) {
             return;
         }
 
@@ -998,7 +1086,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.4k</span>&nbsp;字
+                class="white-color">67k</span>&nbsp;字
             
             
             
@@ -1097,10 +1185,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
+
+    <a href="https://blog.csdn.net/LOL_toulan" class="tooltipped" target="_blank" data-tooltip="关注我的csdn: https://blog.csdn.net/LOL_toulan" data-position="top" data-delay="50">
+        <i class="fab fa-csdn">C</i>
+    </a>
 </div>
     </div>
 </footer>

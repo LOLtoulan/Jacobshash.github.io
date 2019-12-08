@@ -4,18 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="集合13之集合小总结, LOLtoulan">
-    <meta name="description" content="集合总结集合中包含两大集合：Collection和Map
-
-Collection
-List
-
-ArrayList
-底层结构是数组，查询快，增删慢，线程不安全，效率高
-常用方法：
-add();增加元素
-remove();删除元素
-isEmpt">
+    <meta name="keywords" content="IO流8之LineNumberReader, LOLtoulan">
+    <meta name="description" content="LineNumberReader概述及使用一、利用LineNumberReader实现获取行号功能public class LineNumberReaderDemo {
+    public static void main(String[">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +14,7 @@ isEmpt">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>集合13之集合小总结 | LOLtoulan</title>
+    <title>IO流8之LineNumberReader | LOLtoulan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -273,13 +264,13 @@ isEmpt">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        集合13之集合小总结
+                        IO流8之LineNumberReader
                     </div>
                 </div>
             </div>
@@ -401,8 +392,8 @@ isEmpt">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/List/">
-                                <span class="chip bg-color">List</span>
+                            <a href="/tags/IO/">
+                                <span class="chip bg-color">IO</span>
                             </a>
                         
                     </div>
@@ -413,8 +404,8 @@ isEmpt">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java%E9%9B%86%E5%90%88/" class="post-category">
-                                Java集合
+                            <a href="/categories/JavaIO%E6%B5%81/" class="post-category">
+                                JavaIO流
                             </a>
                         
                     </div>
@@ -426,28 +417,28 @@ isEmpt">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-24
+                    2019-12-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-06
+                    2019-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    969
+                    206
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 				
@@ -463,231 +454,94 @@ isEmpt">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="集合总结"><a href="#集合总结" class="headerlink" title="集合总结"></a>集合总结</h1><p>集合中包含两大集合：Collection和Map</p>
-<blockquote>
-<h5 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a><strong>Collection</strong></h5><ol>
-<li><p>List</p>
-<ul>
-<li>ArrayList<ul>
-<li>底层结构是数组，查询快，增删慢，线程不安全，效率高<ul>
-<li>常用方法：<ol>
-<li>add();增加元素</li>
-<li>remove();删除元素</li>
-<li>isEmpty();判断集合是否为空</li>
-<li>toArray();将链表转换为数组</li>
-<li>set();替换</li>
-<li>get();获取指定元素</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Vector<ul>
-<li>底层结构是数组，查询快，增删慢，线程安全，效率低<ul>
-<li>特有方法：<ol>
-<li>addElements();同add()</li>
-<li>elementAt();返回指定位置索引</li>
-</ol>
-</li>
-<li>说明：一般不用。或者说，基本不用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>LinkedList<ul>
-<li>底层结构是链表，查询慢，增删快，线程不安全，效率高<ul>
-<li>特有方法<ol>
-<li>addFirst()</li>
-<li>addLast()</li>
-<li>getFirst()</li>
-<li>getLast()</li>
-<li>peek()获取但不移出此列表的头(第一个元素)</li>
-<li>poll()获取并移除此列表的头</li>
-<li>pop()弹出列表头</li>
-<li>push();将元素推入集合中</li>
-<li>removeFirst()</li>
-<li>removeLast()</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Set（唯一，无序）</p>
-<ul>
-<li><p>HashSet</p>
-<ul>
-<li>底层是hash表，是一个元素为链表的数组<ul>
-<li>通过查看源码我们发现，HashSet的add方法是通过new HashSet时，通过无参构造创建HashMap对象，通过hashmap的put方法来达到元素唯一性。</li>
-</ul>
-</li>
-<li>数据的唯一性依赖于HashCode和equals方法，可自动生成。<ul>
-<li>先判断HashCode是否一样<ul>
-<li>一样，继续比较equals，看返回值，<ul>
-<li>true：相同不添加</li>
-<li>false：不相同，添加</li>
-</ul>
-</li>
-<li>不一样，直接添加</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>LinkedHashSet集合<ul>
-<li>此集合底层是hash表和链表，Hash表确保元素的唯一，链表确保集合的有序</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>TreeSet（可按照一定的规则排序，具体实现与构造器有关）</p>
-<ul>
-<li>底层时二叉树（红黑树）</li>
-</ul>
-</li>
-<li><p>如何保证元素的唯一性，红黑树（元素相同则无法添加进集合中）</p>
-<ul>
-<li><p>自然排序（元素具备具备比较性）</p>
-<ul>
-<li>无参构造排序是因为例如Integer，String，Character都已经实现Comparable接口，是因为：<code>此接口强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的 compareTo 方法被称为它的自然比较方法。</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>构造器排序</p>
-<ul>
-<li>有参构造则是通过让集合构造方法实现Comparator的实现类对象，而一般我们都不会新创建一个类专门来实例化对象，一般我们会通过匿名内部类的方法来实现。   </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>一般我们在用集合时，尽量用ArrayList，其他集合能实现的功能ArrayList集合基本都能实现。一般不用Set集合，用也只用HashSet。（具体情况具体对待）</p>
-</li>
-</ol>
-<h5 id="Map"><a href="#Map" class="headerlink" title="Map"></a><strong>Map</strong></h5><p>将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。</p>
-<p>Map集合的数据结构仅仅针对键有效，与值无关</p>
-<ol>
-<li>HashMap线程不安全，效率高<ul>
-<li>和hashSet一样</li>
-<li>LinkedHashMap<ul>
-<li>和LinkedHashSet一样</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Hashtable线程安全，效率低<ul>
-<li>和HashMap基本一样</li>
-</ul>
-</li>
-<li>TreeSet<ul>
-<li>和TreeSet一样</li>
-</ul>
-</li>
-</ol>
-<h5 id="集合如何选择"><a href="#集合如何选择" class="headerlink" title="集合如何选择"></a><strong>集合如何选择</strong></h5><p>​    看需求</p>
-<ul>
-<li>是否是键值对象形式<ul>
-<li>是：Map<ul>
-<li>键是否需要排序<ul>
-<li>是：HashMap</li>
-<li>否：TreeMap</li>
-</ul>
-</li>
-<li>不知道就用HashMap</li>
-</ul>
-</li>
-<li>否：Collection<ul>
-<li>元素是否唯一：<ul>
-<li>是：Set<ul>
-<li>是否需要排序<ul>
-<li>是：TreeSet</li>
-<li>否：HashSet</li>
-</ul>
-</li>
-<li>不知道就用HashSet</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>否：List<ul>
-<li>安全否？<ul>
-<li>安全Vector（其实也不用，用的最多的是ArrayList的加锁方式）</li>
-<li>否，增删多，查询多<ul>
-<li>增删多：LinkedList</li>
-<li>查询多：ArrayList</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>不知道就用ArrayList，不知道就用ArrayList，不知道就用ArrayList（重要的事情说三遍）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>集合的常见方法及遍历</strong></p>
-<p>Collection：</p>
-<ul>
-<li>add</li>
-<li>remove</li>
-<li>contains</li>
-<li>iterator</li>
-<li>size</li>
-</ul>
-<p>遍历：</p>
-<ul>
-<li><p>增强for</p>
-</li>
-<li><p>迭代器</p>
-</li>
-</ul>
-<p>List集合由三种遍历</p>
-<ul>
-<li><p>普通for，get</p>
-</li>
-<li><p>增强for</p>
-</li>
-<li><p>迭代器</p>
-</li>
-</ul>
-<p>Set</p>
-<ul>
-<li><p>增强for</p>
-</li>
-<li><p>迭代器</p>
-</li>
-</ul>
-<p>Map:</p>
-<ul>
-<li>put</li>
-<li>remove</li>
-<li>containsKey()</li>
-<li>containsValue</li>
-<li>keySet</li>
-<li>get</li>
-<li>value</li>
-<li>entrySet</li>
-<li>size</li>
-</ul>
-<p>遍历两种：</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> hashMap3 <span class="token operator">:</span> arrayList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    Set<span class="token operator">&lt;</span>String<span class="token operator">></span> set <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         String value <span class="token operator">=</span> hashMap3<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">"----"</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h1 id="LineNumberReader概述及使用"><a href="#LineNumberReader概述及使用" class="headerlink" title="LineNumberReader概述及使用"></a>LineNumberReader概述及使用</h1><h3 id="一、利用LineNumberReader实现获取行号功能"><a href="#一、利用LineNumberReader实现获取行号功能" class="headerlink" title="一、利用LineNumberReader实现获取行号功能"></a>一、利用LineNumberReader实现获取行号功能</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LineNumberReaderDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+
+        LineNumberReader lineNumberReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LineNumberReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"LOLtoulan\\a.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String line <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>line <span class="token operator">=</span> lineNumberReader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>lineNumberReader<span class="token punctuation">.</span><span class="token function">getLineNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" \t| "</span> <span class="token operator">+</span> line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java">Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">>></span> entrySet <span class="token operator">=</span> treeMap1<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>Student<span class="token punctuation">,</span> Integer<span class="token operator">></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            Student key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Integer value <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>  key<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>key<span class="token punctuation">.</span><span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ---"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</blockquote>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/*
+a.txt中的数据
+
+abc
+hello0
+hello1
+hello2
+hello3
+hello4
+hello5
+hello6
+hello7
+hello8
+hello9
+abc
+world0
+world1
+world2
+world3
+world4
+world5
+world6
+world7
+world8
+world9
+ */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：<br><img src="1.png" alt=""></p>
+<h3 id="二、利用Reader自定义MyLineNumberReader实现获取行号功能"><a href="#二、利用Reader自定义MyLineNumberReader实现获取行号功能" class="headerlink" title="二、利用Reader自定义MyLineNumberReader实现获取行号功能"></a>二、利用Reader自定义MyLineNumberReader实现获取行号功能</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyLineNumberReader</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> Reader reader<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> lineNumber <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">MyLineNumberReader</span><span class="token punctuation">(</span>Reader reader<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>reader <span class="token operator">=</span> reader<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getLineNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> lineNumber<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLineNumber</span><span class="token punctuation">(</span><span class="token keyword">int</span> lineNumber<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>lineNumber <span class="token operator">=</span> lineNumber<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">readerLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        number<span class="token operator">++</span><span class="token punctuation">;</span>
+        StringBuffer stringBuffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> ch <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>ch <span class="token operator">=</span> reader<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'\r'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> stringBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                stringBuffer <span class="token operator">=</span> stringBuffer<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>stringBuffer<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> stringBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyLineNumberReaderTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        MyLineNumberReader myLineNumberReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyLineNumberReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"LOLtoulan\\a.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String line <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>line <span class="token operator">=</span> myLineNumberReader<span class="token punctuation">.</span><span class="token function">readerLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> myLineNumberReader<span class="token punctuation">.</span><span class="token function">getLineNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" \t| "</span> <span class="token operator">+</span> line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="2.png" alt=""></p>
 
             </div>
             <hr/>
@@ -713,7 +567,7 @@ isEmpt">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://loltoulan.github.io/2019/11/24/ji-he-13-zhi-ji-he-xiao-zong-jie/">https://loltoulan.github.io/2019/11/24/ji-he-13-zhi-ji-he-xiao-zong-jie/</a>
+                    <a href="https://loltoulan.github.io/2019/12/08/io-liu-8-zhi-linenumberreader/">https://loltoulan.github.io/2019/12/08/io-liu-8-zhi-linenumberreader/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -755,8 +609,8 @@ isEmpt">
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/List/">
-                                    <span class="chip bg-color">List</span>
+                                <a href="/tags/IO/">
+                                    <span class="chip bg-color">IO</span>
                                 </a>
                             
                         </div>
@@ -927,7 +781,7 @@ isEmpt">
         repo: 'LOLtoulan.github.io',
         owner: 'LOLtoulan',
         admin: "LOLtoulan",
-        id: '2019-11-24T20-43-58',
+        id: '2019-12-08T12-23-53',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -948,41 +802,43 @@ isEmpt">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/24/xml-jie-shao/">
+                <a href="/2019/12/08/io-liu-8-zhi-linenumberreader/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="XML介绍">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="IO流8之LineNumberReader">
                         
-                        <span class="card-title">XML介绍</span>
+                        <span class="card-title">IO流8之LineNumberReader</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            开始服务器端开发
+                            梳理下IO流相关知识点
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JSP-Servlet/" class="post-category">
-                                    JSP/Servlet
+                            <a href="/categories/JavaIO%E6%B5%81/" class="post-category">
+                                    JavaIO流
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -990,8 +846,8 @@ isEmpt">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/JSP-Servlet/">
-                        <span class="chip bg-color">JSP/Servlet</span>
+                    <a href="/tags/IO/">
+                        <span class="chip bg-color">IO</span>
                     </a>
                     
                 </div>
@@ -1005,31 +861,31 @@ isEmpt">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/24/ji-he-zhi-collections-mo-ni-dou-di-zhu-xi-pai-fa-pai/">
+                <a href="/2019/12/06/io-liu-7-zhi-io-lian-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="集合之Collections模拟斗地主洗牌发牌">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="IO流7之IO练习">
                         
-                        <span class="card-title">集合之Collections模拟斗地主洗牌发牌</span>
+                        <span class="card-title">IO流7之IO练习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Collections模拟斗地主洗牌发牌
+                            梳理下IO流相关知识点
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java%E9%9B%86%E5%90%88/" class="post-category">
-                                    Java集合
+                            <a href="/categories/JavaIO%E6%B5%81/" class="post-category">
+                                    JavaIO流
                                 </a>
                             
                             
@@ -1043,12 +899,8 @@ isEmpt">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/List/">
-                        <span class="chip bg-color">List</span>
-                    </a>
-                    
-                    <a href="/tags/Collections/">
-                        <span class="chip bg-color">Collections</span>
+                    <a href="/tags/IO/">
+                        <span class="chip bg-color">IO</span>
                     </a>
                     
                 </div>
