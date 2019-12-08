@@ -4,8 +4,11 @@
     <meta name="description" content="Request&Response一、servlet路径写法
 全路径匹配
 以”/“开头， “/a”   “/aa/bb” 
-&lt;servlet-mapping>
-    &lt;servlet-name>MyServlet&lt;/ser">
+
+    MyServlet
+    /a
+
+形如这种类型的，我们访问方式为:http://localhost:808">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -430,14 +433,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:  
-                    4k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:  
-                    20 分
+                    10 分
                 </div>
                 
 				
@@ -457,31 +460,31 @@
 <li><p>全路径匹配</p>
 <p>以”/“开头， “/a”   “/aa/bb” </p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/a<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/a<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></span></span></span></code></pre>
 <p>形如这种类型的，我们访问方式为:<code>http://localhost:8080/a</code>或者 <code>http://localhost:8080/aa/bb</code></p>
 </li>
 <li><p>半路径匹配</p>
 <p>形如：</p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/*<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/*<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></span></span></span></code></pre>
 <p>形如这种类型的,我们访问方式为：<code>http://localhost:8080/a</code> 或者 <code>http://localhost:8080/8899/0000</code> ，其实*是通配符，可以匹配任意路径。</p>
 <p>但是，如果是这种：</p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/a/*<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/a/*<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></span></span></span></code></pre>
 <p>我们就需要需要这样访问：<code>http://localhost:8080/a/423</code> 或者 <code>http://localhost:8080/a/8899/0</code></p>
 </li>
 <li><p>以扩展名匹配</p>
 <p>写法：*.扩展名      *.aa    *.bb    *.do</p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>*.do<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>*.do<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></span></span></span></code></pre>
 <p>我们访问方式为：<code>http://localhost:8080/a.do</code> 或者 <code>http://localhost:8080/8899/0000.do</code> 。</p>
 </li>
 </ol>
@@ -495,9 +498,9 @@
 <li><p>可以获取全局配置参数</p>
 <pre class="line-numbers language-xml"><code class="language-xml"> <span class="token comment" spellcheck="true"><!--全局参数，哪个Servlet都可以拿，ServletContext--></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>context-param</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-name</span><span class="token punctuation">></span></span>address<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>param-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-value</span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>param-value</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>context-param</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-name</span><span class="token punctuation">></span></span>address<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->param-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-value</span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->param-value</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->context-param</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></span></span></span></code></pre>
 </li>
 <li><p>获取全局参数(代码书写)</p>
 <pre class="line-numbers language-java"><code class="language-java"> <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
@@ -540,38 +543,36 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"><!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span>
   <span class="token comment" spellcheck="true"><!--全局参数，哪个Servlet都可以拿，ServletContext--></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>context-param</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-name</span><span class="token punctuation">></span></span>address<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>param-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-value</span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>param-value</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>context-param</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-name</span><span class="token punctuation">></span></span>address<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->param-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>param-value</span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->param-value</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->context-param</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext2<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="111.gif" data-original="1.png" alt></p>
 </li>
@@ -603,20 +604,18 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"><!DOCTYPE web-app PUBLIC
-        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-        "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="111.gif" data-original="2.png" alt></p>
 </li>
@@ -663,21 +662,19 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"><!DOCTYPE web-app PUBLIC
-        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-        "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext04<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext04<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletContext03<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext04<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext04<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletContext04<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletContext04<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></code></pre>
 <p><img src="111.gif" data-original="2.png" alt></p>
 <blockquote>
 <p>这里说明一下：</p>
@@ -737,37 +734,35 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"><!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>display-name</span><span class="token punctuation">></span></span>Archetype Created Web Application<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>display-name</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>display-name</span><span class="token punctuation">></span></span>Archetype Created Web Application<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->display-name</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></span></code></pre>
 <p>index.html</p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"><!DOCTYPE html></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->h2</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>LoginServlet<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>get<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>登录<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>form</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></code></pre>
 <blockquote>
 <p>注意，当我们在写好上面的东西时，我们即将项目发布到服务器，发现报404错误，这时，我们检查我们写好的Servlet如果一切都没有问题这是我们试试将项目清理下，也就是将项目的target删除，重新发布，可能会解决你的问题。</p>
 </blockquote>
@@ -800,36 +795,34 @@
         <span class="token function">doGet</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>resp<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"><!DOCTYPE html></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->h2</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>LoginServlet<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>get<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Sign in<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>form</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"><!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>display-name</span><span class="token punctuation">></span></span>Archetype Created Web Application<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>display-name</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>display-name</span><span class="token punctuation">></span></span>Archetype Created Web Application<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->display-name</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="111.gif" data-original="7.png" alt></p>
 <p><img src="111.gif" data-original="8.png" alt></p>
@@ -889,53 +882,51 @@
         <span class="token function">doGet</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>resp<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"><!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>display-name</span><span class="token punctuation">></span></span>Archetype Created Web Application<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>display-name</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>display-name</span><span class="token punctuation">></span></span>Archetype Created Web Application<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->display-name</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/LoginServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"><!DOCTYPE html></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/CountServlet<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->h2</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>LoginServlet<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>get<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Sign in<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>form</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"><!DOCTYPE html></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>body</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>success login<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>h2</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CountServlet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Get the number of successful website logins<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"></</span>h2</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>success login<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->h2</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CountServlet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Get the number of successful website logins<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="111.gif" data-original="12.png" alt></p>
 <blockquote>
@@ -976,21 +967,19 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>web.xml</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"><!DOCTYPE web-app PUBLIC
-        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-        "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token doctype"></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyServletRequest<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></code></pre>
 <p>运行结果：</p>
 <p><img src="111.gif" data-original="14.png" alt></p>
 <p><img src="111.gif" data-original="13.png" alt></p>
@@ -1073,9 +1062,9 @@
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过字符流来进行转码，我们可以让ISO-8859-1的编码方式转换为UTF-8，从而达到解决乱码的效果</p>
 <p>还有一种是更改Tomcat的配置文件，就是Tomcat目录下conf里面的server.xm中的</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><Connector port="8080" protocol="HTTP/1.1"connectionTimeout="20000"redirectPort="8443""/><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443" "><span aria-hidden="true" class="line-numbers-rows"><span></span></span></connector></code></pre>
 <p>改为</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><Connector port="8080" protocol="HTTP/1.1"connectionTimeout="20000"redirectPort="8443" URIEncoding="UTF-8"/><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443" uriencoding="UTF-8"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></connector></code></pre>
 <p><strong>如果我们使用post方法</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"> <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span> HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
         req<span class="token punctuation">.</span><span class="token function">setCharacterEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1095,7 +1084,7 @@
 <pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//以字符流形式写数据</span>
-        resp<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"<h1>hello response(●ˇ∀ˇ●)</h2>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        resp<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"<h1>hello response(●ˇ∀ˇ●)</h1>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">//以字节流形式写数据</span>
         resp<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"hello response"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1139,20 +1128,20 @@
 </blockquote>
 </li>
 <li><p><strong>演练下载资源</strong></p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"><!DOCTYPE html></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype"></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->head</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->h2</span><span class="token punctuation">></span></span>
 
 让tomcat的默认下载器下载：
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/aa.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>aa.jpg<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/bb.txt<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>bb.txt<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/cc.rar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cc.rar<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/aa.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>aa.jpg<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/bb.txt<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>bb.txt<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/cc.rar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cc.rar<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>br</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></code></pre>
 <blockquote>
 <p>无需写任何代码，直接就能下载，原因是Tomcat提供的默认的Servlet –》defaultServlet，专门用于处理放在tomcat服务器上的静态资源。</p>
 </blockquote>
@@ -1228,20 +1217,18 @@
 ```
 
 <p>web.xml</p>
-<pre class="line-numbers language-xml"><code class="language-xml">   <span class="token doctype"><!DOCTYPE web-app PUBLIC
-           "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-           "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+<pre class="line-numbers language-xml"><code class="language-xml">   <span class="token doctype"></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>web-app</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-class</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-class</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet</span><span class="token punctuation">></span></span>
 
      <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-mapping</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-name</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"></</span>url-pattern</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>servlet-mapping</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation"></</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-name</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>url-pattern</span><span class="token punctuation">></span></span>/MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->url-pattern</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->servlet-mapping</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation"><!--</span-->web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></span></span></span></span></span></code></pre>
 </li>
 </ol>
 <h4 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h4><blockquote>
@@ -1869,7 +1856,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">65.7k</span> 字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
             
             
             
@@ -2056,6 +2043,12 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+    <!-- LOLtoulan 天气插件-->
+<!-- <script type="text/javascript">
+WIDGET = {FID: 'b8TkAItBeY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
 
 
         <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
