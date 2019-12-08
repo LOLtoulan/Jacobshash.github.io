@@ -1,14 +1,10 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head>
+<!DOCTYPE html><html lang="zh-CN"><head>
     <meta charset="utf-8">
     <meta name="keywords" content="集合6之泛型介绍与使用, LOLtoulan">
     <meta name="description" content="泛型一、泛型概述
 格式：
 
-&amp;lt;数据类型&amp;gt;
+
 
 此处的数据类型只能是引用类型
 
@@ -25,7 +21,7 @@
 
 在那些地方使用：
 
-看API，如果类，接口，抽象类后面有就说明要">
+看API，如果类，接口，抽象类后面有就说明要用泛型，一般在集合中使用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -57,7 +53,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="111.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">LOLtoulan</span>
                 </a>
@@ -80,7 +76,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="" class="waves-effect waves-light">
+    <a href class="waves-effect waves-light">
 
       
       <i class="fas fa-sitemap" style="zoom: 0.6;"></i>
@@ -165,7 +161,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="111.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LOLtoulan</div>
         <div class="logo-desc">
@@ -199,13 +195,13 @@
 			统计
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul style="background:  ;">
               
                 <li>   
 				
-                  <a href="/tags " style="margin-left:75px";>
+                  <a href="/tags " style="margin-left:75px" ;>
 				  
-				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px"></i>
 			      
 		          <span>标签</span>
                   </a>
@@ -213,9 +209,9 @@
               
                 <li>   
 				
-                  <a href="/categories " style="margin-left:75px";>
+                  <a href="/categories " style="margin-left:75px" ;>
 				  
-				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px"></i>
 			      
 		          <span>分类</span>
                   </a>
@@ -223,9 +219,9 @@
               
                 <li>   
 				
-                  <a href="/archives " style="margin-left:75px";>
+                  <a href="/archives " style="margin-left:75px" ;>
 				  
-				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px"></i>
 			      
 		          <span>归档</span>
                   </a>
@@ -435,35 +431,35 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:  
                     2019-11-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:  
                     2019-12-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:  
+                    193
                 </div>
                 
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    <i class="far fa-clock fa-fw"></i>阅读时长:  
+                    1 分
                 </div>
                 
 				
                 
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>阅读次数:  
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -473,10 +469,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h4 id="一、泛型概述"><a href="#一、泛型概述" class="headerlink" title="一、泛型概述"></a>一、泛型概述</h4><blockquote>
+                <link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h4 id="一、泛型概述"><a href="#一、泛型概述" class="headerlink" title="一、泛型概述"></a>一、泛型概述</h4><blockquote>
 <p>格式：</p>
 <ul>
-<li><p>&lt;数据类型&gt;</p>
+<li><p><数据类型></p>
 </li>
 <li><p>此处的数据类型只能是引用类型</p>
 </li>
@@ -493,13 +490,13 @@
 </ul>
 <p>在那些地方使用：</p>
 <ul>
-<li>看API，如果类，接口，抽象类后面有<E>就说明要用泛型，一般在集合中使用</li>
+<li>看API，如果类，接口，抽象类后面有<e>就说明要用泛型，一般在集合中使用</e></li>
 </ul>
 </blockquote>
 <p>看一个demo</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> arrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator"><</span>Student<span class="token operator">></span> arrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"东方不败"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"令狐冲"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -513,8 +510,8 @@
         arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s7<span class="token punctuation">)</span><span class="token punctuation">;</span>
         arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s8<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        ArrayList<span class="token operator">&lt;</span>Student<span class="token operator">></span> newArrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Iterator<span class="token operator">&lt;</span>Student<span class="token operator">></span> it <span class="token operator">=</span> arrayList<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator"><</span>Student<span class="token operator">></span> newArrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Iterator<span class="token operator"><</span>Student<span class="token operator">></span> it <span class="token operator">=</span> arrayList<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">while</span> <span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             Student s <span class="token operator">=</span>  it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>newArrayList<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -522,7 +519,7 @@
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
 
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> newArrayList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator"><</span> newArrayList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             Student s <span class="token operator">=</span>  newArrayList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"-------"</span> <span class="token operator">+</span> s<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
@@ -561,12 +558,12 @@
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> o<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>o <span class="token keyword">instanceof</span> <span class="token class-name">Student</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
         Student student <span class="token operator">=</span> <span class="token punctuation">(</span>Student<span class="token punctuation">)</span> o<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> student<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+        <span class="token keyword">return</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> student<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&&</span>
                 <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="1.png" alt=""></p>
+<p><img src="111.gif" data-original="1.png" alt></p>
 <h4 id="二、为什么引入泛型"><a href="#二、为什么引入泛型" class="headerlink" title="二、为什么引入泛型"></a>二、为什么引入泛型</h4><blockquote>
 <p>早期的时候，我们使用Object来代表任意类型</p>
 <p>向上转型是没有问题的但向下转型出现了问题，</p>
@@ -606,13 +603,13 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="2.png" alt=""></p>
+<p><img src="111.gif" data-original="2.png" alt></p>
 <h4 id="三、泛型的格式"><a href="#三、泛型的格式" class="headerlink" title="三、泛型的格式"></a>三、泛型的格式</h4><blockquote>
 <p>泛型类</p>
 <ul>
 <li><p>把泛型定义在类上</p>
 </li>
-<li><p>格式public class 类名&lt;泛型类型1，….&gt;</p>
+<li><p>格式public class 类名<泛型类型1，….></p>
 </li>
 </ul>
 <p>Map(K,V);所以泛型类型可以超过一个，可以是多个</p>
@@ -622,15 +619,15 @@
 <p>泛型方法</p>
 <ul>
 <li>把泛型定义在方法上</li>
-<li>格式：public&lt;泛型类型&gt; 返回类型 方法名（泛型类型）</li>
+<li>格式：public<泛型类型> 返回类型 方法名（泛型类型）</li>
 </ul>
 <p>泛型接口</p>
 <ul>
 <li>把泛型定义在接口上</li>
-<li>public interface 接口名&lt;泛型类型&gt;</li>
+<li>public interface 接口名<泛型类型></li>
 </ul>
 </blockquote>
-<h5 id="手写泛型类"><a href="#手写泛型类" class="headerlink" title="手写泛型类"></a><strong>手写泛型类</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+<h5 id="手写泛型类"><a href="#手写泛型类" class="headerlink" title="手写泛型类"></a><strong>手写泛型类</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> T obj<span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> T <span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -643,11 +640,11 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectToolDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ObjectTool<span class="token operator">&lt;</span>Integer<span class="token operator">></span> ot <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectTool<span class="token operator"><</span>Integer<span class="token operator">></span> ot <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         ot<span class="token punctuation">.</span><span class="token function">setObj</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"年龄是："</span> <span class="token operator">+</span> ot<span class="token punctuation">.</span><span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        ObjectTool<span class="token operator">&lt;</span>String<span class="token operator">></span> ot1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectTool<span class="token operator"><</span>String<span class="token operator">></span> ot1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         ot1<span class="token punctuation">.</span><span class="token function">setObj</span><span class="token punctuation">(</span><span class="token string">"郑和惠子"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"姓名是："</span> <span class="token operator">+</span> ot1<span class="token punctuation">.</span><span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -656,7 +653,7 @@
         <span class="token comment" spellcheck="true">//java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String</span>
         <span class="token comment" spellcheck="true">//编译不报错，但是运行时却报错</span>
         <span class="token comment" spellcheck="true">//编译不报错是因为在编译时</span>
-        ObjectTool<span class="token operator">&lt;</span>String<span class="token operator">></span> ot2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectTool<span class="token operator"><</span>String<span class="token operator">></span> ot2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         ot2<span class="token punctuation">.</span><span class="token function">setObj</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         String s <span class="token operator">=</span> ot2<span class="token punctuation">.</span><span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -670,12 +667,12 @@
 <pre class="line-numbers language-java"><code class="language-java">        <span class="token comment" spellcheck="true">//java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String</span>
         <span class="token comment" spellcheck="true">//编译不报错，但是运行时却报错</span>
         <span class="token comment" spellcheck="true">//编译不报错是因为在编译时</span>
-        ObjectTool<span class="token operator">&lt;</span>String<span class="token operator">></span> ot2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectTool<span class="token operator"><</span>String<span class="token operator">></span> ot2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         ot2<span class="token punctuation">.</span><span class="token function">setObj</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         String s <span class="token operator">=</span> ot2<span class="token punctuation">.</span><span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们将代码换成上面的就不会报错了，因为<code>String.valueOf();</code>就是将其他类型转换为String类型的方法。</p>
-<h5 id="手写泛型方法"><a href="#手写泛型方法" class="headerlink" title="手写泛型方法"></a><strong>手写泛型方法</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">{</span>
+<h5 id="手写泛型方法"><a href="#手写泛型方法" class="headerlink" title="手写泛型方法"></a><strong>手写泛型方法</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>T<span class="token operator">></span><span class="token punctuation">{</span>
     <span class="token keyword">public</span> T <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> t<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -683,19 +680,19 @@
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectToolDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        ObjectTool<span class="token operator">&lt;</span>String<span class="token operator">></span> ot1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectTool<span class="token operator"><</span>String<span class="token operator">></span> ot1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"姓名是"</span> <span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span> ot1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token string">"郑和惠子"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        ObjectTool<span class="token operator">&lt;</span>Integer<span class="token operator">></span> ot2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectTool<span class="token operator"><</span>Integer<span class="token operator">></span> ot2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator"><</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"年龄是"</span> <span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span> ot2<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>解析：</p>
-<p>我们发现虽然我们在方法上加了泛型<code>T</code>但是，我们发现如果我们传的类型和<code>ObjectTool&lt;String&gt;</code>不一致还是会报错，所以我们这种方法本质上还是将泛型定义在类上，</p>
+<p>我们发现虽然我们在方法上加了泛型<code>T</code>但是，我们发现如果我们传的类型和<code>ObjectTool<string></string></code>不一致还是会报错，所以我们这种方法本质上还是将泛型定义在类上，</p>
 <p>所以我们需要重新写一个真正的泛型方法，代码如下：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> T <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token operator"><</span>T<span class="token operator">></span> T <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> t<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -710,10 +707,10 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>解析：</p>
 <p>这次我们发现我们只需要实例化一次对象，但是却传什么类型的参数都可以。</p>
-<h5 id="手写泛型接口"><a href="#手写泛型接口" class="headerlink" title="手写泛型接口"></a><strong>手写泛型接口</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">GenericTool</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+<h5 id="手写泛型接口"><a href="#手写泛型接口" class="headerlink" title="手写泛型接口"></a><strong>手写泛型接口</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">GenericTool</span><span class="token operator"><</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
     T <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericToolImpl</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">GenericTool</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericToolImpl</span><span class="token operator"><</span>T<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">GenericTool</span><span class="token operator"><</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> T <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -727,9 +724,9 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"年龄是"</span> <span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span> gti<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-        GenericToolImpl<span class="token operator">&lt;</span>String<span class="token operator">></span> gti1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericToolImpl</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        GenericToolImpl<span class="token operator"><</span>String<span class="token operator">></span> gti1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericToolImpl</span><span class="token operator"><</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         gti1<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token string">"斋藤飞鸟"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        GenericTool<span class="token operator">&lt;</span>Integer<span class="token operator">></span> gti2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericToolImpl</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        GenericTool<span class="token operator"><</span>Integer<span class="token operator">></span> gti2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericToolImpl</span><span class="token operator"><</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         gti2<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token number">78</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -737,32 +734,32 @@
 <p>我们发现其实泛型最大的好处就是在写类名接口名，或方法名时，可以先不写数据类型，把数据类型的方法留在实例化的时候。大大方便了我们的编程。</p>
 <h4 id="四、泛型高级通配符"><a href="#四、泛型高级通配符" class="headerlink" title="四、泛型高级通配符"></a>四、泛型高级通配符</h4><p>主要有三个</p>
 <blockquote>
-<p>   <code>&lt;E&gt;</code></p>
-<p>   <code>&lt;? extends E&gt;</code></p>
-<p>   <code>&lt;? super E&gt;</code></p>
+<p>   <code><e></e></code></p>
+<p>   <code><!--? extends E--></code></p>
+<p>   <code><!--? super E--></code></p>
 </blockquote>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        Collection<span class="token operator">&lt;</span>Object<span class="token operator">></span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span>Object<span class="token operator">></span> c4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span>Object<span class="token operator">></span> c2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span>Object<span class="token operator">></span> c3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span>Object<span class="token operator">></span> c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span>Object<span class="token operator">></span> c4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span>Object<span class="token operator">></span> c2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span>Object<span class="token operator">></span> c3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> c5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> c6 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> c7 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> c8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span><span class="token operator">></span> c5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span><span class="token operator">></span> c6 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span><span class="token operator">></span> c7 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span><span class="token operator">></span> c8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c10 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c11 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c12 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c10 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c11 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token operator">></span> c12 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c13 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c14 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c15 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c16 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c13 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c14 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Animal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c15 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Dog<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collection<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">super</span> Animal<span class="token operator">></span> c16 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator"><</span>Cat<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
@@ -774,33 +771,90 @@
 
 <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>分析：</p>
-<p><img src="3.png" alt=""></p>
-<p>由图片我们发现<code>Collection&lt;Object&gt;</code>只能对<code>Object</code>进行实例化</p>
-<p><code>Collection&lt;?&gt;</code>可以对任意<code>Java</code>类进行实例化</p>
-<p><code>Collection&lt;? extends Animal&gt;</code>向下继承</p>
-<p><code>Collection&lt;? super Animal&gt;</code>向上继承</p>
+<p><img src="111.gif" data-original="3.png" alt></p>
+<p>由图片我们发现<code>Collection<object>只能对<code>Object</code>进行实例化<p></p>
+<p><code>Collection<!--?--></code>可以对任意<code>Java</code>类进行实例化</p>
+<p><code>Collection<!--? extends Animal--></code>向下继承</p>
+<p><code>Collection<!--? super Animal--></code>向上继承</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
 <p>泛型只是一种类型，可以理解为占位符</p>
 <p>泛型可以加在类上，接口上，方法上</p>
 <p>高级通配符：</p>
 <ul>
-<li>泛型通配符<code>&lt;?&gt;</code><ul>
+<li>泛型通配符<code><!--?--></code><ul>
 <li>任意类型，如果没有明确，那就是Object以及任意Java类了</li>
 </ul>
 </li>
-<li><code>&lt;? extends E&gt;</code><ul>
+<li><code><!--? extends E--></code><ul>
 <li>向下限定，E及其子类</li>
 </ul>
 </li>
-<li><code>&lt;? super E&gt;</code><ul>
+<li><code><!--? super E--></code><ul>
 <li>向上限定，E及其父类</li>
 </ul>
 </li>
 </ul>
 </blockquote>
 
-            </div>
-            <hr/>
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script>
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script>
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script>
+            
+            <hr>
 
             
 
@@ -997,10 +1051,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="111.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="111.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1014,8 +1068,8 @@
     });
 </script>
             
-        </div>
-    </div>
+        
+    
 
     
         <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
@@ -1060,13 +1114,13 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i> 上一篇</div>
             <div class="card">
                 <a href="/2019/11/21/ji-he-7-zhi-zeng-qiang-for-xun-huan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="集合7之增强for循环">
+                        <img src="111.gif" data-original="/medias/featureimages/14.jpg" class="responsive-img" alt="集合7之增强for循环">
                         
                         <span class="card-title">集合7之增强for循环</span>
                     </div>
@@ -1112,14 +1166,14 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇 <i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/11/20/ji-he-5-zhi-arraylist-vector-linkedlist-ji-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="集合5之ArrayList,Vector,LinkedList集合">
+                        <img src="111.gif" data-original="/medias/featureimages/19.jpg" class="responsive-img" alt="集合5之ArrayList,Vector,LinkedList集合">
                         
                         <span class="card-title">集合5之ArrayList,Vector,LinkedList集合</span>
                     </div>
@@ -1165,7 +1219,7 @@
     </div>
 </article>
 
-</div>
+
 
 
 <script>
@@ -1230,14 +1284,14 @@
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
 
-    </div>
+    
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>  目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
-</div>
+
 
 <!-- TOC 悬浮按钮. -->
 
@@ -1326,22 +1380,21 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     
 
-</main>
+
 
 
 
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
+            Copyright ©
             <span id="year">年份</span>
             <a href="https://loltoulan.github.io" target="_blank">LOLtoulan</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            | Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+            | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67k</span>&nbsp;字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
             
             
             
@@ -1349,14 +1402,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             
             <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
+                | <i class="far fa-eye"></i> 总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span> 次
             </span>
             
             
             <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
+                | <i class="fas fa-users"></i> 总访问人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
             </span>
             
             <br>
@@ -1456,9 +1507,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
+            <span class="title"><i class="fas fa-search"></i>  搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -1519,10 +1569,7 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
+    <script type="text/javascript" color="0,0,255" pointcolor="0,0,255" opacity="0.7" zindex="-1" count="99" src="/libs/background/canvas-nest.js"></script>
     
 
     
@@ -1554,6 +1601,7 @@ $(function () {
             }
           }
         });
-        </script></body>
+        </script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script>
 
-</html>
+
+</object></code></p></div></div></div></div></div></div></main><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
