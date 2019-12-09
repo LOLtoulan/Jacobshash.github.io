@@ -431,14 +431,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:  
-                    3.4k
+                    5.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:  
-                    14 分
+                    23 分
                 </div>
                 
 				
@@ -487,7 +487,7 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="111.gif" data-original="1.png" alt></p>
+<p><img src="/.io//111.gif" data-original="1.png" alt></p>
 <h4 id="二、通过源码分析Set集合为什么保证元素唯一性"><a href="#二、通过源码分析Set集合为什么保证元素唯一性" class="headerlink" title="二、通过源码分析Set集合为什么保证元素唯一性"></a>二、通过源码分析Set集合为什么保证元素唯一性</h4><h5 id="小案例"><a href="#小案例" class="headerlink" title="小案例"></a>小案例</h5><p>再看源码分析前，我们先来看一个demo，代码如下；</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
@@ -538,7 +538,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="2.png" alt></p>
+<p><img src="/.io//111.gif" data-original="2.png" alt></p>
 <p>我们发现运行结果中并没有去除重复的元素，这时，我们就要进行源码分析</p>
 <h5 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h5><p>通过源码分析我们就想到直接进入add方法，进入之后我们发现</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -713,7 +713,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="3.png" alt></p>
+<p><img src="/.io//111.gif" data-original="3.png" alt></p>
 <h4 id="三、LinkedHashSet集合的特点"><a href="#三、LinkedHashSet集合的特点" class="headerlink" title="三、LinkedHashSet集合的特点"></a>三、LinkedHashSet集合的特点</h4><blockquote>
 <p>具有可预知迭代顺序的 <code>Set</code> 接口的哈希表和链接列表实现。此实现与 <code>HashSet</code>  的不同之外在于，后者维护着一个运行于所有条目的双重链接列表。</p>
 </blockquote>
@@ -733,7 +733,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="4.png" alt></p>
+<p><img src="/.io//111.gif" data-original="4.png" alt></p>
 <p>而且通过源代码我们发现：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LinkedHashSet</span><span class="token operator"><</span>E<span class="token operator">></span> 
     <span class="token keyword">extends</span> <span class="token class-name">HashSet</span><span class="token operator"><</span>E<span class="token operator">></span> 
@@ -772,7 +772,7 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="111.gif" data-original="5.png" alt></p>
+<p><img src="/.io//111.gif" data-original="5.png" alt></p>
 <p>由上面的运行结果和程序可知，我们不自己设置排序规则的话，TreeSet的排序是按照他自己一些规则进行排序的。TreeSet的排序一共有两种：</p>
 <blockquote>
 <p>自然排序</p>
@@ -843,7 +843,7 @@
                 <span class="token comment" spellcheck="true">//这里的key其实是被强制转型为Comparable类型，而且我们的Integer和String都实现了这个接口，所以，这里其实是向上转型</span>
                 Comparable<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">super</span> K<span class="token operator">></span> k <span class="token operator">=</span> <span class="token punctuation">(</span>Comparable<span class="token operator"><</span><span class="token operator">?</span> <span class="token keyword">super</span> K<span class="token operator">></span><span class="token punctuation">)</span> key<span class="token punctuation">;</span>
             <span class="token keyword">do</span> <span class="token punctuation">{</span>
-                <span class="token comment" spellcheck="true">//把t赋值给parent，也就是Entry<k,v> parent;</k,v></span>
+                <span class="token comment" spellcheck="true">//把t赋值给parent，也就是Entry<K,V> parent;</span>
                 parent <span class="token operator">=</span> t<span class="token punctuation">;</span>
                 <span class="token comment" spellcheck="true">//比较的返回值进行判断，负整数、零或正整数，根据此对象是小于、等于还是大于指定对象。</span>
                 cmp <span class="token operator">=</span> k<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -914,11 +914,11 @@
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span>Student s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">-</span> s<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值< span>
+        <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值</span>
         <span class="token keyword">int</span> m <span class="token operator">=</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">:</span> n<span class="token punctuation">;</span>
         <span class="token keyword">return</span> m<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值<></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator"><</span>Student<span class="token operator">></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator"><</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -943,7 +943,7 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果如下：</p>
-<p><img src="111.gif" data-original="6.png" alt></p>
+<p><img src="/.io//111.gif" data-original="6.png" alt></p>
 <blockquote>
 <p>通过这个代码，我们知道，</p>
 <ul>
@@ -959,12 +959,12 @@
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值< span>
+        <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值</span>
         <span class="token keyword">int</span> m <span class="token operator">=</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span> n<span class="token punctuation">;</span>
 
         <span class="token keyword">return</span> m<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值<></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span>  <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
@@ -999,14 +999,14 @@
 
         <span class="token comment" spellcheck="true">//如果一个方法的参数是接口那么真正要的是接口实现类对象</span>
         <span class="token comment" spellcheck="true">//还可以使用匿名内部类方法实现</span>
-        <span class="token comment" spellcheck="true">//TreeSet<student> treeSet = new TreeSet<>(new MyComparator());</student></span>
+        <span class="token comment" spellcheck="true">//TreeSet<Student> treeSet = new TreeSet<>(new MyComparator());</span>
 
         <span class="token comment" spellcheck="true">//使用匿名内部类就不需要新创建一个类</span>
         TreeSet<span class="token operator"><</span>Student<span class="token operator">></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator"><</span>Student<span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Comparator</span><span class="token operator"><</span>Student<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
                 <span class="token annotation punctuation">@Override</span>
                 <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Student s1<span class="token punctuation">,</span> Student s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token keyword">int</span> n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值< span>
+                    <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值</span>
                     <span class="token keyword">int</span> m <span class="token operator">=</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span> n<span class="token punctuation">;</span>
 
                     <span class="token keyword">return</span> m<span class="token punctuation">;</span>
@@ -1014,12 +1014,12 @@
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">//lambda表达式</span>
-        <span class="token comment" spellcheck="true">/*TreeSet<student> treeSet1 = new TreeSet<student>((s1, s2) -> {
+        <span class="token comment" spellcheck="true">/*TreeSet<Student> treeSet1 = new TreeSet<Student>((s1, s2) -> {
             int n = s1.getAge() - s2.getAge();
             int m = n == 0 ? s1.getName().compareTo(s2.getName()) : n;
 
             return m;
-        });*/</student></student></span>
+        });*/</span>
 
         Student s9 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"工藤一"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Student s10 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"江疏影"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1039,9 +1039,9 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"---"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值<></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="7.png" alt></p>
+<p><img src="/.io//111.gif" data-original="7.png" alt></p>
 <p><strong>Set集合随机生成10个，100以内的数</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1059,7 +1059,7 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="111.gif" data-original="8.png" alt></p>
+<p><img src="/.io//111.gif" data-original="8.png" alt></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator"><</span>Integer<span class="token operator">></span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator"><</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1077,7 +1077,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="9.png" alt></p>
+<p><img src="/.io//111.gif" data-original="9.png" alt></p>
 <p><strong>使用TreeSet集合输入5位同学语文，英语，数学成绩，并按照从总分高到低进行排序</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span>  <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
@@ -1152,7 +1152,7 @@
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         TreeSet<span class="token operator"><</span>Student<span class="token operator">></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator"><</span>Student<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值.< span>
+            <span class="token comment" spellcheck="true">//其中"(a<b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值.</span>
             <span class="token keyword">int</span> num <span class="token operator">=</span> s2<span class="token punctuation">.</span><span class="token function">getSum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s1<span class="token punctuation">.</span><span class="token function">getSum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">int</span> num1 <span class="token operator">=</span> num <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getChinese</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getChinese</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> num<span class="token punctuation">;</span>
             <span class="token keyword">int</span> num2 <span class="token operator">=</span> num1 <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">getEnglish</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getEnglish</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> num1<span class="token punctuation">;</span>
@@ -1188,9 +1188,9 @@
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getChinese</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getMath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getEnglish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></b)?a:b"是一个"条件表达式",它是这样执行的:如果a<b为真,则表达式取a值,否则取b值.<></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="10.png" alt></p>
+<p><img src="/.io//111.gif" data-original="10.png" alt></p>
 <h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><blockquote>
 <p>Set集合</p>
 <ol>
@@ -1839,7 +1839,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">70.2k</span> 字
             
             
             

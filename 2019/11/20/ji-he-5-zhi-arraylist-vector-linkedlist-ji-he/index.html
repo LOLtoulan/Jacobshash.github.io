@@ -428,14 +428,14 @@ List 接口的大小可变数组的实现。实现了所有可选列表操作，
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:  
-                    514
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:  
-                    1 分
+                    9 分
                 </div>
                 
 				
@@ -654,7 +654,7 @@ List 接口的大小可变数组的实现。实现了所有可选列表操作，
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>该方法重在重写equals方法，如果没重写equals方法，就无法达到去重的目的。</p>
-<p>因为我们查看contains方法源码时，发现他是重写equals方法，如下图<br><img src="111.gif" data-original="2.png" alt></p>
+<p>因为我们查看contains方法源码时，发现他是重写equals方法，如下图<br><img src="/.io//111.gif" data-original="2.png" alt></p>
 <p>如果我们不重写equals方法，它默认调用的是Object的equals方法，比较的是地址，而我们时new出来的对象，地址当然不同，所以我们无法去重。</p>
 <h5 id="用LinkedList模拟栈数据结构的结合，并测试"><a href="#用LinkedList模拟栈数据结构的结合，并测试" class="headerlink" title="用LinkedList模拟栈数据结构的结合，并测试"></a><strong>用LinkedList模拟栈数据结构的结合，并测试</strong></h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyStack</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> LinkedList linkedList<span class="token punctuation">;</span>
@@ -683,11 +683,11 @@ List 接口的大小可变数组的实现。实现了所有可选列表操作，
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myStack<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="111.gif" data-original="3.png" alt></p>
+<p><img src="/.io//111.gif" data-original="3.png" alt></p>
 <p>解析：</p>
 <p>我们发现运行结果和栈一样，先进后出（FILO），说明我们成功模拟了栈的数据结构。</p>
 <h5 id="补充，集合嵌套遍历："><a href="#补充，集合嵌套遍历：" class="headerlink" title="补充，集合嵌套遍历："></a>补充，集合嵌套遍历：</h5><p><strong>题目要求</strong>：</p>
-<p><img src="111.gif" data-original="4.png" alt></p>
+<p><img src="/.io//111.gif" data-original="4.png" alt></p>
 <p>代码如下：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
@@ -761,7 +761,7 @@ List 接口的大小可变数组的实现。实现了所有可选列表操作，
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="5.png" alt></p>
+<p><img src="/.io//111.gif" data-original="5.png" alt></p>
 <h5 id="随机产生10个数，要求不能重复，且排序"><a href="#随机产生10个数，要求不能重复，且排序" class="headerlink" title="随机产生10个数，要求不能重复，且排序"></a>随机产生10个数，要求不能重复，且排序</h5><p>撸代码：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -786,7 +786,7 @@ List 接口的大小可变数组的实现。实现了所有可选列表操作，
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="7.png" alt></p>
+<p><img src="/.io//111.gif" data-original="7.png" alt></p>
 <h5 id="找最大值"><a href="#找最大值" class="headerlink" title="找最大值"></a>找最大值</h5><p>从键盘中录入数字，以‘0’结束，并找出最大值</p>
 <p>撸代码：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayDemo</span> <span class="token punctuation">{</span>
@@ -811,7 +811,7 @@ List 接口的大小可变数组的实现。实现了所有可选列表操作，
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="8.png" alt></p>
+<p><img src="/.io//111.gif" data-original="8.png" alt></p>
 <h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><blockquote>
 <p>ArrayList集合是不安全的，但是可以通过加锁来实现线程安全</p>
 <p>Vector是在JavaJDK1就出现的集合，所以拥有自己独特的方法，但现在有已不用，Vector集合是不安全的，但是可以通过加锁来实现线程安全</p>
@@ -1416,7 +1416,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">70.2k</span> 字
             
             
             

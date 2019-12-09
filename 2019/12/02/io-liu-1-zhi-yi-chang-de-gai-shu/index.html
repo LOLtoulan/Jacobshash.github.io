@@ -422,21 +422,21 @@ Throwabl">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:  
-                    2019-12-06
+                    2019-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:  
-                    2.9k
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:  
-                    11 分
+                    15 分
                 </div>
                 
 				
@@ -478,7 +478,7 @@ Throwabl">
 </li>
 </ol>
 <p>异常分类图解：</p>
-<p><img src="111.gif" data-original="1.png" alt></p>
+<p><img src="/.io//111.gif" data-original="1.png" alt></p>
 <h4 id="三、jvm如何默认处理异常"><a href="#三、jvm如何默认处理异常" class="headerlink" title="三、jvm如何默认处理异常"></a>三、jvm如何默认处理异常</h4><blockquote>
 <p>如果程序出现了问题，我们没有做任何处理，最终JVM会做出默认处理，把异常的名称原因以及出现的问题输出在控制台上，看似很好，<strong>但是</strong>，同时也会结束程序。</p>
 </blockquote>
@@ -494,7 +494,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="2.png" alt></p>
+<p><img src="/.io//111.gif" data-original="2.png" alt></p>
 <p>我们发现，jvm默认的异常处理不仅会将出错的原因，出错的异常名称，以及异常的文件的第几行都输出在控制台，但是，我么发现，<code>System.out.println("Hello Exception");</code>，没有打印出来，也就是说，在捕获第一个异常后，程序会终止，这就是我们处理异常的原因。</p>
 <h4 id="四、try捕获异常"><a href="#四、try捕获异常" class="headerlink" title="四、try捕获异常"></a>四、try捕获异常</h4><p>其实捕获异常很简单，最常见的就是</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">try</span><span class="token punctuation">{</span>
@@ -543,7 +543,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="3.png" alt></p>
+<p><img src="/.io//111.gif" data-original="3.png" alt></p>
 <p>我们发现，异常也捕捉了，程序也继续运行了，这就是我们重新自己捕获异常的原因。</p>
 <blockquote>
 <p><strong>多异常处理</strong></p>
@@ -593,11 +593,11 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="4.png" alt></p>
+<p><img src="/.io//111.gif" data-original="4.png" alt></p>
 <blockquote>
-<p>利用try…catch…一旦try里面出现了问题，就会把问题给抛出去，一旦有匹配的就会执行catch里面的代码，然后结束掉try…catch…，继续执行后面的代码。</p>
+<p>利用<code>try...catch...</code>一旦try里面出现了问题，就会把问题给抛出去，一旦有匹配的就会执行catch里面的代码，然后结束掉<code>try...catch...</code>，继续执行后面的代码。</p>
 <p><strong>注意：</strong>平级关系位置无所谓，有子父关系的异常，父不能放在最前面</p>
-<p><img src="111.gif" data-original="5.png" alt></p>
+<p><img src="/.io//111.gif" data-original="5.png" alt></p>
 <p>jdk7的新特性：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
@@ -612,14 +612,14 @@ Throwabl">
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>注意：</strong></p>
 <p>多个异常间只能是兄弟关系，如果是子父关系，就会报错。</p>
-<p><img src="111.gif" data-original="6.png" alt></p>
+<p><img src="/.io//111.gif" data-original="6.png" alt></p>
 </blockquote>
 <h4 id="五、编译期异常和运行期异常的区别"><a href="#五、编译期异常和运行期异常的区别" class="headerlink" title="五、编译期异常和运行期异常的区别"></a>五、编译期异常和运行期异常的区别</h4><blockquote>
 <p><strong>编译期异常：</strong>顾名思义，就是在程序编译时间就出现的异常。</p>
 <p><strong>运行期异常：</strong>就是在程序运行时出现的异常。</p>
 </blockquote>
 <p><strong>编译期异常：</strong></p>
-<p><img src="111.gif" data-original="7.png" alt></p>
+<p><img src="/.io//111.gif" data-original="7.png" alt></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyLock</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
@@ -634,7 +634,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果我们不捕捉异常，那么，编译器就会：</p>
-<p><img src="111.gif" data-original="8.png" alt></p>
+<p><img src="/.io//111.gif" data-original="8.png" alt></p>
 <p>所以，我们需要捕捉异常，代码如下</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyLock</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -655,7 +655,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="9.png" alt></p>
+<p><img src="/.io//111.gif" data-original="9.png" alt></p>
 <p><strong>运行期异常：</strong></p>
 <blockquote>
 <p>大部分的运行时期异常，都是我们写程序时不够严谨导致的，可以通过修改代码达到除去异常的目的。</p>
@@ -678,7 +678,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="10.png" alt></p>
+<p><img src="/.io//111.gif" data-original="10.png" alt></p>
 <h4 id="六、throws方式抛出异常"><a href="#六、throws方式抛出异常" class="headerlink" title="六、throws方式抛出异常"></a>六、throws方式抛出异常</h4><blockquote>
 <p>主要在方法上抛出异常，一般不再main方法上使用throws抛出异常。</p>
 </blockquote>
@@ -702,7 +702,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="11.png" alt></p>
+<p><img src="/.io//111.gif" data-original="11.png" alt></p>
 <blockquote>
 <p>编译器异常抛出，将来调用者必须处理。</p>
 <p>运行期异常，将来调用者不必处理，当然也可以处理。</p>
@@ -734,7 +734,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="12.png" alt></p>
+<p><img src="/.io//111.gif" data-original="12.png" alt></p>
 <h4 id="七、throw方式抛出异常"><a href="#七、throw方式抛出异常" class="headerlink" title="七、throw方式抛出异常"></a>七、throw方式抛出异常</h4><p>通过代码进行讲解</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThrowDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -799,7 +799,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="12.png" alt></p>
+<p><img src="/.io//111.gif" data-original="12.png" alt></p>
 <p>但是如果在finally之前虚拟机结束运行，那么就不会执行finally中的语句</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FinallyDemo</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -820,7 +820,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="13.png" alt></p>
+<p><img src="/.io//111.gif" data-original="13.png" alt></p>
 <h4 id="九、finally、final、finalize的区别"><a href="#九、finally、final、finalize的区别" class="headerlink" title="九、finally、final、finalize的区别"></a>九、finally、final、finalize的区别</h4><blockquote>
 <p>finally：是异常处理的一部分，用于释放资源，一般来说，代码肯定会执行，特殊情况：在执行finally之前jvm退出了</p>
 <hr>
@@ -856,11 +856,11 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="14.png" alt></p>
+<p><img src="/.io//111.gif" data-original="14.png" alt></p>
 <p>通过结果我们发现，好像是没有走到finally中去，因为输出的是30，而不是40，但实际上，我们通过debug过程中发现，其实是走了finally中的代码。</p>
 <p>通过下面两张图片我们会更加清晰：</p>
-<p><img src="111.gif" data-original="15.png" alt></p>
-<p><img src="111.gif" data-original="16.png" alt></p>
+<p><img src="/.io//111.gif" data-original="15.png" alt></p>
+<p><img src="/.io//111.gif" data-original="16.png" alt></p>
 <p>通过这两征途我们明确的知道finally里面的代码的确是走了，但是最终输出的还是30，为什么呢？</p>
 <blockquote>
 <p>答案是：</p>
@@ -915,7 +915,7 @@ Throwabl">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="17.png" alt></p>
+<p><img src="/.io//111.gif" data-original="17.png" alt></p>
 <h4 id="十二、异常的注意事项"><a href="#十二、异常的注意事项" class="headerlink" title="十二、异常的注意事项"></a>十二、异常的注意事项</h4><blockquote>
 <p>子类重写父类方法时，只能抛出父类相同的或者父类中异常的子类异常，</p>
 <hr>
@@ -957,7 +957,9 @@ Throwabl">
 </li>
 <li><p>非RuntimeException  编译器异常，我们必须处理</p>
 <p>我们自己处理异常的原因是，jvm在进行处理异常时，会把异常名称，原因，位置等信息输出在控制台，但是同时他也会将程序停掉，程序不能在执行了。</p>
-<ul>
+</li>
+</ul>
+</li>
 <li><p>常见的处理方式</p>
 <ol>
 <li><p>throw</p>
@@ -980,14 +982,10 @@ Throwabl">
 </li>
 <li><p>try…catch…finally….</p>
 <blockquote>
-<p>try里面的代码越少越好，因为放在try里面就要走异常处理机制，走异常处理机制Java虚拟机就会开启新的资源来管理这些代码，代码越多，Java就需要更多的资源来管理他，所以越少越好</p>
-<hr>
-<p>catch里面必须有内容，哪怕是简单的提示，否则没有意义，因为，如果不写，那就是隐藏了一个bug，而且我们并不知情。</p>
+<h2 id="try里面的代码越少越好，因为放在try里面就要走异常处理机制，走异常处理机制Java虚拟机就会开启新的资源来管理这些代码，代码越多，Java就需要更多的资源来管理他，所以越少越好"><a href="#try里面的代码越少越好，因为放在try里面就要走异常处理机制，走异常处理机制Java虚拟机就会开启新的资源来管理这些代码，代码越多，Java就需要更多的资源来管理他，所以越少越好" class="headerlink" title="try里面的代码越少越好，因为放在try里面就要走异常处理机制，走异常处理机制Java虚拟机就会开启新的资源来管理这些代码，代码越多，Java就需要更多的资源来管理他，所以越少越好"></a>try里面的代码越少越好，因为放在try里面就要走异常处理机制，走异常处理机制Java虚拟机就会开启新的资源来管理这些代码，代码越多，Java就需要更多的资源来管理他，所以越少越好</h2><p>catch里面必须有内容，哪怕是简单的提示，否则没有意义，因为，如果不写，那就是隐藏了一个bug，而且我们并不知情。</p>
 </blockquote>
 </li>
 </ol>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -997,8 +995,6 @@ Throwabl">
 <blockquote>
 <p>所以我们知道Java不可能考虑到所有的异常，所以在实际开发中，我们往往需要自定义异常，如果我们要写一个异常类我们就要继承Exception或者是RuntimeException，否则无法当作一个异常类。</p>
 </blockquote>
-</li>
-</ul>
 </li>
 </ul>
 </blockquote>
@@ -1601,7 +1597,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">70.2k</span> 字
             
             
             

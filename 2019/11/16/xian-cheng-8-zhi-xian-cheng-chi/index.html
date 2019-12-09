@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:  
-                    263
+                    752
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:  
-                    1 分
+                    3 分
                 </div>
                 
 				
@@ -493,9 +493,9 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
 <p>没调用shutdown()时，</p>
-<p><img src="111.gif" data-original="1.png" alt></p>
+<p><img src="/.io//111.gif" data-original="1.png" alt></p>
 <p>当调用shutdown()时，</p>
-<p><img src="111.gif" data-original="2.png" alt></p>
+<p><img src="/.io//111.gif" data-original="2.png" alt></p>
 <h4 id="二、线程的第三种创建方法"><a href="#二、线程的第三种创建方法" class="headerlink" title="二、线程的第三种创建方法"></a>二、线程的第三种创建方法</h4><p>线程的第三种创建方法时通过实现Callable接口来实现的，而且这种方法还有返回值，下面来看一下线程的第三种创建方法</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyCallable</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
@@ -517,7 +517,7 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>因为这种方法是依赖线程池做的，所以拥有和线程池一样的特性，</p>
 <p>运行结果如下：</p>
-<p><img src="111.gif" data-original="3.png" alt></p>
+<p><img src="/.io//111.gif" data-original="3.png" alt></p>
 <p>如果只是这样，那么这种方法还没Runnable好用，就不必有这个方法了，但是，前面说过，这种方法可以有返回值，下面就做一个含有返回值的案例。</p>
 <p>代码如下：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyCallable</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token operator"><</span>Integer<span class="token operator">></span>  <span class="token punctuation">{</span>
@@ -558,7 +558,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>计算结果：</p>
-<p><img src="111.gif" data-original="4.png" alt></p>
+<p><img src="/.io//111.gif" data-original="4.png" alt></p>
 <h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><blockquote>
 <p>线程池，在执行完代码后不会死亡，而会空闲下来等待下一个线程使用，但线程池的大小要视情况而定。</p>
 <p>Callable实现线程的方法有返回值，如果你的程序需要用到返回值，那么这个首选，但是，如果没有返回值，尽量不要用，太麻烦了。</p>
@@ -1162,7 +1162,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">70.2k</span> 字
             
             
             

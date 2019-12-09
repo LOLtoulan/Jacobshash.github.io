@@ -519,16 +519,16 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>控制台返回:</p>
-<p><img src="111.gif" data-original="3.png" alt></p>
+<p><img src="/.io//111.gif" data-original="3.png" alt></p>
 <p>然后我们又找到D盘下面，我们发现果然多了几个文件</p>
-<p><img src="111.gif" data-original="1.png" alt></p>
+<p><img src="/.io//111.gif" data-original="1.png" alt></p>
 <p>我们发现file3并没有像我们想像的一样，创建一个Lan.txt，而是创建了一个名为Lan.txt的文件夹，如下图：</p>
-<p><img src="111.gif" data-original="2.png" alt></p>
+<p><img src="/.io//111.gif" data-original="2.png" alt></p>
 <blockquote>
 <p>如果存在相应的文件或目录则返回false，否则返回true</p>
 </blockquote>
 <p>我再次运行了一次该程序，控制台输出：</p>
-<p><img src="111.gif" data-original="4.png" alt></p>
+<p><img src="/.io//111.gif" data-original="4.png" alt></p>
 <p>正好对应我们上面说的。</p>
 <blockquote>
 <p>如果我们创建文件或目录的时候没有指定盘符，那么默认会创建在该项目下，</p>
@@ -553,7 +553,7 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="5.png" alt></p>
+<p><img src="/.io//111.gif" data-original="5.png" alt></p>
 <h4 id="三、删除文件或目录"><a href="#三、删除文件或目录" class="headerlink" title="三、删除文件或目录"></a>三、删除文件或目录</h4><p>刚才我们复习了<strong>创建文件或目录</strong>，接下来我们在复习下<strong>删除文件及目录</strong>，</p>
 <blockquote>
 <p>public boolean delete();</p>
@@ -569,9 +569,9 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>控制台：</p>
-<p><img src="111.gif" data-original=".png" alt></p>
+<p><img src="/.io//111.gif" data-original=".png" alt></p>
 <p>项目目录：</p>
-<p><img src="111.gif" data-original="7.png" alt></p>
+<p><img src="/.io//111.gif" data-original="7.png" alt></p>
 <p><strong>删除目录，代码如下：</strong></p>
 <blockquote>
 <p>Java中的delete方法不走回收站</p>
@@ -595,19 +595,19 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行前：</p>
-<p><img src="111.gif" data-original="8.png" alt></p>
+<p><img src="/.io//111.gif" data-original="8.png" alt></p>
 <p>控制台:</p>
-<p><img src="111.gif" data-original="9.png" alt></p>
+<p><img src="/.io//111.gif" data-original="9.png" alt></p>
 <p>运行后：</p>
-<p><img src="111.gif" data-original="10.png" alt></p>
+<p><img src="/.io//111.gif" data-original="10.png" alt></p>
 <p>我们发现，当我们对file3创建的对象进行删除时我们发现没有删干净，于是我重新创建他们，然后执行下面代码：</p>
 <pre class="line-numbers language-java"><code class="language-java"> File file3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"LOLTou"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"deletes : "</span><span class="token operator">+</span>file3<span class="token punctuation">.</span><span class="token function">mkdirs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>然后我们发现，控制台输出：</p>
-<p><img src="111.gif" data-original="11.png" alt></p>
+<p><img src="/.io//111.gif" data-original="11.png" alt></p>
 <p>当然文件也没有删除，所以，我重新查看API，我们发现</p>
-<p><img src="111.gif" data-original="12.png" alt></p>
+<p><img src="/.io//111.gif" data-original="12.png" alt></p>
 <h4 id="四、File类的重命名功能"><a href="#四、File类的重命名功能" class="headerlink" title="四、File类的重命名功能"></a>四、File类的重命名功能</h4><blockquote>
 <p>public boolean renameTo(File dest);</p>
 </blockquote>
@@ -621,9 +621,9 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行前：</p>
-<p><img src="111.gif" data-original="14.png" alt></p>
+<p><img src="/.io//111.gif" data-original="14.png" alt></p>
 <p>运行后：</p>
-<p><img src="111.gif" data-original="15.png" alt></p>
+<p><img src="/.io//111.gif" data-original="15.png" alt></p>
 <p>如果在不同路径下，另一个路径下没有file4指定的文件，那会怎么样呢？</p>
 <p>代码如下：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyFile</span> <span class="token punctuation">{</span>
@@ -636,7 +636,7 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行之后效果如图：</p>
-<p><img src="111.gif" data-original="16.png" alt></p>
+<p><img src="/.io//111.gif" data-original="16.png" alt></p>
 <blockquote>
 <p>结论：</p>
 <p>如果文件路径名相同那么是修改名字，</p>
@@ -689,7 +689,7 @@ public File(String pathname">
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="111.gif" data-original="17.png" alt></p>
+<p><img src="/.io//111.gif" data-original="17.png" alt></p>
 <h4 id="六、获取功能"><a href="#六、获取功能" class="headerlink" title="六、获取功能"></a>六、获取功能</h4><blockquote>
 <p>public String getAbsolutePath();</p>
 <p>返回此抽象路径名的绝对路径名字符串。 </p>
@@ -744,7 +744,7 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="18.png" alt></p>
+<p><img src="/.io//111.gif" data-original="18.png" alt></p>
 <h5 id="高级获取功能："><a href="#高级获取功能：" class="headerlink" title="高级获取功能："></a><strong>高级获取功能</strong>：</h5><blockquote>
 <p>public String[] list();</p>
 <p>public File[] listFiles()</p>
@@ -773,7 +773,7 @@ public File(String pathname">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行如下：<br><img src="111.gif" data-original="19.png" alt></p>
+<p>运行如下：<br><img src="/.io//111.gif" data-original="19.png" alt></p>
 <h4 id="七、获取某文件下后缀相同的文件"><a href="#七、获取某文件下后缀相同的文件" class="headerlink" title="七、获取某文件下后缀相同的文件"></a>七、获取某文件下后缀相同的文件</h4><blockquote>
 <p>分析：</p>
 <ul>
@@ -799,7 +799,7 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行如下：</p>
-<p><img src="111.gif" data-original="20.png" alt></p>
+<p><img src="/.io//111.gif" data-original="20.png" alt></p>
 <p><strong>（V2.0）</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileDemo4</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -819,7 +819,7 @@ public File(String pathname">
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="111.gif" data-original="21.png" alt></p>
+<p><img src="/.io//111.gif" data-original="21.png" alt></p>
 <h4 id="八、批量修改文件名"><a href="#八、批量修改文件名" class="headerlink" title="八、批量修改文件名"></a>八、批量修改文件名</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  *      题目：
  *          将IMG_20190214_214554.jpg名字改为IMG_214554.jpg
@@ -854,11 +854,11 @@ public File(String pathname">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果</p>
-<p><img src="111.gif" data-original="22.png" alt></p>
+<p><img src="/.io//111.gif" data-original="22.png" alt></p>
 <p>运行前：</p>
-<p><img src="111.gif" data-original="24.png" alt></p>
+<p><img src="/.io//111.gif" data-original="24.png" alt></p>
 <p>运行后：</p>
-<p><img src="111.gif" data-original="23.png" alt></p>
+<p><img src="/.io//111.gif" data-original="23.png" alt></p>
 <h4 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h4><blockquote>
 <p>IO流的操作大部分都是对文件的操作，所以Java提供File类 供我们操作</p>
 <p>构造方法：</p>
@@ -1492,7 +1492,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">70.2k</span> 字
             
             
             

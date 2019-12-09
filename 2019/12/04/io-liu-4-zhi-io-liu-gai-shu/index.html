@@ -494,7 +494,7 @@
 <li>如：Reader的子类之一，FileReader</li>
 </ul>
 <p>画图解释如下：</p>
-<p><img src="111.gif" data-original="1.png" alt></p>
+<p><img src="/.io//111.gif" data-original="1.png" alt></p>
 </blockquote>
 <h4 id="三、FileOutputStream方法用法"><a href="#三、FileOutputStream方法用法" class="headerlink" title="三、FileOutputStream方法用法"></a>三、FileOutputStream方法用法</h4><blockquote>
 <p>字节输出流操作步骤</p>
@@ -515,7 +515,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="2.png" alt></p>
+<p><img src="/.io//111.gif" data-original="2.png" alt></p>
 <blockquote>
 <p>创建字节流对象做了哪几种事？</p>
 <ul>
@@ -551,11 +551,11 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="3.png" alt></p>
+<p><img src="/.io//111.gif" data-original="3.png" alt></p>
 <h5 id="FileOutputStream换行和追加写入"><a href="#FileOutputStream换行和追加写入" class="headerlink" title="FileOutputStream换行和追加写入"></a>FileOutputStream换行和追加写入</h5><blockquote>
 <p>换行，在后面追加<code>"\n"</code>就行了，</p>
 <p>追加写入，追加时，我们发现我们不会，不懂就问，问之前先看API，我们发现在FileOutputStream，中的构造函数中有追加的构造函数，如下:</p>
-<p><img src="111.gif" data-original="6.png" alt></p>
+<p><img src="/.io//111.gif" data-original="6.png" alt></p>
 <p>我们发现最后一个中含有可追加的构造方法的标识，在File后面写上true后即可</p>
 </blockquote>
 <p>代码如下：</p>
@@ -569,7 +569,7 @@
 
         fileOutputStream.close();
     }
-}</code></pre><p>运行结果：<br><img src="111.gif" data-original="7.png" alt></p>
+}</code></pre><p>运行结果：<br><img src="/.io//111.gif" data-original="7.png" alt></p>
 <h5 id="字节输出流加入异常处理"><a href="#字节输出流加入异常处理" class="headerlink" title="字节输出流加入异常处理"></a>字节输出流加入异常处理</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo2</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
@@ -633,9 +633,9 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="4.png" alt></p>
+<p><img src="/.io//111.gif" data-original="4.png" alt></p>
 <p>文本内容</p>
-<p><img src="111.gif" data-original="5.png" alt></p>
+<p><img src="/.io//111.gif" data-original="5.png" alt></p>
 <p><strong>读取中文乱码：</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyInputStream</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
@@ -649,7 +649,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="9.png" alt></p>
+<p><img src="/.io//111.gif" data-original="9.png" alt></p>
 <h4 id="五、复制文本文件（一次读一个字节）"><a href="#五、复制文本文件（一次读一个字节）" class="headerlink" title="五、复制文本文件（一次读一个字节）"></a>五、复制文本文件（一次读一个字节）</h4><h5 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h5><blockquote>
 <p><strong>复制文件：</strong></p>
 <p>数据源：从哪里来</p>
@@ -680,7 +680,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="8.png" alt></p>
+<p><img src="/.io//111.gif" data-original="8.png" alt></p>
 <blockquote>
 <p>虽说读取两个字节会转化为汉字，但是，为什么会转换且没有错哪？</p>
 </blockquote>
@@ -698,7 +698,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果</p>
-<p><img src="111.gif" data-original="10.png" alt></p>
+<p><img src="/.io//111.gif" data-original="10.png" alt></p>
 <blockquote>
 <p>我们可以明显的发现，在计算机中，中文储存的字节分两个：</p>
 <ul>
@@ -745,7 +745,7 @@ love
 China
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果：</p>
-<p><img src="111.gif" data-original="12.png" alt></p>
+<p><img src="/.io//111.gif" data-original="12.png" alt></p>
 <p>运行结果分析：</p>
 <blockquote>
 <p>按照我们想的，一次五个字节，应该是第一次取到<code>Ilove</code>但是我们发现，他只取到了 <code>lo</code> ，为什么呢？</p>
@@ -789,7 +789,7 @@ FileInputStream  读入数据
         <span class="token comment" spellcheck="true">//fileOutputStream.close();</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="111.gif" data-original="16.png" alt></p>
+<p><img src="/.io//111.gif" data-original="16.png" alt></p>
 <h5 id="复制稍大的文件的运行时长比较"><a href="#复制稍大的文件的运行时长比较" class="headerlink" title="复制稍大的文件的运行时长比较"></a>复制稍大的文件的运行时长比较</h5><p><strong>一个字节一个字节的复制：</strong></p>
 <p>代码如下：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CopyFile</span> <span class="token punctuation">{</span>
@@ -814,7 +814,7 @@ FileInputStream  读入数据
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行时长：</p>
-<p><img src="111.gif" data-original="14.png" alt></p>
+<p><img src="/.io//111.gif" data-original="14.png" alt></p>
 <p><strong>一次读取一个字节数组</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CopyFile</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
@@ -839,7 +839,7 @@ FileInputStream  读入数据
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行时长：</p>
-<p><img src="111.gif" data-original="15.png" alt></p>
+<p><img src="/.io//111.gif" data-original="15.png" alt></p>
 <blockquote>
 <p>字节数组提高效率</p>
 </blockquote>
@@ -856,7 +856,7 @@ FileInputStream  读入数据
         bos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行结果：<br><img src="111.gif" data-original="17.png" alt></p>
+<p>运行结果：<br><img src="/.io//111.gif" data-original="17.png" alt></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyBuffered</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
 
@@ -1609,7 +1609,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             | Theme <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">46k</span> 字
+             <i class="fas fa-chart-area"></i> 站点总字数: <span class="white-color">70.2k</span> 字
             
             
             
