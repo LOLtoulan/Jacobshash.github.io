@@ -427,7 +427,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-06
+                    2019-12-22
                 </div>
                 
 
@@ -441,7 +441,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    21 分
                 </div>
                 
 				
@@ -1171,7 +1171,8 @@
         String filename <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"filename"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//获取这个文件在Tomcat上的对对路径地址</span>
         String path <span class="token operator">=</span> <span class="token function">getServletContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getRealPath</span><span class="token punctuation">(</span><span class="token string">"download/"</span><span class="token operator">+</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+        <span class="token comment" spellcheck="true">//下载带有中文名的文件时，让文件名出现</span>
+        filename <span class="token operator">=</span> URLEncoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//让浏览器收到这份资源的时候，以下载的方式提醒用户，而不是直接在浏览器上展示。</span>
         resp<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Disposition"</span><span class="token punctuation">,</span> <span class="token string">"attachment; filename="</span><span class="token operator">+</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1191,122 +1192,42 @@
     <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
         <span class="token function">doGet</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> resp<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>index.html</p>
-<pre class="line-numbers language-html"><code class="language-html"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-<html>
-<body>
-        <h2>Hello World!</h2>
-
-<pre><code>让tomcat的默认下载器下载：&lt;br&gt;
-    &lt;a href=&quot;download/aa.jpg&quot;&gt;aa.jpg&lt;/a&gt;&lt;br&gt;
-    &lt;a href=&quot;download/bb.txt&quot;&gt;bb.txt&lt;/a&gt;&lt;br&gt;
-    &lt;a href=&quot;download/cc.rar&quot;&gt;cc.rar&lt;/a&gt;&lt;br&gt;
-手动编码提供下载下载：&lt;br&gt;
-    &lt;a href=&quot;MyDownload?filename=aa.jpg&quot;&gt;aa.jpg&lt;/a&gt;&lt;br&gt;
-    &lt;a href=&quot;MyDownload?filename=bb.txt&quot;&gt;bb.txt&lt;/a&gt;&lt;br&gt;
-    &lt;a href=&quot;MyDownload?filename=cc.rar&quot;&gt;cc.rar&lt;/a&gt;&lt;br&gt;</code></pre>
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        $('a').each(function() {
-          const $this = $(this);
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script>
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        $('a').each(function() {
-          const $this = $(this);
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script>
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        $('a').each(function() {
-          const $this = $(this);
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script>
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        $('a').each(function() {
-          const $this = $(this);
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script></body>
-</html>   
-```
-
-<p>web.xml</p>
-<pre class="line-numbers language-xml"><code class="language-xml">   <span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
-           "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-           "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-class</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span>
-
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-mapping</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
+<p>index.html</p>
+<pre class="line-numbers language-html"><code class="language-html">       <span class="token doctype">&lt;!DOCTYPE html></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        让tomcat的默认下载器下载：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/aa.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>aa.jpg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/bb.txt<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>bb.txt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>download/cc.rar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cc.rar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+          手动编码提供下载下载：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MyDownload?filename<span class="token punctuation">=</span>aa.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>aa.jpg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MyDownload?filename<span class="token punctuation">=</span>bb.txt<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>bb.txt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MyDownload?filename<span class="token punctuation">=</span>cc.rar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>cc.rar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>   web.xml</p>
+<pre class="line-numbers language-xml"><code class="language-xml">   <span class="token doctype">&lt;!DOCTYPE web-app PUBLIC
+                 "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+                 "http://java.sun.com/dtd/web-app_2_3.dtd" ></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-class</span><span class="token punctuation">></span></span>com.yage.myservlet.MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-class</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span>
+
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-mapping</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/MyDownload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h4><blockquote>
 <p>ServletContext【重点】</p>
 <blockquote>
@@ -1872,7 +1793,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">107.3k</span>&nbsp;字
+                class="white-color">108.9k</span>&nbsp;字
             
             
             

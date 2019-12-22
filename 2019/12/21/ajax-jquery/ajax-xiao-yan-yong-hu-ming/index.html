@@ -5,12 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Ajax校验用户名, LOLtoulan">
-    <meta name="description" content="Ajax校验用户名JDBCUtil02.javapublic class JDBCUtil02 {
+    <meta name="description" content="Ajax校验用户名普通写法JDBCUtil02.javapublic class JDBCUtil02 {
 
     static ComboPooledDataSource dataSource = null;
 
-    static {
-   ">
+    static {">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -396,8 +395,12 @@
                                 <span class="chip bg-color">Ajax</span>
                             </a>
                         
-                            <a href="/tags/Jquery/">
-                                <span class="chip bg-color">Jquery</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
                     </div>
@@ -435,14 +438,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 				
@@ -458,7 +461,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Ajax校验用户名"><a href="#Ajax校验用户名" class="headerlink" title="Ajax校验用户名"></a>Ajax校验用户名</h1><h5 id="JDBCUtil02-java"><a href="#JDBCUtil02-java" class="headerlink" title="JDBCUtil02.java"></a>JDBCUtil02.java</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JDBCUtil02</span> <span class="token punctuation">{</span>
+                <h1 id="Ajax校验用户名"><a href="#Ajax校验用户名" class="headerlink" title="Ajax校验用户名"></a>Ajax校验用户名</h1><h3 id="普通写法"><a href="#普通写法" class="headerlink" title="普通写法"></a>普通写法</h3><h5 id="JDBCUtil02-java"><a href="#JDBCUtil02-java" class="headerlink" title="JDBCUtil02.java"></a>JDBCUtil02.java</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JDBCUtil02</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">static</span> ComboPooledDataSource dataSource <span class="token operator">=</span> null<span class="token punctuation">;</span>
 
@@ -790,6 +793,62 @@ INSERT INTO `testuser` VALUES ('6', 'admin', 'admin');<span aria-hidden="true" c
 <h5 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h5><p><img src="/2019/12/21/ajax-jquery/ajax-xiao-yan-yong-hu-ming/3.png" alt></p>
 <p><img src="/2019/12/21/ajax-jquery/ajax-xiao-yan-yong-hu-ming/1.png" alt></p>
 <p><img src="/2019/12/21/ajax-jquery/ajax-xiao-yan-yong-hu-ming/2.png" alt></p>
+<h3 id="jQuery写法"><a href="#jQuery写法" class="headerlink" title="jQuery写法"></a>jQuery写法</h3><p>其他不变</p>
+<p>值改变了html</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+
+    <span class="token keyword">function</span> <span class="token function">checkUserName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#name"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//let password = $("#password").val();</span>
+        $<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8080/ajaxdemo/CheckUserName"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                name<span class="token punctuation">:</span> name<span class="token punctuation">,</span>
+                <span class="token comment" spellcheck="true">//password:password</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">,</span> stats<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//alert(data);</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//用户名存在</span>
+                    <span class="token comment" spellcheck="true">//alert("用户名已存在");</span>
+                    <span class="token comment" spellcheck="true">//document.getElementById("span01").innerHTML = "&lt;font color='red'>用户名已存在!&lt;/font>";</span>
+                    <span class="token comment" spellcheck="true">//$("#span01").innerHTML = "&lt;font color='red'>用户名已存在!&lt;/font>";</span>
+                    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#span01"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">"&lt;font color='red'>用户名已存在!&lt;/font>"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//alert("用户名可用");</span>
+                    <span class="token comment" spellcheck="true">//document.getElementById("span01").innerHTML = "&lt;font color='green'>用户名可用!&lt;/font>";</span>
+                    <span class="token comment" spellcheck="true">//$("#span01").innerHTML ="&lt;font color='green'>用户名可用!&lt;/font>";</span>
+                    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#span01"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">"&lt;font color='green'>用户名可用!&lt;/font>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>用户名:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">onblur</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkUserName()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>span01<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>密码<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">colspan</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>注册<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：</p>
+<p><img src="/2019/12/21/ajax-jquery/ajax-xiao-yan-yong-hu-ming/3.png" alt></p>
+<p><img src="/2019/12/21/ajax-jquery/ajax-xiao-yan-yong-hu-ming/1.png" alt></p>
+<p><img src="/2019/12/21/ajax-jquery/ajax-xiao-yan-yong-hu-ming/2.png" alt></p>
 
             </div>
             <hr/>
@@ -857,8 +916,12 @@ INSERT INTO `testuser` VALUES ('6', 'admin', 'admin');<span aria-hidden="true" c
                                     <span class="chip bg-color">Ajax</span>
                                 </a>
                             
-                                <a href="/tags/Jquery/">
-                                    <span class="chip bg-color">Jquery</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
                         </div>
@@ -1046,30 +1109,29 @@ INSERT INTO `testuser` VALUES ('6', 'admin', 'admin');<span aria-hidden="true" c
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/21/ajax-jquery/ajax-xiao-yan-yong-hu-ming/">
+                <a href="/2019/12/22/ajax-jquery/jquery-yu-ajax-jie-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Ajax校验用户名">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="jQuery与Ajax结合">
                         
-                        <span class="card-title">Ajax校验用户名</span>
+                        <span class="card-title">jQuery与Ajax结合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ajax校验用户名
+                            jQuery与Ajax结合
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1082,7 +1144,6 @@ INSERT INTO `testuser` VALUES ('6', 'admin', 'admin');<span aria-hidden="true" c
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1090,8 +1151,12 @@ INSERT INTO `testuser` VALUES ('6', 'admin', 'admin');<span aria-hidden="true" c
                         <span class="chip bg-color">Ajax</span>
                     </a>
                     
-                    <a href="/tags/Jquery/">
-                        <span class="chip bg-color">Jquery</span>
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
@@ -1143,8 +1208,12 @@ INSERT INTO `testuser` VALUES ('6', 'admin', 'admin');<span aria-hidden="true" c
                         <span class="chip bg-color">Ajax</span>
                     </a>
                     
-                    <a href="/tags/Jquery/">
-                        <span class="chip bg-color">Jquery</span>
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
@@ -1331,7 +1400,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">107.3k</span>&nbsp;字
+                class="white-color">108.9k</span>&nbsp;字
             
             
             
