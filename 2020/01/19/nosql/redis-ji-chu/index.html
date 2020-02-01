@@ -1,0 +1,1694 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Redis基础, LOLtoulan">
+    <meta name="description" content="Redis基础1. 概念： redis是一款高性能的NOSQL系列的非关系型数据库
+    1.1.什么是NOSQL
+        NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Redis基础 | LOLtoulan</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LOLtoulan</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-sitemap" style="zoom: 0.6;"></i>
+      
+      <span>统计</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LOLtoulan</div>
+        <div class="logo-desc">
+            
+            技术博客，Java基础，算法
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;" target="_blank" rel="noopener">
+			
+				<i class="fa-fw fas fa-sitemap"></i>
+			
+			统计
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/archives " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Redis基础
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/redis/">
+                                <span class="chip bg-color">redis</span>
+                            </a>
+                        
+                            <a href="/tags/NOSQL/">
+                                <span class="chip bg-color">NOSQL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Redis%E5%9F%BA%E7%A1%80/" class="post-category">
+                                Redis基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-01-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-01-22
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Redis基础"><a href="#Redis基础" class="headerlink" title="Redis基础"></a>Redis基础</h1><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token list punctuation">1.</span> 概念： redis是一款高性能的NOSQL系列的非关系型数据库
+<span class="token code keyword">    1.1.什么是NOSQL</span>
+<span class="token code keyword">        NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</span>
+<span class="token code keyword">        随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</span>
+
+<span class="token code keyword">        1.1.1.    NOSQL和关系型数据库比较</span>
+<span class="token code keyword">            优点：</span>
+<span class="token code keyword">                1）成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。</span>
+<span class="token code keyword">                2）查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。</span>
+<span class="token code keyword">                3）存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。</span>
+<span class="token code keyword">                4）扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。</span>
+
+<span class="token code keyword">            缺点：</span>
+<span class="token code keyword">                1）维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。</span>
+<span class="token code keyword">                2）不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。</span>
+<span class="token code keyword">                3）不提供关系型数据库对事务的处理。</span>
+
+<span class="token code keyword">        1.1.2.    非关系型数据库的优势：</span>
+<span class="token code keyword">            1）性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。</span>
+<span class="token code keyword">            2）可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</span>
+
+<span class="token code keyword">        1.1.3.    关系型数据库的优势：</span>
+<span class="token code keyword">            1）复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</span>
+<span class="token code keyword">            2）事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。</span>
+
+<span class="token code keyword">        1.1.4.    总结</span>
+<span class="token code keyword">            关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，</span>
+<span class="token code keyword">            让NoSQL数据库对关系型数据库的不足进行弥补。</span>
+<span class="token code keyword">            一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据</span>
+
+<span class="token code keyword">    1.2.主流的NOSQL产品</span>
+<span class="token code keyword">        •    键值(Key-Value)存储数据库</span>
+<span class="token code keyword">                相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB</span>
+<span class="token code keyword">                典型应用： 内容缓存，主要用于处理大量数据的高访问负载。 </span>
+<span class="token code keyword">                数据模型： 一系列键值对</span>
+<span class="token code keyword">                优势： 快速查询</span>
+<span class="token code keyword">                劣势： 存储的数据缺少结构化</span>
+<span class="token code keyword">        •    列存储数据库</span>
+<span class="token code keyword">                相关产品：Cassandra, HBase, Riak</span>
+<span class="token code keyword">                典型应用：分布式的文件系统</span>
+<span class="token code keyword">                数据模型：以列簇式存储，将同一列数据存在一起</span>
+<span class="token code keyword">                优势：查找速度快，可扩展性强，更容易进行分布式扩展</span>
+<span class="token code keyword">                劣势：功能相对局限</span>
+<span class="token code keyword">        •    文档型数据库</span>
+<span class="token code keyword">                相关产品：CouchDB、MongoDB</span>
+<span class="token code keyword">                典型应用：Web应用（与Key-Value类似，Value是结构化的）</span>
+<span class="token code keyword">                数据模型： 一系列键值对</span>
+<span class="token code keyword">                优势：数据结构要求不严格</span>
+<span class="token code keyword">                劣势： 查询性能不高，而且缺乏统一的查询语法</span>
+<span class="token code keyword">        •    图形(Graph)数据库</span>
+<span class="token code keyword">                相关数据库：Neo4J、InfoGrid、Infinite Graph</span>
+<span class="token code keyword">                典型应用：社交网络</span>
+<span class="token code keyword">                数据模型：图结构</span>
+<span class="token code keyword">                优势：利用图结构相关算法。</span>
+<span class="token code keyword">                劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。</span>
+<span class="token code keyword">    1.3 什么是Redis</span>
+<span class="token code keyword">        Redis是用C语言开发的一个开源的高性能键值对（key-value）数据库，官方提供测试数据，50个并发执行100000个请求,读的速度是110000次/s,写的速度是81000次/s ，且Redis通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下：</span>
+<span class="token code keyword">            1) 字符串类型 string</span>
+<span class="token code keyword">            2) 哈希类型 hash</span>
+<span class="token code keyword">            3) 列表类型 list</span>
+<span class="token code keyword">            4) 集合类型 set</span>
+<span class="token code keyword">            5) 有序集合类型 sortedset</span>
+<span class="token code keyword">        1.3.1 redis的应用场景</span>
+<span class="token code keyword">            •    缓存（数据查询、短连接、新闻内容、商品内容等等）</span>
+<span class="token code keyword">            •    聊天室的在线好友列表</span>
+<span class="token code keyword">            •    任务队列。（秒杀、抢购、12306等等）</span>
+<span class="token code keyword">            •    应用排行榜</span>
+<span class="token code keyword">            •    网站访问统计</span>
+<span class="token code keyword">            •    数据过期处理（可以精确到毫秒</span>
+<span class="token code keyword">            •    分布式集群架构中的session分离</span>
+<span class="token hr punctuation">----------------------------------------------------------------------------------</span>
+<span class="token list punctuation">2.</span> 下载安装
+<span class="token code keyword">    1. 官网：https://redis.io</span>
+<span class="token code keyword">    2. 中文网：http://www.redis.net.cn/</span>
+<span class="token code keyword">    3. 解压直接可以使用：</span>
+<span class="token code keyword">        * redis.windows.conf：配置文件</span>
+<span class="token code keyword">        * redis-cli.exe：redis的客户端</span>
+<span class="token code keyword">        * redis-server.exe：redis服务器端</span>
+<span class="token hr punctuation">----------------------------------------------------------------------------------</span>
+<span class="token list punctuation">3.</span> 命令操作
+<span class="token code keyword">    1. redis的数据结构：</span>
+<span class="token code keyword">        * redis存储的是：key,value格式的数据，其中key都是字符串，value有5种不同的数据结构</span>
+<span class="token code keyword">            * value的数据结构：</span>
+<span class="token code keyword">                1) 字符串类型 string</span>
+<span class="token code keyword">                2) 哈希类型 hash ： map格式  </span>
+<span class="token code keyword">                3) 列表类型 list ： linkedlist格式。支持重复元素</span>
+<span class="token code keyword">                4) 集合类型 set  ： 不允许重复元素</span>
+<span class="token code keyword">                5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序</span>
+
+<span class="token code keyword">    2. 字符串类型 string</span>
+<span class="token code keyword">        1. 存储： set key value</span>
+<span class="token code keyword">            127.0.0.1:6379> set username zhangsan</span>
+<span class="token code keyword">            OK</span>
+<span class="token code keyword">        2. 获取： get key</span>
+<span class="token code keyword">            127.0.0.1:6379> get username</span>
+<span class="token code keyword">            "zhangsan"</span>
+<span class="token code keyword">        3. 删除： del key</span>
+<span class="token code keyword">            127.0.0.1:6379> del age</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">    3. 哈希类型 hash</span>
+<span class="token code keyword">        1. 存储： hset key field value</span>
+<span class="token code keyword">            127.0.0.1:6379> hset myhash username lisi</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">            127.0.0.1:6379> hset myhash password 123</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">        2. 获取： </span>
+<span class="token code keyword">            * hget key field: 获取指定的field对应的值</span>
+<span class="token code keyword">                127.0.0.1:6379> hget myhash username</span>
+<span class="token code keyword">                "lisi"</span>
+<span class="token code keyword">            * hgetall key：获取所有的field和value</span>
+<span class="token code keyword">                127.0.0.1:6379> hgetall myhash</span>
+<span class="token code keyword">                1) "username"</span>
+<span class="token code keyword">                2) "lisi"</span>
+<span class="token code keyword">                3) "password"</span>
+<span class="token code keyword">                4) "123"</span>
+
+<span class="token code keyword">        3. 删除： hdel key field</span>
+<span class="token code keyword">            127.0.0.1:6379> hdel myhash username</span>
+<span class="token code keyword">            (integer) 1</span>
+
+<span class="token code keyword">    4. 列表类型 list:可以添加一个元素到列表的头部（左边）或者尾部（右边）</span>
+<span class="token code keyword">        1. 添加：</span>
+<span class="token code keyword">            1. lpush key value: 将元素加入列表左表</span>
+
+<span class="token code keyword">            2. rpush key value：将元素加入列表右边</span>
+
+<span class="token code keyword">                127.0.0.1:6379> lpush myList a</span>
+<span class="token code keyword">                (integer) 1</span>
+<span class="token code keyword">                127.0.0.1:6379> lpush myList b</span>
+<span class="token code keyword">                (integer) 2</span>
+<span class="token code keyword">                127.0.0.1:6379> rpush myList c</span>
+<span class="token code keyword">                (integer) 3</span>
+<span class="token code keyword">        2. 获取：</span>
+<span class="token code keyword">            * lrange key start end ：范围获取</span>
+<span class="token code keyword">                127.0.0.1:6379> lrange myList 0 -1</span>
+<span class="token code keyword">                1) "b"</span>
+<span class="token code keyword">                2) "a"</span>
+<span class="token code keyword">                3) "c"</span>
+<span class="token code keyword">        3. 删除：</span>
+<span class="token code keyword">            * lpop key： 删除列表最左边的元素，并将元素返回</span>
+<span class="token code keyword">            * rpop key： 删除列表最右边的元素，并将元素返回</span>
+
+<span class="token code keyword">    5. 集合类型 set ： 不允许重复元素</span>
+<span class="token code keyword">        1. 存储：sadd key value</span>
+<span class="token code keyword">            127.0.0.1:6379> sadd myset a</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">            127.0.0.1:6379> sadd myset a</span>
+<span class="token code keyword">            (integer) 0</span>
+<span class="token code keyword">        2. 获取：smembers key:获取set集合中所有元素</span>
+<span class="token code keyword">            127.0.0.1:6379> smembers myset</span>
+<span class="token code keyword">            1) "a"</span>
+<span class="token code keyword">        3. 删除：srem key value:删除set集合中的某个元素    </span>
+<span class="token code keyword">            127.0.0.1:6379> srem myset a</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">        6. 有序集合类型 sortedset：不允许重复元素，且元素有顺序.每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</span>
+
+<span class="token code keyword">        1. 存储：zadd key score value</span>
+<span class="token code keyword">            127.0.0.1:6379> zadd mysort 60 zhangsan</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">            127.0.0.1:6379> zadd mysort 50 lisi</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">            127.0.0.1:6379> zadd mysort 80 wangwu</span>
+<span class="token code keyword">            (integer) 1</span>
+<span class="token code keyword">        2. 获取：zrange key start end [withscores]</span>
+<span class="token code keyword">            127.0.0.1:6379> zrange mysort 0 -1</span>
+<span class="token code keyword">            1) "lisi"</span>
+<span class="token code keyword">            2) "zhangsan"</span>
+<span class="token code keyword">            3) "wangwu"</span>
+
+<span class="token code keyword">            127.0.0.1:6379> zrange mysort 0 -1 withscores</span>
+<span class="token code keyword">            1) "zhangsan"</span>
+<span class="token code keyword">            2) "60"</span>
+<span class="token code keyword">            3) "wangwu"</span>
+<span class="token code keyword">            4) "80"</span>
+<span class="token code keyword">            5) "lisi"</span>
+<span class="token code keyword">            6) "500"</span>
+<span class="token code keyword">        3. 删除：zrem key value</span>
+<span class="token code keyword">            127.0.0.1:6379> zrem mysort lisi</span>
+<span class="token code keyword">            (integer) 1</span>
+
+<span class="token code keyword">    7. 通用命令</span>
+<span class="token code keyword">        1. keys * : 查询所有的键</span>
+<span class="token code keyword">        2. type key ： 获取键对应的value的类型</span>
+<span class="token code keyword">        3. del key：删除指定的key value</span>
+<span class="token hr punctuation">----------------------------------------------------------------------------------</span>
+<span class="token list punctuation">4.</span> 持久化
+<span class="token code keyword">    1. redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。</span>
+<span class="token code keyword">    2. redis持久化机制：</span>
+<span class="token code keyword">        1. RDB：默认方式，不需要进行配置，默认就使用这种机制</span>
+<span class="token code keyword">            * 在一定的间隔时间中，检测key的变化情况，然后持久化数据</span>
+<span class="token code keyword">            1. 编辑redis.windwos.conf文件</span>
+<span class="token code keyword">                      after 900 sec (15 min) if at least 1 key changed</span>
+<span class="token code keyword">                save 900 1</span>
+<span class="token code keyword">                      after 300 sec (5 min) if at least 10 keys changed</span>
+<span class="token code keyword">                save 300 10</span>
+<span class="token code keyword">                      after 60 sec if at least 10000 keys changed</span>
+<span class="token code keyword">                save 60 10000</span>
+
+<span class="token code keyword">            2. 重新启动redis服务器，并指定配置文件名称</span>
+<span class="token code keyword">                redis-server.exe redis.windows.conf    </span>
+
+<span class="token code keyword">        2. AOF：日志记录的方式，可以记录每一条命令的操作。可以每一次命令操作后，持久化数据</span>
+<span class="token code keyword">            1. 编辑redis.windwos.conf文件</span>
+<span class="token code keyword">                appendonly no（关闭aof） --> appendonly yes （开启aof）</span>
+
+<span class="token code keyword">                     appendfsync always ： 每一次操作都进行持久化</span>
+<span class="token code keyword">                appendfsync everysec ： 每隔一秒进行一次持久化</span>
+<span class="token code keyword">                     appendfsync no     ： 不进行持久化</span>
+<span class="token hr punctuation">----------------------------------------------------------------------------------</span>
+<span class="token list punctuation">5.</span> Java客户端 Jedis
+<span class="token code keyword">    * Jedis: 一款java操作redis数据库的工具.</span>
+<span class="token code keyword">    * 使用步骤：</span>
+<span class="token code keyword">        1. 下载jedis的jar包</span>
+<span class="token code keyword">        2. 使用</span>
+<span class="token code keyword">            //1. 获取连接</span>
+<span class="token code keyword">            Jedis jedis = new Jedis("localhost",6379);</span>
+<span class="token code keyword">               //2. 操作</span>
+<span class="token code keyword">               jedis.set("username","zhangsan");</span>
+<span class="token code keyword">            //3. 关闭连接</span>
+<span class="token code keyword">            jedis.close();</span>
+<span class="token code keyword">    * Jedis操作各种redis中的数据结构</span>
+<span class="token code keyword">        1) 字符串类型 string</span>
+<span class="token code keyword">            set</span>
+<span class="token code keyword">            get</span>
+
+<span class="token code keyword">             //1. 获取连接</span>
+<span class="token code keyword">            Jedis jedis = new Jedis();//如果使用空参构造，默认值 "localhost",6379端口</span>
+<span class="token code keyword">            //2. 操作</span>
+<span class="token code keyword">            //存储</span>
+<span class="token code keyword">            jedis.set("username","zhangsan");</span>
+<span class="token code keyword">            //获取</span>
+<span class="token code keyword">            String username = jedis.get("username");</span>
+<span class="token code keyword">            System.out.println(username);</span>
+
+<span class="token code keyword">            //可以使用setex()方法存储可以指定过期时间的 key value</span>
+<span class="token code keyword">            jedis.setex("activecode",20,"hehe");//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对</span>
+
+<span class="token code keyword">            //3. 关闭连接</span>
+<span class="token code keyword">            jedis.close();</span>
+
+<span class="token code keyword">        2) 哈希类型 hash ： map格式  </span>
+<span class="token code keyword">            hset</span>
+<span class="token code keyword">            hget</span>
+<span class="token code keyword">            hgetAll</span>
+<span class="token code keyword">            //1. 获取连接</span>
+<span class="token code keyword">            Jedis jedis = new Jedis();//如果使用空参构造，默认值 "localhost",6379端口</span>
+<span class="token code keyword">            //2. 操作</span>
+<span class="token code keyword">            // 存储hash</span>
+<span class="token code keyword">            jedis.hset("user","name","lisi");</span>
+<span class="token code keyword">            jedis.hset("user","age","23");</span>
+<span class="token code keyword">            jedis.hset("user","gender","female");</span>
+
+<span class="token code keyword">            // 获取hash</span>
+<span class="token code keyword">            String name = jedis.hget("user", "name");</span>
+<span class="token code keyword">            System.out.println(name);</span>
+<span class="token code keyword">                        // 获取hash的所有map中的数据</span>
+<span class="token code keyword">            Map&lt;String, String> user = jedis.hgetAll("user");</span>
+
+<span class="token code keyword">            // keyset</span>
+<span class="token code keyword">            Set&lt;String> keySet = user.keySet();</span>
+<span class="token code keyword">            for (String key : keySet) {</span>
+<span class="token code keyword">                //获取value</span>
+<span class="token code keyword">                String value = user.get(key);</span>
+<span class="token code keyword">                System.out.println(key + ":" + value);</span>
+<span class="token code keyword">            }</span>
+
+<span class="token code keyword">            //3. 关闭连接</span>
+<span class="token code keyword">            jedis.close();</span>
+<span class="token code keyword">        3) 列表类型 list ： linkedlist格式。支持重复元素</span>
+<span class="token code keyword">            lpush / rpush</span>
+<span class="token code keyword">            lpop / rpop</span>
+<span class="token code keyword">            lrange start end : 范围获取</span>
+
+<span class="token code keyword">             //1. 获取连接</span>
+<span class="token code keyword">            Jedis jedis = new Jedis();//如果使用空参构造，默认值 "localhost",6379端口</span>
+<span class="token code keyword">            //2. 操作</span>
+<span class="token code keyword">            // list 存储</span>
+<span class="token code keyword">            jedis.lpush("mylist","a","b","c");//从左边存</span>
+<span class="token code keyword">            jedis.rpush("mylist","a","b","c");//从右边存</span>
+
+<span class="token code keyword">            // list 范围获取</span>
+<span class="token code keyword">            List&lt;String> mylist = jedis.lrange("mylist", 0, -1);</span>
+<span class="token code keyword">            System.out.println(mylist);</span>
+
+<span class="token code keyword">            // list 弹出</span>
+<span class="token code keyword">            String element1 = jedis.lpop("mylist");//c</span>
+<span class="token code keyword">            System.out.println(element1);</span>
+
+<span class="token code keyword">            String element2 = jedis.rpop("mylist");//c</span>
+<span class="token code keyword">            System.out.println(element2);</span>
+
+<span class="token code keyword">            // list 范围获取</span>
+<span class="token code keyword">            List&lt;String> mylist2 = jedis.lrange("mylist", 0, -1);</span>
+<span class="token code keyword">            System.out.println(mylist2);</span>
+
+<span class="token code keyword">            //3. 关闭连接</span>
+<span class="token code keyword">            jedis.close();</span>
+<span class="token code keyword">          4) 集合类型 set  ： 不允许重复元素</span>
+<span class="token code keyword">            sadd</span>
+<span class="token code keyword">            smembers:获取所有元素</span>
+
+<span class="token code keyword">            //1. 获取连接</span>
+<span class="token code keyword">            Jedis jedis = new Jedis();//如果使用空参构造，默认值 "localhost",6379端口</span>
+<span class="token code keyword">            //2. 操作</span>
+<span class="token code keyword">                        // set 存储</span>
+<span class="token code keyword">            jedis.sadd("myset","java","php","c++");</span>
+
+<span class="token code keyword">            // set 获取</span>
+<span class="token code keyword">            Set&lt;String> myset = jedis.smembers("myset");</span>
+<span class="token code keyword">            System.out.println(myset);</span>
+
+<span class="token code keyword">            //3. 关闭连接</span>
+<span class="token code keyword">            jedis.close();</span>
+<span class="token code keyword">        5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序</span>
+<span class="token code keyword">            zadd</span>
+<span class="token code keyword">            zrange</span>
+
+<span class="token code keyword">            //1. 获取连接</span>
+<span class="token code keyword">            Jedis jedis = new Jedis();//如果使用空参构造，默认值 "localhost",6379端口</span>
+<span class="token code keyword">            //2. 操作</span>
+<span class="token code keyword">            // sortedset 存储</span>
+<span class="token code keyword">            jedis.zadd("mysortedset",3,"亚瑟");</span>
+<span class="token code keyword">            jedis.zadd("mysortedset",30,"后裔");</span>
+<span class="token code keyword">            jedis.zadd("mysortedset",55,"孙悟空");</span>
+
+<span class="token code keyword">            // sortedset 获取</span>
+<span class="token code keyword">            Set&lt;String> mysortedset = jedis.zrange("mysortedset", 0, -1);</span>
+
+<span class="token code keyword">            System.out.println(mysortedset);</span>
+<span class="token code keyword">            //3. 关闭连接</span>
+<span class="token code keyword">            jedis.close();</span>
+<span class="token code keyword">    * jedis连接池： JedisPool</span>
+<span class="token code keyword">        * 使用：</span>
+<span class="token code keyword">            1. 创建JedisPool连接池对象</span>
+<span class="token code keyword">            2. 调用方法 getResource()方法获取Jedis连接</span>
+<span class="token code keyword">                //0.创建一个配置对象</span>
+<span class="token code keyword">                JedisPoolConfig config = new JedisPoolConfig();</span>
+<span class="token code keyword">                config.setMaxTotal(50);</span>
+<span class="token code keyword">                config.setMaxIdle(10);</span>
+
+<span class="token code keyword">                //1.创建Jedis连接池对象</span>
+<span class="token code keyword">                JedisPool jedisPool = new JedisPool(config,"localhost",6379);</span>
+
+<span class="token code keyword">                //2.获取连接</span>
+<span class="token code keyword">                Jedis jedis = jedisPool.getResource();</span>
+<span class="token code keyword">                //3. 使用</span>
+<span class="token code keyword">                jedis.set("hehe","heihei");</span>
+<span class="token code keyword">                //4. 关闭 归还到连接池中</span>
+<span class="token code keyword">                jedis.close();</span>
+
+<span class="token code keyword">        * 连接池工具类</span>
+<span class="token code keyword">            public class JedisPoolUtils {</span>
+
+<span class="token code keyword">                private static JedisPool jedisPool;</span>
+
+<span class="token code keyword">                static{</span>
+<span class="token code keyword">                    //读取配置文件</span>
+<span class="token code keyword">                    InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream("jedis.properties");</span>
+<span class="token code keyword">                    //创建Properties对象</span>
+<span class="token code keyword">                    Properties pro = new Properties();</span>
+<span class="token code keyword">                    //关联文件</span>
+<span class="token code keyword">                    try {</span>
+<span class="token code keyword">                        pro.load(is);</span>
+<span class="token code keyword">                    } catch (IOException e) {</span>
+<span class="token code keyword">                        e.printStackTrace();</span>
+<span class="token code keyword">                    }</span>
+<span class="token code keyword">                    //获取数据，设置到JedisPoolConfig中</span>
+<span class="token code keyword">                    JedisPoolConfig config = new JedisPoolConfig();</span>
+<span class="token code keyword">                    config.setMaxTotal(Integer.parseInt(pro.getProperty("maxTotal")));</span>
+<span class="token code keyword">                    config.setMaxIdle(Integer.parseInt(pro.getProperty("maxIdle")));</span>
+
+<span class="token code keyword">                    //初始化JedisPool</span>
+<span class="token code keyword">                    jedisPool = new JedisPool(config,pro.getProperty("host"),Integer.parseInt(pro.getProperty("port")));</span>
+<span class="token code keyword">                }</span>
+<span class="token code keyword">                /**</span>
+<span class="token code keyword">                 * 获取连接方法</span>
+<span class="token code keyword">                 */</span>
+<span class="token code keyword">                public static Jedis getJedis(){</span>
+<span class="token code keyword">                    return jedisPool.getResource();</span>
+<span class="token code keyword">                }</span>
+<span class="token code keyword">            }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="小案例，Java程序操作Redis："><a href="#小案例，Java程序操作Redis：" class="headerlink" title="小案例，Java程序操作Redis："></a>小案例，Java程序操作Redis：</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">test</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Jedis jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Jedis jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String s <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">////可以使用setex()方法存储可以指定过期时间的 key value</span>
+        jedis<span class="token punctuation">.</span><span class="token function">setex</span><span class="token punctuation">(</span><span class="token string">"activecode"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"haha"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对</span>
+        String s1 <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"activecode"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        String s2 <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"activecode"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"10s之后"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*
+          运行结果：
+            zhangsan
+            haha
+            10s之后
+            haha
+         */</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Jedis jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">hset</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">hset</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"id"</span><span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">hset</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">hgetAll</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> ketset <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String key <span class="token operator">:</span> ketset<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String value <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key <span class="token operator">+</span> <span class="token string">"："</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*
+            运行结果：
+                name：zhangsan
+                password：zhangsan
+                id：24
+         */</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Jedis jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">sadd</span><span class="token punctuation">(</span><span class="token string">"myset"</span><span class="token punctuation">,</span> <span class="token string">"java"</span><span class="token punctuation">,</span> <span class="token string">"php"</span><span class="token punctuation">,</span> <span class="token string">"c++"</span><span class="token punctuation">,</span> <span class="token string">"javascript"</span><span class="token punctuation">,</span><span class="token string">"java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> myset <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">smembers</span><span class="token punctuation">(</span><span class="token string">"myset"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> myset<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*
+            运行结果：
+                javascript
+                java
+                php
+                c++
+         */</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test5</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Jedis jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">zadd</span><span class="token punctuation">(</span><span class="token string">"mysortedset"</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"诸葛大力"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">zadd</span><span class="token punctuation">(</span><span class="token string">"mysortedset"</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token string">"成果"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">zadd</span><span class="token punctuation">(</span><span class="token string">"mysortedset"</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">"成果"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jedis<span class="token punctuation">.</span><span class="token function">zadd</span><span class="token punctuation">(</span><span class="token string">"mysortedset"</span><span class="token punctuation">,</span><span class="token number">55</span><span class="token punctuation">,</span><span class="token string">"张伟"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// sortedset 获取</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">></span> mysortedset <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">zrange</span><span class="token punctuation">(</span><span class="token string">"mysortedset"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> mysortedset<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*
+            运行结果：
+                诸葛大力
+                成果
+                张伟
+         */</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li>注意：使用redis缓存一些不经常发生变化的数据。</li>
+<li>数据库的数据一旦发生改变，则需要更新缓存。<ul>
+<li>数据库的表执行 增删改的相关操作，需要将redis缓存数据情况，再次存入</li>
+<li>在service对应的增删改方法中，将redis数据删除。</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.loltoulan.top" rel="external nofollow noreferrer">LOLtoulan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.loltoulan.top/2020/01/19/nosql/redis-ji-chu/">http://www.loltoulan.top/2020/01/19/nosql/redis-ji-chu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.loltoulan.top" target="_blank">LOLtoulan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/redis/">
+                                    <span class="chip bg-color">redis</span>
+                                </a>
+                            
+                                <a href="/tags/NOSQL/">
+                                    <span class="chip bg-color">NOSQL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80NzkyMS8yNDQxOA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/01/28/mybatis/mybatis-ru-men/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="mybatis入门">
+                        
+                        <span class="card-title">mybatis入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            mybatis入门
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mybatis%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    mybatis框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/18/ajax-jquery/json-ji-chu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Json基础">
+                        
+                        <span class="card-title">Json基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Json基础
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Json%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    Json基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/json/">
+                        <span class="chip bg-color">json</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('12000')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: LOLtoulan<br />'
+            + '文章作者: LOLtoulan<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="http://www.loltoulan.top" target="_blank">LOLtoulan</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">154k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "11";
+                    var startDate = "11";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LOLtoulan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:loltoulan@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1987108233" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1987108233" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/mo-yin-han-yu/activities" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/mo-yin-han-yu/activities" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+
+
+    <a href="https://blog.csdn.net/LOL_toulan" class="tooltipped" target="_blank" data-tooltip="关注我的csdn: https://blog.csdn.net/LOL_toulan" data-position="top" data-delay="50">
+        <i class="fab fa-csdn">C</i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script type="text/javascript"> var OriginTitile=document.title,st; document.addEventListener("visibilitychange",function(){ document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3)) }) </script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- LOLtoulan 天气插件-->
+<!-- <script type="text/javascript">
+WIDGET = {FID: 'b8TkAItBeY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?url='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script></body>
+
+</html>
